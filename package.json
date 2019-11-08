@@ -2,7 +2,7 @@
 	"name": "personal",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://nkuznetsov.github.io/personal",
+	"homepage": "https://fluffyoyster.cc",
 	"dependencies": {
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
