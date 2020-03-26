@@ -5,13 +5,14 @@
   "homepage": "https://fluffyoyster.cc",
   "dependencies": {
     "@types/jest": "^25.1.4",
-    "@types/node": "^13.9.3",
+    "@types/node": "^12.12.31",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-fela": "^11.2.0",
     "react-scripts": "3.2.0",
     "typescript": "^3.8.3"
   },
