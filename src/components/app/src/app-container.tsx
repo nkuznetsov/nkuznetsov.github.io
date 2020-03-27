@@ -1,13 +1,15 @@
 import React from 'react';
-import { globalStyles } from '../../../assets/styles/global';
 import { AppRenderer } from './app-renderer';
+import { ThemeProvider } from 'react-jss';
+import { ThemeConsumer } from './theme-consumer';
+import { themes } from '../../../assets/styles/themes';
 
 export const AppContainer = () => {
-  const styles = globalStyles(); // memo
-
   return (
-    <div className={styles.app}>
-      <AppRenderer />
-    </div>
+    <ThemeProvider theme={themes.lightTheme}>
+      <ThemeConsumer>
+        <AppRenderer />
+      </ThemeConsumer>
+    </ThemeProvider>
   );
 };
