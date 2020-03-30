@@ -1,8 +1,8 @@
 import { createUseStyles } from 'react-jss';
 
-const localStyles = createUseStyles(theme => ({
+export default createUseStyles(theme => ({
   text: {
-    color: theme.colorPrimary
+    color: theme.foreground
   },
   lobster: {
     height: '40vmin',
@@ -16,5 +16,3 @@ const localStyles = createUseStyles(theme => ({
     to: { transform: 'rotate(360deg)' }
   }
 }));
-
-export { localStyles };

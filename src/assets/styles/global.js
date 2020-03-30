@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-const globalStyles = createUseStyles(theme => ({
+export default createUseStyles(theme => ({
   app: {
     backgroundColor: theme.background,
     textAlign: 'center',
@@ -12,5 +12,3 @@ const globalStyles = createUseStyles(theme => ({
       "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
   }
 }));
-
-export { globalStyles };

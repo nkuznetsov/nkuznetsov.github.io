@@ -1,16 +1,13 @@
 import React from 'react';
-import { useTheme } from 'react-jss';
-import lobster from '../../../assets/images/lobster.svg';
-import { localStyles } from '../../../assets/styles/local';
+import { Lobster } from '../../lobster';
+import { ThemeController } from '../../theme-controller';
+import { IAppRendererProps } from './app-interface';
 
-export const AppRenderer = () => {
-  const theme = useTheme();
-  const styles = localStyles(theme);
-
+export const AppRenderer = (props: IAppRendererProps) => {
   return (
     <>
-      <p className={styles.text}>Just a fluffy lobster here for now</p>
-      <img src={lobster} alt='lobster' className={styles.lobster} />
+      <Lobster />
+      <ThemeController changeTheme={props.changeTheme} />
     </>
   );
 };
