@@ -1,6 +1,6 @@
 import colors from './colors';
 
-export const themes = {
+export default {
   lightTheme: {
     primary: colors.purple,
     accent: colors.lightGray,

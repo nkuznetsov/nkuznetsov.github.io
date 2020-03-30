@@ -1,14 +1,24 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(theme => ({
+  '@global': {
+    html: {
+      margin: '0',
+      padding: '0'
+    },
+    body: {
+      margin: '0',
+      padding: '0',
+      fontFamily:
+        "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+      fontSize: '20px'
+    }
+  },
   app: {
-    backgroundColor: theme.background,
-    textAlign: 'center',
-    fontSize: '20px',
+    position: 'fixed',
+    width: '100%',
     height: '100%',
-    margin: '0',
-    padding: '0',
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
+    background: theme.background,
+    textAlign: 'center'
   }
 }));
