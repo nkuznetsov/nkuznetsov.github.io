@@ -1,5 +1,5 @@
 export interface IThemeControllerContainerProps {
-  changeTheme: (isLight: boolean) => void;
+  changeTheme: (isChecked: boolean) => void;
 }
 
 export interface IThemeControllerRendererProps {

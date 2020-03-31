@@ -19,6 +19,12 @@ export default createUseStyles(theme => ({
     width: '100%',
     height: '100%',
     background: theme.background,
-    textAlign: 'center'
+    textAlign: 'center',
+    animationName: '$fadein',
+    animationDuration: '2s'
+  },
+  '@keyframes fadein': {
+    from: { opacity: '0.6' },
+    to: { opacity: '1' }
   }
 }));

@@ -5,7 +5,7 @@ export default createUseStyles(theme => ({
     color: theme.foreground
   },
   lobster: {
-    height: '40vmin',
+    height: '25rem',
     pointerEvents: 'none',
     animationName: '$rotate',
     animationDuration: '20s',
@@ -14,5 +14,9 @@ export default createUseStyles(theme => ({
   '@keyframes rotate': {
     from: { transform: 'rotate(0deg)' },
     to: { transform: 'rotate(360deg)' }
+  },
+  themeIcon: {
+    width: '2em',
+    height: '2em'
   }
 }));
