@@ -18,6 +18,7 @@ export default createUseStyles(theme => ({
     position: 'fixed',
     width: '100%',
     height: '100%',
+    color: theme.foreground,
     background: theme.background,
     textAlign: 'center',
     animationName: '$fadein',

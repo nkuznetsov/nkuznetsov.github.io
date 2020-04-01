@@ -1,5 +1,5 @@
-import colors from './colors';
 import { ITheme, ThemeType } from '../models';
+import colors from './colors';
 
 const lightTheme: ITheme = {
   type: ThemeType.Light,

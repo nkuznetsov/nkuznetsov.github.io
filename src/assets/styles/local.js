@@ -1,9 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(theme => ({
-  text: {
-    color: theme.foreground
-  },
   lobster: {
     height: '25rem',
     pointerEvents: 'none',
@@ -18,5 +15,11 @@ export default createUseStyles(theme => ({
   themeIcon: {
     width: '2em',
     height: '2em'
+  },
+  themeController: {
+    padding: '1em'
+  },
+  name: {
+    fontSize: '2em'
   }
 }));
