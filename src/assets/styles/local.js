@@ -17,7 +17,7 @@ export default createUseStyles(theme => ({
     height: '2em'
   },
   themeController: {
-    padding: '1em'
+    padding: '2em'
   },
   name: {
     fontSize: '2em'
