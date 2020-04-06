@@ -5,7 +5,7 @@ const lightTheme: ITheme = {
   type: ThemeType.Light,
   primary: colors.purple,
   accent1: colors.gray[0],
-  accent2: colors.darkGray[0],
+  accent2: colors.purple,
   warn: colors.red,
   foreground: colors.brown,
   background: colors.white

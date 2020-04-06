@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 const lobsterHeight = '20rem';
 const lobsterPadding = '2rem';
 const lobsterTransition = '1s';
-const circleRadius = '50%';
 
 export default createUseStyles(theme => ({
   container: {
@@ -13,9 +12,8 @@ export default createUseStyles(theme => ({
     height: `${lobsterHeight}`,
     padding: `${lobsterPadding}`,
     transition: `${lobsterTransition}`,
-    borderRadius: `${circleRadius}`,
     background: theme.accent1,
-    pointerEvents: 'none',
+    borderRadius: '2rem',
     animation: '$rotateClockwise 30s infinite'
   },
   '@keyframes rotateClockwise': {
@@ -26,8 +24,8 @@ export default createUseStyles(theme => ({
     height: `${lobsterHeight}`,
     padding: `${lobsterPadding}`,
     transition: `${lobsterTransition}`,
-    borderRadius: `${circleRadius}`,
     background: theme.accent2,
+    borderRadius: '50%',
     animation: '$rotateCounterClockwise 30s infinite'
   },
   '@keyframes rotateCounterClockwise': {
