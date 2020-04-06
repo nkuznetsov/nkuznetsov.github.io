@@ -3,8 +3,8 @@ import { ITheme, ThemeType } from '../../../assets/models';
 import { IThemeControllerRendererProps } from './theme-controller-interface';
 import { useTheme } from 'react-jss';
 import Checkbox from '@material-ui/core/Checkbox';
-import DarkThemeActiveIcon from '../../../assets/images/dark_theme_active.svg';
-import DarkThemeInactiveIcon from '../../../assets/images/dark_theme_inactive.svg';
+import darkThemeActive from '../../../assets/images/moon_light.svg';
+import darkThemeInactive from '../../../assets/images/moon_dark.svg';
 import localStyles from '../../../assets/styles/local';
 
 export const ThemeControllerRenderer = (
@@ -18,14 +18,14 @@ export const ThemeControllerRenderer = (
     <Checkbox
       icon={
         <img
-          src={DarkThemeInactiveIcon}
+          src={darkThemeInactive}
           alt='dark theme active icon'
           className={styles.themeIcon}
         ></img>
       }
       checkedIcon={
         <img
-          src={DarkThemeActiveIcon}
+          src={darkThemeActive}
           alt='dark theme inactive icon'
           className={styles.themeIcon}
         ></img>

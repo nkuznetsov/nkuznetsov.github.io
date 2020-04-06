@@ -6,7 +6,8 @@ enum ThemeType {
 interface ITheme {
   type: ThemeType;
   primary: string;
-  accent: string;
+  accent1: string;
+  accent2: string;
   warn: string;
   foreground: string;
   background: string;
