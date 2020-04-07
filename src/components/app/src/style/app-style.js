@@ -14,11 +14,14 @@ export default createUseStyles(theme => ({
       fontSize: '20px'
     }
   },
+  container: {
+    height: '80%'
+  },
   app: {
     position: 'fixed',
     width: '100%',
     height: '100%',
-    color: theme.foreground,
+    color: theme.onBackground,
     background: theme.background,
     textAlign: 'center',
     animationName: '$fadein',
@@ -27,5 +30,8 @@ export default createUseStyles(theme => ({
   '@keyframes fadein': {
     from: { opacity: '0.6' },
     to: { opacity: '1' }
+  },
+  name: {
+    fontSize: '3rem'
   }
 }));

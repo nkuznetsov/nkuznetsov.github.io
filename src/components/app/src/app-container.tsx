@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { AppRenderer } from './app-renderer';
-import { defaultThemeType, defaultLocale } from '../../../assets/constants';
+import { defaultThemeType, defaultLocale } from '../../../constants';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'react-jss';
-import { ThemeType } from '../../../assets/models';
+import { ThemeType } from '../../../models';
 import { ThemeWrapper } from './theme-wrapper';
-import messages from '../../../assets/messages';
-import themes from '../../../assets/styles/themes';
+import messages from '../../../messages';
+import themes from '../../../styles/themes';
 
 export const AppContainer = () => {
   const locale = defaultLocale;

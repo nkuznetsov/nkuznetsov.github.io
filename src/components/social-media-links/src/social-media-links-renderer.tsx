@@ -1,27 +1,27 @@
 import React from 'react';
-import { gitHubLink, linkedInLink } from '../../../assets/constants';
-import { useIntl } from 'react-intl';
+import { gitHubLink, linkedInLink } from '../../../constants';
+import { ReactComponent as GitHubLogo } from './style/github.svg';
+import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
 import { useTheme } from 'react-jss';
-import github from '../../../assets/images/github.svg';
-import linkedin from '../../../assets/images/linkedin.svg';
-import localStyles from '../../../assets/styles/local';
+import socialMediaLinksStyle from './style/social-media-links-style';
 
 export const SocialMediaLinksRenderer = () => {
   const theme = useTheme();
-  const styles = localStyles(theme);
-  const { formatMessage } = useIntl();
+  const styles = socialMediaLinksStyle(theme);
 
   return (
-    <>
-      <p className={styles.name}>
-        {formatMessage({ id: 'home.nikitaKuznetsov' })}
-      </p>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center'
+      }}
+    >
       <a href={gitHubLink}>
-        <img src={github} alt='GitHub' className={styles.socialIcon} />
+        <GitHubLogo className={styles.socialIcon}>'GitHub'</GitHubLogo>
       </a>
       <a href={linkedInLink}>
-        <img src={linkedin} alt='LinkedIn' className={styles.socialIcon} />
+        <LinkedInLogo className={styles.socialIcon}>'LinkedIn'</LinkedInLogo>
       </a>
-    </>
+    </div>
   );
 };
