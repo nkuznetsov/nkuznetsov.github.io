@@ -1,6 +1,6 @@
 # Fluffy Oyster
 
-Playground for a fluffy oyster. test
+Playground for a fluffy oyster.
 
 ## Usage
 
