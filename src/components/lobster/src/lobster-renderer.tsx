@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Image } from '../../image';
 import { ReactComponent as LobsterImage } from './style/lobster.svg';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
@@ -13,8 +14,9 @@ export const LobsterRenderer = () => {
   return (
     <div onMouseEnter={() => setHovered(!hovered)}>
       <p>{formatMessage({ id: 'home.fluffyLobsterWelcome' })}</p>
-      <LobsterImage
-        xlinkTitle='lobster'
+      <Image
+        Svg={LobsterImage}
+        ariaLabel='lobster'
         className={
           hovered ? styles.lobsterCounterclockwise : styles.lobsterClockwise
         }

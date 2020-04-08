@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from '../../image';
 import { ITheme, ThemeType } from '../../../models';
 import { IThemeControllerRendererProps } from './theme-controller-interface';
 import { useTheme } from 'react-jss';
@@ -18,18 +19,18 @@ export const ThemeControllerRenderer = (
     <div className={styles.themeController}>
       <Checkbox
         icon={
-          <img
+          <Image
             src={darkThemeInactive}
-            alt='dark theme active icon'
+            ariaLabel='dark theme active icon'
             className={styles.themeIcon}
-          ></img>
+          />
         }
         checkedIcon={
-          <img
+          <Image
             src={darkThemeActive}
-            alt='dark theme inactive icon'
+            ariaLabel='dark theme inactive icon'
             className={styles.themeIcon}
-          ></img>
+          />
         }
         onChange={props.switchTheme}
         checked={isChecked}

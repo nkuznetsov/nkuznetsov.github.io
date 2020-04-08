@@ -1,5 +1,6 @@
 import React from 'react';
 import { gitHubLink, linkedInLink } from '../../../constants';
+import { Image } from '../../image';
 import { ReactComponent as GitHubLogo } from './style/github.svg';
 import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
 import { useTheme } from 'react-jss';
@@ -16,12 +17,20 @@ export const SocialMediaLinksRenderer = () => {
         justifyContent: 'center'
       }}
     >
-      <a href={gitHubLink}>
-        <GitHubLogo className={styles.socialIcon}>'GitHub'</GitHubLogo>
-      </a>
-      <a href={linkedInLink}>
-        <LinkedInLogo className={styles.socialIcon}>'LinkedIn'</LinkedInLogo>
-      </a>
+      <Image
+        hover
+        link={gitHubLink}
+        Svg={GitHubLogo}
+        className={styles.socialIcon}
+        ariaLabel='GitHub'
+      />
+      <Image
+        hover
+        link={linkedInLink}
+        Svg={LinkedInLogo}
+        className={styles.socialIcon}
+        ariaLabel='LinkedIn'
+      />
     </div>
   );
 };
