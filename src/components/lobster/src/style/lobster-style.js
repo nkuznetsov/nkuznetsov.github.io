@@ -6,7 +6,7 @@ const lobsterTransition = '1s';
 
 export default createUseStyles(theme => ({
   lobsterClockwise: {
-    width: lobsterHeight,
+    height: lobsterHeight,
     padding: lobsterPadding,
     transition: lobsterTransition,
     background: theme.base.secondary,
@@ -14,7 +14,7 @@ export default createUseStyles(theme => ({
     animation: '$rotateClockwise 30s infinite'
   },
   lobsterCounterclockwise: {
-    width: lobsterHeight,
+    height: lobsterHeight,
     padding: lobsterPadding,
     transition: lobsterTransition,
     background: theme.base.secondaryVariant,

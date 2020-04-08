@@ -18,7 +18,7 @@ export const LobsterRenderer = () => {
         Svg={LobsterImage}
         ariaLabel='lobster'
         className={
-          hovered ? styles.lobsterCounterclockwise : styles.lobsterClockwise
+          hovered ? styles.lobsterClockwise : styles.lobsterCounterclockwise
         }
       />
     </div>
