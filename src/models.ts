@@ -8,9 +8,9 @@ interface IBaseTheme {
 
   // Key surface categories, excluding background
   primary: string;
-  primaryVariant: string;
+  primaryVariants: string[];
   secondary: string;
-  secondaryVariant: string;
+  secondaryVariants: string[];
   surface: string;
   error: string;
 

@@ -5,12 +5,12 @@ import { IBaseTheme, ITheme, ThemeType } from '../models';
 import colors from './colors';
 
 const baseTheme: IBaseTheme = {
-  primary: colors.purple[300],
-  primaryVariant: colors.purple[200],
-  secondary: colors.teal[100],
-  secondaryVariant: colors.teal[200],
-  surface: colors.white,
-  error: colors.red[200],
+  primary: colors.teal[100],
+  primaryVariants: [colors.teal[200], colors.teal[300]],
+  secondary: colors.pink[100],
+  secondaryVariants: [colors.pink[200], colors.pink[300]],
+  surface: colors.gray[300],
+  error: colors.red[100],
 
   onPrimary: colors.brown,
   onSecondary: colors.brown,

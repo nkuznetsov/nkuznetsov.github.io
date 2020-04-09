@@ -19,6 +19,7 @@ export const SocialMediaLinksRenderer = () => {
     >
       <Image
         hover
+        themed
         link={gitHubLink}
         Svg={GitHubLogo}
         className={styles.socialIcon}
@@ -26,6 +27,7 @@ export const SocialMediaLinksRenderer = () => {
       />
       <Image
         hover
+        themed
         link={linkedInLink}
         Svg={LinkedInLogo}
         className={styles.socialIcon}

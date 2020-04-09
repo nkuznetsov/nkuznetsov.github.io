@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { IImageProps } from './image-interface';
+import { useTheme } from 'react-jss';
+import imageStyle from './style/image-style';
 
 export const ImageRenderer = (props: IImageProps) => {
-  const { src, Svg, link, className, ariaLabel, hover } = props;
-
+  const { src, Svg, link, className, ariaLabel, hover, themed } = props;
   const [hovered, setHovered] = useState(false);
+  const theme = useTheme();
+  const styles = imageStyle(theme);
+
+  const composedClass = themed
+    ? [className, styles.themed].join(' ')
+    : className;
 
   const hoverStyle = hover
     ? {
@@ -20,7 +27,7 @@ export const ImageRenderer = (props: IImageProps) => {
     >
       {Svg ? (
         <a href={link}>
-          <Svg className={className} style={hoverStyle}>
+          <Svg className={composedClass} style={hoverStyle}>
             {ariaLabel}
           </Svg>
         </a>
@@ -28,7 +35,7 @@ export const ImageRenderer = (props: IImageProps) => {
         <img
           src={src}
           alt={ariaLabel}
-          className={className}
+          className={composedClass}
           style={hoverStyle}
         />
       )}

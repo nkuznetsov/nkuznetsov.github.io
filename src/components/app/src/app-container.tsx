@@ -6,7 +6,7 @@ import { ThemeProvider } from 'react-jss';
 import { ThemeType } from '../../../models';
 import { ThemeWrapper } from './theme-wrapper';
 import messages from '../../../messages';
-import themes from '../../../styles/themes';
+import themes from '../../../style/themes';
 
 export const AppContainer = () => {
   const locale = defaultLocale;

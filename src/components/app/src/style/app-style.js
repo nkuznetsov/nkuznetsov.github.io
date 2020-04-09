@@ -14,9 +14,6 @@ export default createUseStyles(theme => ({
       fontSize: '20px'
     }
   },
-  container: {
-    height: '80%'
-  },
   app: {
     position: 'fixed',
     width: '100%',
@@ -31,7 +28,38 @@ export default createUseStyles(theme => ({
     from: { opacity: '0.6' },
     to: { opacity: '1' }
   },
+  container: {
+    // background: 'pink',
+    height: '100%'
+  },
+  leftContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'flex-start',
+    paddingTop: '3%'
+    // background: 'brown'
+  },
+  centerContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingBottom: '20%'
+    // background: 'teal'
+  },
+  rightContainer: {
+    // background: 'cyan',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignContent: 'flex-start'
+  },
   name: {
-    fontSize: '3rem'
+    fontSize: '3rem',
+    marginTop: '2rem'
+  },
+  mainImage: {
+    // background: 'brown',
+    width: '15rem',
+    height: '15rem',
+    padding: 0
   }
 }));

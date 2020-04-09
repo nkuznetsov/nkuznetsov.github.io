@@ -5,4 +5,5 @@ export interface IImageProps {
   link?: string;
   src?: string;
   Svg?: any;
+  themed?: boolean;
 }
