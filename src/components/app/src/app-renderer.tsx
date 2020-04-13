@@ -2,6 +2,7 @@ import React from 'react';
 import { IAppRendererProps } from './app-interface';
 import { Image } from '../../image';
 import { Logo } from '../../logo';
+import { MagicController } from '../../magic-controller';
 import { ReactComponent as DarkOysterImage } from './style/dark_oyster.svg';
 import { ReactComponent as LightOysterImage } from './style/light_oyster.svg';
 import { SocialMediaLinks } from '../../social-media-links';
@@ -17,6 +18,8 @@ export const AppRenderer = (props: IAppRendererProps) => {
   const theme: any = useTheme();
   const styles = appStyle(theme);
   const { formatMessage } = useIntl();
+  const { changeTheme, toggleMagic, isMagic } = props;
+
   const oysterImage =
     theme.type === ThemeType.Light ? DarkOysterImage : LightOysterImage;
 
@@ -43,7 +46,8 @@ export const AppRenderer = (props: IAppRendererProps) => {
       </Grid>
       <Grid container item xs={2} className={styles.rightContainer}>
         <Grid item>
-          <ThemeController changeTheme={props.changeTheme} />
+          <ThemeController changeTheme={changeTheme} />
+          <MagicController toggleMagic={toggleMagic} isMagic={isMagic} />
         </Grid>
       </Grid>
       <Image src={catImage} ariaLabel='cat' className={styles.catImage} />
