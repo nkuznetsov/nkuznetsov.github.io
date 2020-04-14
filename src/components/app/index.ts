@@ -1,1 +1,1 @@
-export { AppContainer as App } from "./src/app-container";
+export { AppContainer as App, AppContext } from './src/app-container';

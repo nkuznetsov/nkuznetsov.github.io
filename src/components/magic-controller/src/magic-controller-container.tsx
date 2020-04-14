@@ -5,13 +5,11 @@ import { MagicControllerRenderer } from './magic-controller-renderer';
 export const MagicControllerContainer = (
   props: IMagicControllerContainerProps
 ) => {
-  const { toggleMagic, isMagic } = props;
+  const { toggleMagic } = props;
 
   const switchMagic = (event: React.ChangeEvent<HTMLInputElement>) => {
     toggleMagic(event.target.checked);
   };
 
-  return (
-    <MagicControllerRenderer toggleMagic={switchMagic} isMagic={isMagic} />
-  );
+  return <MagicControllerRenderer toggleMagic={switchMagic} />;
 };
