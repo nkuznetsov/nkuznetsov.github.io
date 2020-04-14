@@ -4,6 +4,7 @@ export interface IAppContext {
 }
 
 export interface IAppRendererProps {
-  changeTheme: (isLight: boolean) => void;
+  toggleDebug: (isDebug: boolean) => void;
   toggleMagic: (isMagic: boolean) => void;
+  toggleTheme: (isLight: boolean) => void;
 }

@@ -1,11 +1,11 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles(theme => ({
-  themeIcon: {
+  toggleIcon: {
     width: '3rem',
     height: '3rem'
   },
-  themeController: {
+  toggleController: {
     padding: '2rem'
   }
 }));

@@ -26,9 +26,8 @@ export const AppContainer = () => {
   const [isDebug, setIsDebug] = useState(defaultIsDebug);
 
   const appContext: IAppContext = { isMagic, isDebug };
-  // const AppContext = React.createContext(appContext);
 
-  const changeTheme = (isChecked: boolean) => {
+  const toggleTheme = (isChecked: boolean) => {
     setTheme(isChecked ? themes[ThemeType.Dark] : themes[ThemeType.Light]);
   };
 
@@ -36,7 +35,7 @@ export const AppContainer = () => {
     setIsMagic(isMagic);
   };
 
-  const toggleIsDebug = (isDebug: boolean) => {
+  const toggleDebug = (isDebug: boolean) => {
     setIsDebug(isDebug);
   };
 
@@ -44,7 +43,11 @@ export const AppContainer = () => {
     <IntlProvider locale={locale} messages={translations}>
       <ThemeProvider theme={{ ...theme }}>
         <AppContext.Provider value={appContext}>
-          <AppRenderer changeTheme={changeTheme} toggleMagic={toggleMagic} />
+          <AppRenderer
+            toggleDebug={toggleDebug}
+            toggleMagic={toggleMagic}
+            toggleTheme={toggleTheme}
+          />
         </AppContext.Provider>
       </ThemeProvider>
     </IntlProvider>
