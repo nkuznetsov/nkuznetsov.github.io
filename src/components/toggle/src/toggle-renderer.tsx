@@ -10,8 +10,8 @@ import darkThemeInactiveImage from './style/moon_dark.svg';
 import headerStyle from './style/toggle-style';
 import wandActiveImage from './style/wand_dark.svg';
 import wandInactiveImage from './style/wand_light.svg';
-import wrenchActiveImage from './style/wand_dark.svg';
-import wrenchInactiveImage from './style/wand_light.svg';
+import wrenchActiveImage from './style/wrench_dark.svg';
+import wrenchInactiveImage from './style/wrench_light.svg';
 
 export const ToggleRenderer = (props: IToggleProps) => {
   const { type, toggle } = props;
@@ -51,8 +51,10 @@ export const ToggleRenderer = (props: IToggleProps) => {
   return (
     <div className={styles.toggleController}>
       <Checkbox
+        style={{ padding: 0 }}
         icon={
           <Image
+            themed
             src={inactiveIcon}
             ariaLabel='toggle active icon'
             className={styles.toggleIcon}
@@ -60,6 +62,7 @@ export const ToggleRenderer = (props: IToggleProps) => {
         }
         checkedIcon={
           <Image
+            themed
             src={activeIcon}
             ariaLabel='toggle inactive icon'
             className={styles.toggleIcon}

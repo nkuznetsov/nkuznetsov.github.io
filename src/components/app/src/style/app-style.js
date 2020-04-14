@@ -47,9 +47,6 @@ export default createUseStyles(theme => ({
     paddingBottom: '15%'
   },
   rightContainer: {
-    // background: 'cyan',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignContent: 'flex-start'
+    // background: 'cyan'
   }
 }));

@@ -33,7 +33,7 @@ export const AppRenderer = (props: IAppRendererProps) => {
           </Grid>
         </Grid>
         <Grid container item xs={2} className={styles.rightContainer}>
-          <Grid item container justify='flex-end'>
+          <Grid container item justify='flex-end'>
             <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
             <Toggle type={ToggleType.Magic} toggle={toggleMagic} />
             <Toggle type={ToggleType.Theme} toggle={toggleTheme} />

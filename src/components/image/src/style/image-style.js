@@ -1,12 +1,11 @@
 import { createUseStyles } from 'react-jss';
 import { ThemeType } from '../../../../models';
+import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
   themed: {
-    border:
-      theme.type === ThemeType.Light
-        ? `1px solid ${theme.base.primaryVariants[1]}`
-        : `1px solid ${theme.base.surface}`,
-    borderRadius: '30%'
+    borderRadius: '30%',
+    background:
+      theme.type === ThemeType.Light ? 'transparent' : colors.gray[300]
   }
 }));

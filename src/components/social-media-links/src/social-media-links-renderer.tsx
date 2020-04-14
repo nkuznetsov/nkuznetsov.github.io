@@ -11,12 +11,7 @@ export const SocialMediaLinksRenderer = () => {
   const styles = socialMediaLinksStyle(theme);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center'
-      }}
-    >
+    <div className={styles.socialIconsContainer}>
       <Image
         hover
         themed
