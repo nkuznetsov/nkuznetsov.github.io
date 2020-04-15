@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7aa8fb811c7f00559d488702a0d58bfa",
+    "revision": "d1408032913f63b8c2c7ff08f627f5cd",
     "url": "/index.html"
   },
   {
-    "revision": "221584b233b1d9dc8fd8",
-    "url": "/static/js/2.785467aa.chunk.js"
+    "revision": "9e683b69902155d6b1f7",
+    "url": "/static/js/2.3dc753fe.chunk.js"
   },
   {
-    "revision": "7a02478a4ad5c72a4981",
-    "url": "/static/js/main.7be9bc73.chunk.js"
+    "revision": "708e79e8ca61104f45e4",
+    "url": "/static/js/main.dc8116a4.chunk.js"
   },
   {
     "revision": "ce34a19c78e8489ba22e",
@@ -50,5 +50,21 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "44f2b28453471bc0ce3a437efdb917cf",
     "url": "/static/media/moon_light.44f2b284.svg"
+  },
+  {
+    "revision": "2996ef8ed939e63f64e894ea8420d78b",
+    "url": "/static/media/wand_dark.2996ef8e.svg"
+  },
+  {
+    "revision": "fefb27b12969fa0b7da54afcec8d9729",
+    "url": "/static/media/wand_light.fefb27b1.svg"
+  },
+  {
+    "revision": "c43359f9e1c11f55cbea1cbcb68c7e09",
+    "url": "/static/media/wrench_dark.c43359f9.svg"
+  },
+  {
+    "revision": "3538bbc855e49be0492fa601d42e59c9",
+    "url": "/static/media/wrench_light.3538bbc8.svg"
   }
 ]);
