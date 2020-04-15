@@ -1,7 +1,9 @@
 import { createUseStyles } from 'react-jss';
+import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
   mainImage: {
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
     width: '15rem',
     height: '15rem',
     animation: '$popout 5s ease alternate infinite'

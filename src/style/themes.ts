@@ -3,6 +3,7 @@
 
 import { IBaseTheme, ITheme, ThemeType } from '../models';
 import colors from './colors';
+import { defaultIsDebug } from '../constants';
 
 const baseTheme: IBaseTheme = {
   primary: colors.teal[100],
@@ -23,7 +24,9 @@ const lightTheme: ITheme = {
 
   type: ThemeType.Light,
   background: colors.white,
-  onBackground: colors.brown
+  onBackground: colors.brown,
+
+  isDebug: defaultIsDebug
 };
 
 const darkTheme: ITheme = {
@@ -31,7 +34,9 @@ const darkTheme: ITheme = {
 
   type: ThemeType.Dark,
   background: colors.gray[400],
-  onBackground: colors.white
+  onBackground: colors.white,
+
+  isDebug: defaultIsDebug
 };
 
 export default { lightTheme, darkTheme };

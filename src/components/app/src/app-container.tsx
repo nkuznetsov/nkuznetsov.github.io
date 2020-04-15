@@ -37,6 +37,9 @@ export const AppContainer = () => {
 
   const toggleDebug = (isDebug: boolean) => {
     setIsDebug(isDebug);
+    const newTheme = theme;
+    newTheme.isDebug = isDebug;
+    setTheme(newTheme);
   };
 
   return (

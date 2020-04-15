@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import colors from '../../../../style/colors';
 
 const logoWidth = '10rem';
 const logoHeight = '10rem';
@@ -13,7 +14,7 @@ export default createUseStyles(theme => ({
     height: logoHeight,
     padding: logoPadding,
     transition: logoTransition,
-    background: theme.base.primary,
+    background: theme.isDebug ? colors.white : theme.base.primary,
     borderRadius: '5%',
     boxShadow: [
       [0, 0, 0, borderSpreadOne, theme.base.primaryVariants[0]],
@@ -26,7 +27,7 @@ export default createUseStyles(theme => ({
     height: logoHeight,
     padding: logoPadding,
     transition: logoTransition,
-    background: theme.base.secondary,
+    background: theme.isDebug ? colors.white : theme.base.secondary,
     borderRadius: '40%',
     boxShadow: [
       [0, 0, 0, borderSpreadOne, theme.base.secondaryVariants[0]],

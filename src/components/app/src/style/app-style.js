@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
   '@global': {
@@ -29,24 +30,28 @@ export default createUseStyles(theme => ({
     to: { opacity: '1' }
   },
   container: {
-    // background: 'pink',
+    background: theme.isDebug ? colors.brown : colors.transparent,
     height: '100%'
   },
   leftContainer: {
+    background: theme.isDebug ? colors.pink[100] : colors.transparent,
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'flex-start',
     paddingTop: '3%'
-    // background: 'brown'
   },
   centerContainer: {
-    // background: 'teal',
+    background: theme.isDebug ? colors.pink[200] : colors.transparent,
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
     paddingBottom: '15%'
   },
   rightContainer: {
-    // background: 'cyan'
+    background: theme.isDebug ? colors.pink[300] : colors.transparent
+  },
+  rightSubContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end'
   }
 }));

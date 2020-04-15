@@ -1,7 +1,10 @@
 import { createUseStyles } from 'react-jss';
+import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
-  toggleController: {
+  toggleContainer: {
+    background: theme.isDebug ? colors.purple[100] : colors.transparent,
+    height: '4rem',
     padding: '2rem'
   },
   toggleIcon: {

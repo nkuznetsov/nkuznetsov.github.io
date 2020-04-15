@@ -49,7 +49,7 @@ export const ToggleRenderer = (props: IToggleProps) => {
   };
 
   return (
-    <div className={styles.toggleController}>
+    <div className={styles.toggleContainer}>
       <Checkbox
         style={{ padding: 0 }}
         icon={

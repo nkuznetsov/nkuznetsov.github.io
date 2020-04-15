@@ -28,6 +28,8 @@ interface ITheme {
   // Styles, specific to a theme
   background: string;
   onBackground: string;
+
+  isDebug: boolean;
 }
 
 export { ThemeType };

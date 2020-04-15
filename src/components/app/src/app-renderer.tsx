@@ -4,6 +4,7 @@ import { HeaderImage } from '../../header-image';
 import { IAppRendererProps } from './app-interface';
 import { Logo } from '../../logo';
 import { MyName } from '../../my-name';
+import { showDebug } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
 import { Toggle } from '../../toggle';
@@ -33,9 +34,12 @@ export const AppRenderer = (props: IAppRendererProps) => {
           </Grid>
         </Grid>
         <Grid container item xs={2} className={styles.rightContainer}>
-          <Grid container item justify='flex-end'>
-            <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
+          <Grid container item className={styles.rightSubContainer}>
+            {showDebug ? (
+              <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
+            ) : null}
             <Toggle type={ToggleType.Magic} toggle={toggleMagic} />
+
             <Toggle type={ToggleType.Theme} toggle={toggleTheme} />
           </Grid>
         </Grid>

@@ -2,6 +2,7 @@
 // https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 
 export default {
+  transparent: 'transparent',
   white: '#FFFFFF',
   gray: {
     100: '#FAFBFC',
