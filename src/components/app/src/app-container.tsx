@@ -14,8 +14,8 @@ import {
 } from '../../../constants';
 
 export const AppContext = React.createContext({
-  isMagic: false,
-  isDebug: false
+  isMagic: defaultIsMagic,
+  isDebug: defaultIsDebug
 });
 
 export const AppContainer = () => {

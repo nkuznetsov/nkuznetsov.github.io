@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../app';
 import { Header } from '../../header';
 import { HeaderImage } from '../../header-image';
 import { IAppRendererProps } from './app-interface';
@@ -18,17 +19,18 @@ export const AppRenderer = (props: IAppRendererProps) => {
   const theme: any = useTheme();
   const styles = appStyle(theme);
   const { toggleDebug, toggleMagic, toggleTheme } = props;
+  const appContext = useContext(AppContext);
 
   return (
     <Box className={styles.app}>
       <Grid container className={styles.container}>
         <Grid container item xs={2} className={styles.leftContainer}>
-          <Logo />
+          {appContext.isMagic ? <Logo /> : null}
         </Grid>
         <Grid container item xs={8} className={styles.centerContainer}>
           <Grid item>
-            <Header />
-            <HeaderImage />
+            {appContext.isMagic ? <Header /> : null}
+            {appContext.isMagic ? <HeaderImage /> : null}
             <MyName />
             <SocialMediaLinks />
           </Grid>
@@ -39,11 +41,10 @@ export const AppRenderer = (props: IAppRendererProps) => {
               <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
             ) : null}
             <Toggle type={ToggleType.Magic} toggle={toggleMagic} />
-
             <Toggle type={ToggleType.Theme} toggle={toggleTheme} />
           </Grid>
         </Grid>
-        <SlideoutImage />
+        {appContext.isMagic ? <SlideoutImage /> : null}
       </Grid>
     </Box>
   );
