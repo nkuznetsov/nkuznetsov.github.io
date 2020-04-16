@@ -8,6 +8,7 @@ import { MyName } from '../../my-name';
 import { showDebug } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
+import { Stars } from '../../stars';
 import { Toggle } from '../../toggle';
 import { ToggleType } from '../../toggle/src/toggle-interface';
 import { useTheme } from 'react-jss';
@@ -55,6 +56,7 @@ export const AppRenderer = (props: IAppRendererProps) => {
         </Grid>
         {isMagic[3] ? <SlideoutImage /> : null}
       </Grid>
+      <Stars />
     </Box>
   );
 };

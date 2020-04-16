@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
+import { randomInt } from '../../../utils';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from '../../../models';
 import messages from '../../../messages';
@@ -36,7 +37,7 @@ export const AppContainer = () => {
   };
 
   const toggleMagic = () => {
-    const idx = getRandomInt(0, isMagic.length);
+    const idx = randomInt(0, isMagic.length);
 
     const newMagic = isMagic.map((magic, i) => {
       if (i === idx) {
@@ -52,14 +53,6 @@ export const AppContainer = () => {
     const newTheme = theme;
     newTheme.isDebug = isDebug;
     setTheme(newTheme);
-  };
-
-  const getRandomInt = (min: number, max: number) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-
-    // maximum is exclusive and the minimum is inclusive
-    return Math.floor(Math.random() * (max - min)) + min;
   };
 
   return (
