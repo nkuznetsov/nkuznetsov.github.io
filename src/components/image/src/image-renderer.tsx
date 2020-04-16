@@ -28,8 +28,8 @@ export const ImageRenderer = (props: IImageProps) => {
     if (popOutOnHover) {
       composedClass = [
         composedClass,
-        styles.hoverTransition,
-        hovered ? styles.popOut : styles.popIn
+        hovered ? styles.popOut : styles.popIn,
+        styles.hoverTransition
       ].join(' ');
     }
 

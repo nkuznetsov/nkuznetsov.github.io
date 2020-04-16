@@ -15,10 +15,10 @@ export default createUseStyles(theme => ({
     transition: '0.5s'
   },
   popOut: {
-    transform: 'scale(1.5, 1.5)'
+    transform: 'scale(1.5)'
   },
   popIn: {
-    transform: 'scale(1, 1)'
+    transform: 'scale(1)'
   },
   rotateClockwise: { animation: '$rotateClockwise 1.5s' },
   '@keyframes rotateClockwise': {
