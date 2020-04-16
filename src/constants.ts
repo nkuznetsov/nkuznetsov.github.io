@@ -1,6 +1,6 @@
 import { ThemeType } from './models';
 
-const debug = true;
+const debug = false;
 export const defaultIsDebug = debug;
 export const showDebug = debug;
 
