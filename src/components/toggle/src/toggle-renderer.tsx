@@ -3,15 +3,14 @@ import { AppContext } from '../../app';
 import { Image } from '../../image';
 import { ITheme, ThemeType } from '../../../models';
 import { IToggleProps, ToggleType } from './toggle-interface';
+import { ReactComponent as DarkThemeActiveImage } from './style/moon_light.svg';
+import { ReactComponent as darkThemeInactiveImage } from './style/moon_dark.svg';
+import { ReactComponent as WandActiveImage } from './style/wand_dark.svg';
+import { ReactComponent as WandInactiveImage } from './style/wand_light.svg';
+import { ReactComponent as WrenchActiveImage } from './style/wrench_dark.svg';
+import { ReactComponent as WrenchInactiveImage } from './style/wrench_light.svg';
 import { useTheme } from 'react-jss';
-import Checkbox from '@material-ui/core/Checkbox';
-import darkThemeActiveImage from './style/moon_light.svg';
-import darkThemeInactiveImage from './style/moon_dark.svg';
 import headerStyle from './style/toggle-style';
-import wandActiveImage from './style/wand_dark.svg';
-import wandInactiveImage from './style/wand_light.svg';
-import wrenchActiveImage from './style/wrench_dark.svg';
-import wrenchInactiveImage from './style/wrench_light.svg';
 
 export const ToggleRenderer = (props: IToggleProps) => {
   const { type, toggle } = props;
@@ -26,51 +25,63 @@ export const ToggleRenderer = (props: IToggleProps) => {
   switch (type) {
     case ToggleType.Debug: {
       isChecked = appContext.isDebug;
-      activeIcon = wrenchActiveImage;
-      inactiveIcon = wrenchInactiveImage;
+      activeIcon = WrenchActiveImage;
+      inactiveIcon = WrenchInactiveImage;
       break;
     }
     case ToggleType.Magic: {
       isChecked = appContext.isMagic;
-      activeIcon = wandActiveImage;
-      inactiveIcon = wandInactiveImage;
+      activeIcon = WandActiveImage;
+      inactiveIcon = WandInactiveImage;
       break;
     }
     case ToggleType.Theme: {
       isChecked = theme.type === ThemeType.Dark;
-      activeIcon = darkThemeActiveImage;
+      activeIcon = DarkThemeActiveImage;
       inactiveIcon = darkThemeInactiveImage;
       break;
     }
   }
 
   const toggleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    toggle(event.target.checked);
+    switch (type) {
+      case ToggleType.Debug: {
+        toggle(!appContext.isDebug);
+        break;
+      }
+      case ToggleType.Magic: {
+        toggle(!appContext.isMagic);
+        break;
+      }
+      case ToggleType.Theme: {
+        isChecked = theme.type === ThemeType.Dark;
+        toggle(!isChecked);
+        break;
+      }
+    }
   };
 
   return (
     <div className={styles.toggleContainer}>
-      <Checkbox
-        style={{ padding: 0 }}
-        icon={
-          <Image
-            themed
-            src={inactiveIcon}
-            ariaLabel='toggle active icon'
-            className={styles.toggleIcon}
-          />
-        }
-        checkedIcon={
-          <Image
-            themed
-            src={activeIcon}
-            ariaLabel='toggle inactive icon'
-            className={styles.toggleIcon}
-          />
-        }
-        onChange={toggleHandler}
-        checked={isChecked}
-      />
+      {isChecked ? (
+        <Image
+          themed
+          rotate360OnHover
+          Svg={activeIcon}
+          ariaLabel='toggle inactive icon'
+          className={styles.toggleIcon}
+          onClick={toggleHandler}
+        />
+      ) : (
+        <Image
+          themed
+          rotate360OnHover
+          Svg={inactiveIcon}
+          ariaLabel='toggle active icon'
+          className={styles.toggleIcon}
+          onClick={toggleHandler}
+        />
+      )}
     </div>
   );
 };

@@ -33,13 +33,13 @@ export default createUseStyles(theme => ({
       [0, 0, 0, borderSpreadOne, theme.base.secondaryVariants[0]],
       [0, 0, 0, borderSpreadTwo, theme.base.secondaryVariants[1]]
     ],
-    animation: '$rotateCounterClockwise 30s infinite'
+    animation: '$rotateCounterclockwise 30s infinite'
   },
   '@keyframes rotateClockwise': {
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' }
   },
-  '@keyframes rotateCounterClockwise': {
+  '@keyframes rotateCounterclockwise': {
     '0%': { transform: 'rotate(360deg)' },
     '100%': { transform: 'rotate(0deg)' }
   }

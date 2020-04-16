@@ -1,24 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IImageProps } from './image-interface';
 import { useTheme } from 'react-jss';
 import imageStyle from './style/image-style';
 
 export const ImageRenderer = (props: IImageProps) => {
-  const { src, Svg, link, className, ariaLabel, hover, themed } = props;
+  const {
+    ariaLabel,
+    className,
+    link,
+    onClick,
+    popOutOnHover,
+    rotate360OnHover,
+    src,
+    Svg,
+    themed
+  } = props;
   const [hovered, setHovered] = useState(false);
+  const [composedClass, setComposedClass] = useState<string | undefined>('');
   const theme = useTheme();
   const styles = imageStyle(theme);
 
-  const composedClass = themed
-    ? [className, styles.themed].join(' ')
-    : className;
+  useEffect(() => {
+    let composedClass = themed
+      ? [className, styles.themed].join(' ')
+      : className;
 
-  const hoverStyle = hover
-    ? {
-        transform: `${hovered ? 'scale(1.5, 1.5)' : 'scale(1, 1)'}`,
-        transition: '0.5s'
-      }
-    : undefined;
+    if (popOutOnHover) {
+      composedClass = [
+        composedClass,
+        styles.hoverTransition,
+        hovered ? styles.popOut : styles.popIn
+      ].join(' ');
+    }
+
+    if (rotate360OnHover) {
+      composedClass = [
+        composedClass,
+        hovered ? styles.rotateClockwise : styles.resetImage
+      ].join(' ');
+    }
+
+    setComposedClass(composedClass);
+  }, [
+    styles,
+    themed,
+    className,
+    popOutOnHover,
+    hovered,
+    rotate360OnHover,
+    setComposedClass
+  ]);
 
   return (
     <div
@@ -27,17 +58,12 @@ export const ImageRenderer = (props: IImageProps) => {
     >
       {Svg ? (
         <a href={link}>
-          <Svg className={composedClass} style={hoverStyle}>
+          <Svg className={composedClass} onClick={onClick}>
             {ariaLabel}
           </Svg>
         </a>
       ) : (
-        <img
-          src={src}
-          alt={ariaLabel}
-          className={composedClass}
-          style={hoverStyle}
-        />
+        <img src={src} alt={ariaLabel} className={composedClass} />
       )}
     </div>
   );

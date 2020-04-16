@@ -13,7 +13,7 @@ export const SocialMediaLinksRenderer = () => {
   return (
     <div className={styles.socialIconsContainer}>
       <Image
-        hover
+        popOutOnHover
         themed
         link={gitHubLink}
         Svg={GitHubLogo}
@@ -21,7 +21,7 @@ export const SocialMediaLinksRenderer = () => {
         ariaLabel='GitHub'
       />
       <Image
-        hover
+        popOutOnHover
         themed
         link={linkedInLink}
         Svg={LinkedInLogo}

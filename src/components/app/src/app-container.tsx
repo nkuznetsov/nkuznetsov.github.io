@@ -28,7 +28,11 @@ export const AppContainer = () => {
   const appContext: IAppContext = { isMagic, isDebug };
 
   const toggleTheme = (isChecked: boolean) => {
-    setTheme(isChecked ? themes[ThemeType.Dark] : themes[ThemeType.Light]);
+    const newTheme = isChecked
+      ? themes[ThemeType.Dark]
+      : themes[ThemeType.Light];
+    newTheme.isDebug = isDebug;
+    setTheme(newTheme);
   };
 
   const toggleMagic = (isMagic: boolean) => {
