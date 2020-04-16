@@ -7,6 +7,7 @@ export const ImageRenderer = (props: IImageProps) => {
   const {
     ariaLabel,
     className,
+    glow,
     link,
     onClick,
     popOutOnHover,
@@ -36,19 +37,24 @@ export const ImageRenderer = (props: IImageProps) => {
     if (rotate360OnHover) {
       composedClass = [
         composedClass,
-        hovered ? styles.rotateClockwise : styles.resetImage
+        hovered
+          ? glow
+            ? styles.rotateClockwiseAndGlow
+            : styles.rotateClockwise
+          : styles.resetImage
       ].join(' ');
     }
 
     setComposedClass(composedClass);
   }, [
-    styles,
-    themed,
     className,
-    popOutOnHover,
+    glow,
     hovered,
+    popOutOnHover,
     rotate360OnHover,
-    setComposedClass
+    setComposedClass,
+    styles,
+    themed
   ]);
 
   return (

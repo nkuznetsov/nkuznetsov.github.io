@@ -6,7 +6,7 @@ export default createUseStyles(theme => ({
     background: theme.isDebug ? colors.pink[300] : colors.transparent,
     width: '15rem',
     height: '15rem',
-    animation: '$popout 5s ease alternate infinite'
+    animation: '$popout 2s ease alternate infinite'
   },
   '@keyframes popout': {
     '90%': {

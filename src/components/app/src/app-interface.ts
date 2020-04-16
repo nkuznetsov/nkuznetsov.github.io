@@ -1,5 +1,5 @@
 export interface IAppContext {
-  isMagic: boolean;
+  isMagic: boolean[];
   isDebug: boolean;
 }
 

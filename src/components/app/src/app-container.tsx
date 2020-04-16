@@ -35,8 +35,16 @@ export const AppContainer = () => {
     setTheme(newTheme);
   };
 
-  const toggleMagic = (isMagic: boolean) => {
-    setIsMagic(isMagic);
+  const toggleMagic = () => {
+    const idx = getRandomInt(0, isMagic.length);
+
+    const newMagic = isMagic.map((magic, i) => {
+      if (i === idx) {
+        return !magic;
+      }
+      return magic;
+    });
+    setIsMagic(newMagic);
   };
 
   const toggleDebug = (isDebug: boolean) => {
@@ -44,6 +52,14 @@ export const AppContainer = () => {
     const newTheme = theme;
     newTheme.isDebug = isDebug;
     setTheme(newTheme);
+  };
+
+  const getRandomInt = (min: number, max: number) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    // maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (max - min)) + min;
   };
 
   return (

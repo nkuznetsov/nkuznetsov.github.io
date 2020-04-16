@@ -4,7 +4,8 @@ const debug = false;
 export const defaultIsDebug = debug;
 export const showDebug = debug;
 
-export const defaultIsMagic = false;
+/** Collection of switches for magic components */
+export const defaultIsMagic = [false, false, false, false];
 
 export const defaultThemeType = ThemeType.Dark;
 

@@ -7,7 +7,7 @@ export default createUseStyles(theme => ({
     fontSize: '2rem',
     marginRight: '0.3rem',
     color: colors.pink[300],
-    animation: '$hideshow 10s ease infinite',
+    animation: '$hideshow 4s ease infinite',
     opacity: 0
   },
   oysterText: {
@@ -15,14 +15,14 @@ export default createUseStyles(theme => ({
     fontSize: '2rem',
     marginRight: '0.3rem',
     color: colors.pink[200],
-    animation: '$hideshow 10s 1.5s ease infinite',
+    animation: '$hideshow 4s 1.5s ease infinite',
     opacity: 0
   },
   playgroundText: {
     background: theme.isDebug ? colors.teal[300] : colors.transparent,
     fontSize: '2rem',
     color: colors.pink[100],
-    animation: '$hideshow 10s 3s ease infinite',
+    animation: '$hideshow 4s 3s ease infinite',
     opacity: 0
   },
   '@keyframes hideshow': {

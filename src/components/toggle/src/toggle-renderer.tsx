@@ -13,7 +13,7 @@ import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
 export const ToggleRenderer = (props: IToggleProps) => {
-  const { type, toggle } = props;
+  const { glow, rotate360OnHover, toggle, type } = props;
   const theme = useTheme() as ITheme;
   const styles = headerStyle(theme);
   const appContext = useContext(AppContext);
@@ -30,7 +30,7 @@ export const ToggleRenderer = (props: IToggleProps) => {
       break;
     }
     case ToggleType.Magic: {
-      isChecked = appContext.isMagic;
+      isChecked = appContext.isMagic.some(m => m);
       activeIcon = WandActiveImage;
       inactiveIcon = WandInactiveImage;
       break;
@@ -65,21 +65,23 @@ export const ToggleRenderer = (props: IToggleProps) => {
     <div className={styles.toggleContainer}>
       {isChecked ? (
         <Image
-          themed
-          rotate360OnHover
-          Svg={activeIcon}
           ariaLabel='toggle inactive icon'
           className={styles.toggleIcon}
+          glow={glow}
           onClick={toggleHandler}
+          rotate360OnHover={rotate360OnHover}
+          Svg={activeIcon}
+          themed
         />
       ) : (
         <Image
-          themed
-          rotate360OnHover
-          Svg={inactiveIcon}
           ariaLabel='toggle active icon'
           className={styles.toggleIcon}
+          glow={glow}
           onClick={toggleHandler}
+          rotate360OnHover={rotate360OnHover}
+          Svg={inactiveIcon}
+          themed
         />
       )}
     </div>

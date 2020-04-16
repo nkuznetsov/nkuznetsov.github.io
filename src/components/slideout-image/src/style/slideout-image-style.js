@@ -5,7 +5,7 @@ export default createUseStyles(theme => ({
   catImage: {
     background: theme.isDebug ? colors.brown : colors.transparent,
     transform: 'translateY(10rem)',
-    animation: '$popup 10s 6.5s ease infinite',
+    animation: '$popup 10s 0.5s ease infinite',
     position: 'absolute',
     bottom: '0',
     right: '0',

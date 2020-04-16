@@ -25,6 +25,12 @@ export default createUseStyles(theme => ({
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' }
   },
+  rotateClockwiseAndGlow: { animation: '$rotateClockwiseAndGlow 1.5s' },
+  '@keyframes rotateClockwiseAndGlow': {
+    '0%': { transform: 'rotate(0deg)', background: colors.gray[300] },
+    '50%': { background: colors.red[100] },
+    '100%': { transform: 'rotate(360deg)', background: colors.gray[300] }
+  },
   resetImage: { animation: '$resetImage 1.5s ease-out' },
   '@keyframes resetImage': {
     '0%': { opacity: 0.3 },

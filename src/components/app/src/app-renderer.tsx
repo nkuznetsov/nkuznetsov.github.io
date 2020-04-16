@@ -19,18 +19,18 @@ export const AppRenderer = (props: IAppRendererProps) => {
   const theme: any = useTheme();
   const styles = appStyle(theme);
   const { toggleDebug, toggleMagic, toggleTheme } = props;
-  const appContext = useContext(AppContext);
+  const { isMagic } = useContext(AppContext);
 
   return (
     <Box className={styles.app}>
       <Grid container className={styles.container}>
         <Grid container item xs={2} className={styles.leftContainer}>
-          {appContext.isMagic ? <Logo /> : null}
+          {isMagic[0] ? <Logo /> : null}
         </Grid>
         <Grid container item xs={8} className={styles.centerContainer}>
           <Grid item>
-            {appContext.isMagic ? <Header /> : null}
-            {appContext.isMagic ? <HeaderImage /> : null}
+            {isMagic[1] ? <Header /> : null}
+            {isMagic[2] ? <HeaderImage /> : null}
             <MyName />
             <SocialMediaLinks />
           </Grid>
@@ -40,11 +40,20 @@ export const AppRenderer = (props: IAppRendererProps) => {
             {showDebug ? (
               <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
             ) : null}
-            <Toggle type={ToggleType.Magic} toggle={toggleMagic} />
-            <Toggle type={ToggleType.Theme} toggle={toggleTheme} />
+            <Toggle
+              glow
+              type={ToggleType.Magic}
+              toggle={toggleMagic}
+              rotate360OnHover
+            />
+            <Toggle
+              type={ToggleType.Theme}
+              toggle={toggleTheme}
+              rotate360OnHover
+            />
           </Grid>
         </Grid>
-        {appContext.isMagic ? <SlideoutImage /> : null}
+        {isMagic[3] ? <SlideoutImage /> : null}
       </Grid>
     </Box>
   );
