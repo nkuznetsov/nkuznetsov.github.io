@@ -33,7 +33,7 @@ const darkTheme: ITheme = {
   base: baseTheme,
 
   type: ThemeType.Dark,
-  background: colors.gray[400],
+  background: colors.gray[800],
   onBackground: colors.white,
 
   isDebug: defaultIsDebug

@@ -16,6 +16,7 @@ export const ImageRenderer = (props: IImageProps) => {
     Svg,
     themed
   } = props;
+
   const [hovered, setHovered] = useState(false);
   const [composedClass, setComposedClass] = useState<string | undefined>('');
   const theme = useTheme();
@@ -35,14 +36,17 @@ export const ImageRenderer = (props: IImageProps) => {
     }
 
     if (rotate360OnHover) {
-      composedClass = [
-        composedClass,
-        hovered
-          ? glow
-            ? styles.rotateClockwiseAndGlow
-            : styles.rotateClockwise
-          : styles.resetImage
-      ].join(' ');
+      let classToAdd;
+
+      if (hovered) {
+        classToAdd = glow
+          ? styles.rotateClockwiseAndGlow
+          : styles.rotateClockwise;
+      } else {
+        classToAdd = styles.resetImage;
+      }
+
+      composedClass = [composedClass, classToAdd].join(' ');
     }
 
     setComposedClass(composedClass);
@@ -59,8 +63,8 @@ export const ImageRenderer = (props: IImageProps) => {
 
   return (
     <div
-      onMouseEnter={() => setHovered(!hovered)}
-      onMouseLeave={() => setHovered(!hovered)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {Svg ? (
         <a href={link}>

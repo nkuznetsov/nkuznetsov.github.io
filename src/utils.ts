@@ -9,17 +9,17 @@ export const randomInt = (min: number, max: number) => {
 };
 
 export const randomColor = () => {
-  let val = 'black';
+  let val = colors.black;
   if (randomInt(0, 5) === 1) {
-    val = '#DAF7A6';
+    val = colors.yellow[100];
   } else if (randomInt(0, 5) === 2) {
-    val = '#FFC300';
+    val = colors.yellow[200];
   } else if (randomInt(0, 5) === 3) {
-    val = '#FF5733';
+    val = colors.red[200];
   } else if (randomInt(0, 5) === 4) {
-    val = '#82E0AA';
+    val = colors.teal[200];
   } else {
-    val = '#85C1E9';
+    val = colors.purple[100];
   }
   return val;
 };
