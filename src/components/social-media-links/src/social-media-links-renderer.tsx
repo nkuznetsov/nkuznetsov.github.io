@@ -6,7 +6,7 @@ import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
 import { useTheme } from 'react-jss';
 import socialMediaLinksStyle from './style/social-media-links-style';
 
-export const SocialMediaLinksRenderer = () => {
+export const SocialMediaLinksRenderer: React.FunctionComponent = () => {
   const theme = useTheme();
   const styles = socialMediaLinksStyle(theme);
 

@@ -6,7 +6,7 @@ import { ThemeType } from '../../../models';
 import { useTheme } from 'react-jss';
 import headerStyle from './style/header-image-style';
 
-export const HeaderImageRenderer = () => {
+export const HeaderImageRenderer: React.FunctionComponent = () => {
   const theme: any = useTheme();
   const styles = headerStyle(theme);
   const oysterImage =

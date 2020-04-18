@@ -3,8 +3,8 @@ import { IImageProps } from './image-interface';
 import { useTheme } from 'react-jss';
 import imageStyle from './style/image-style';
 
-export const ImageRenderer = (props: IImageProps) => {
-  const {
+export const ImageRenderer: React.FunctionComponent<IImageProps> = React.memo(
+  ({
     ariaLabel,
     className,
     glow,
@@ -15,66 +15,66 @@ export const ImageRenderer = (props: IImageProps) => {
     src,
     Svg,
     themed
-  } = props;
+  }) => {
+    const [hovered, setHovered] = useState(false);
+    const [composedClass, setComposedClass] = useState<string | undefined>('');
+    const theme = useTheme();
+    const styles = imageStyle(theme);
 
-  const [hovered, setHovered] = useState(false);
-  const [composedClass, setComposedClass] = useState<string | undefined>('');
-  const theme = useTheme();
-  const styles = imageStyle(theme);
+    useEffect(() => {
+      let composedClass = themed
+        ? [className, styles.themed].join(' ')
+        : className;
 
-  useEffect(() => {
-    let composedClass = themed
-      ? [className, styles.themed].join(' ')
-      : className;
-
-    if (popOutOnHover) {
-      composedClass = [
-        composedClass,
-        hovered ? styles.popOut : styles.popIn,
-        styles.hoverTransition
-      ].join(' ');
-    }
-
-    if (rotate360OnHover) {
-      let classToAdd;
-
-      if (hovered) {
-        classToAdd = glow
-          ? styles.rotateClockwiseAndGlow
-          : styles.rotateClockwise;
-      } else {
-        classToAdd = styles.resetImage;
+      if (popOutOnHover) {
+        composedClass = [
+          composedClass,
+          hovered ? styles.popOut : styles.popIn,
+          styles.hoverTransition
+        ].join(' ');
       }
 
-      composedClass = [composedClass, classToAdd].join(' ');
-    }
+      if (rotate360OnHover) {
+        let classToAdd;
 
-    setComposedClass(composedClass);
-  }, [
-    className,
-    glow,
-    hovered,
-    popOutOnHover,
-    rotate360OnHover,
-    setComposedClass,
-    styles,
-    themed
-  ]);
+        if (hovered) {
+          classToAdd = glow
+            ? styles.rotateClockwiseAndGlow
+            : styles.rotateClockwise;
+        } else {
+          classToAdd = styles.resetImage;
+        }
 
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {Svg ? (
-        <a href={link}>
-          <Svg className={composedClass} onClick={onClick}>
-            {ariaLabel}
-          </Svg>
-        </a>
-      ) : (
-        <img src={src} alt={ariaLabel} className={composedClass} />
-      )}
-    </div>
-  );
-};
+        composedClass = [composedClass, classToAdd].join(' ');
+      }
+
+      setComposedClass(composedClass);
+    }, [
+      className,
+      glow,
+      hovered,
+      popOutOnHover,
+      rotate360OnHover,
+      setComposedClass,
+      styles,
+      themed
+    ]);
+
+    return (
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {Svg ? (
+          <a href={link}>
+            <Svg className={composedClass} onClick={onClick}>
+              {ariaLabel}
+            </Svg>
+          </a>
+        ) : (
+          <img src={src} alt={ariaLabel} className={composedClass} />
+        )}
+      </div>
+    );
+  }
+);

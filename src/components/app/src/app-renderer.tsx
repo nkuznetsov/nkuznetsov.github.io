@@ -16,47 +16,48 @@ import appStyle from './style/app-style';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
-export const AppRenderer = (props: IAppRendererProps) => {
-  const theme: any = useTheme();
-  const styles = appStyle(theme);
-  const { toggleDebug, toggleMagic, toggleTheme } = props;
-  const { isMagic } = useContext(AppContext);
+export const AppRenderer: React.FunctionComponent<IAppRendererProps> = React.memo(
+  ({ toggleDebug, toggleMagic, toggleTheme }) => {
+    const theme: any = useTheme();
+    const styles = appStyle(theme);
+    const { isMagic } = useContext(AppContext);
 
-  return (
-    <Box className={styles.app}>
-      <Grid container className={styles.container}>
-        <Grid container item xs={2} className={styles.leftContainer}>
-          {isMagic[0] ? <Logo /> : null}
-        </Grid>
-        <Grid container item xs={8} className={styles.centerContainer}>
-          <Grid item>
-            {isMagic[1] ? <Header /> : null}
-            {isMagic[2] ? <HeaderImage /> : null}
-            <MyName />
-            <SocialMediaLinks />
+    return (
+      <Box className={styles.app}>
+        <Grid container className={styles.container}>
+          <Grid container item xs={2} className={styles.leftContainer}>
+            {isMagic[0] ? <Logo /> : null}
           </Grid>
-        </Grid>
-        <Grid container item xs={2} className={styles.rightContainer}>
-          <Grid container item className={styles.rightSubContainer}>
-            {showDebug ? (
-              <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
-            ) : null}
-            <Toggle
-              glow
-              type={ToggleType.Magic}
-              toggle={toggleMagic}
-              rotate360OnHover
-            />
-            <Toggle
-              type={ToggleType.Theme}
-              toggle={toggleTheme}
-              rotate360OnHover
-            />
+          <Grid container item xs={8} className={styles.centerContainer}>
+            <Grid item>
+              {isMagic[1] ? <Header /> : null}
+              {isMagic[2] ? <HeaderImage /> : null}
+              <MyName />
+              <SocialMediaLinks />
+            </Grid>
           </Grid>
+          <Grid container item xs={2} className={styles.rightContainer}>
+            <Grid container item className={styles.rightSubContainer}>
+              {showDebug ? (
+                <Toggle type={ToggleType.Debug} toggle={toggleDebug} />
+              ) : null}
+              <Toggle
+                glow
+                type={ToggleType.Magic}
+                toggle={toggleMagic}
+                rotate360OnHover
+              />
+              <Toggle
+                type={ToggleType.Theme}
+                toggle={toggleTheme}
+                rotate360OnHover
+              />
+            </Grid>
+          </Grid>
+          {isMagic[3] ? <SlideoutImage /> : null}
         </Grid>
-        {isMagic[3] ? <SlideoutImage /> : null}
-      </Grid>
-      <Stars />
-    </Box>
-  );
-};
+        <Stars />
+      </Box>
+    );
+  }
+);

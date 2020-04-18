@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from 'react-jss';
 import starsStyle from './style/stars-style';
 
-export const StarsRenderer = () => {
+export const StarsRenderer: React.FunctionComponent = () => {
   const theme = useTheme();
   const styles = starsStyle(theme);
 

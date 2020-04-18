@@ -12,78 +12,79 @@ import { ReactComponent as WrenchInactiveImage } from './style/wrench_light.svg'
 import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
-export const ToggleRenderer = (props: IToggleProps) => {
-  const { glow, rotate360OnHover, toggle, type } = props;
-  const theme = useTheme() as ITheme;
-  const styles = headerStyle(theme);
-  const appContext = useContext(AppContext);
+export const ToggleRenderer: React.FunctionComponent<IToggleProps> = React.memo(
+  ({ glow, rotate360OnHover, toggle, type }) => {
+    const theme = useTheme() as ITheme;
+    const styles = headerStyle(theme);
+    const appContext = useContext(AppContext);
 
-  let isChecked;
-  let activeIcon;
-  let inactiveIcon;
+    let isChecked;
+    let activeIcon;
+    let inactiveIcon;
 
-  switch (type) {
-    case ToggleType.Debug: {
-      isChecked = appContext.isDebug;
-      activeIcon = WrenchActiveImage;
-      inactiveIcon = WrenchInactiveImage;
-      break;
-    }
-    case ToggleType.Magic: {
-      isChecked = appContext.isMagic.some(m => m);
-      activeIcon = WandActiveImage;
-      inactiveIcon = WandInactiveImage;
-      break;
-    }
-    case ToggleType.Theme: {
-      isChecked = theme.type === ThemeType.Dark;
-      activeIcon = DarkThemeActiveImage;
-      inactiveIcon = darkThemeInactiveImage;
-      break;
-    }
-  }
-
-  const toggleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     switch (type) {
       case ToggleType.Debug: {
-        toggle(!appContext.isDebug);
+        isChecked = appContext.isDebug;
+        activeIcon = WrenchActiveImage;
+        inactiveIcon = WrenchInactiveImage;
         break;
       }
       case ToggleType.Magic: {
-        toggle(!appContext.isMagic);
+        isChecked = appContext.isMagic.some(magic => magic);
+        activeIcon = WandActiveImage;
+        inactiveIcon = WandInactiveImage;
         break;
       }
       case ToggleType.Theme: {
         isChecked = theme.type === ThemeType.Dark;
-        toggle(!isChecked);
+        activeIcon = DarkThemeActiveImage;
+        inactiveIcon = darkThemeInactiveImage;
         break;
       }
     }
-  };
 
-  return (
-    <div className={styles.toggleContainer}>
-      {isChecked ? (
-        <Image
-          ariaLabel='toggle inactive icon'
-          className={styles.toggleIcon}
-          glow={glow}
-          onClick={toggleHandler}
-          rotate360OnHover={rotate360OnHover}
-          Svg={activeIcon}
-          themed
-        />
-      ) : (
-        <Image
-          ariaLabel='toggle active icon'
-          className={styles.toggleIcon}
-          glow={glow}
-          onClick={toggleHandler}
-          rotate360OnHover={rotate360OnHover}
-          Svg={inactiveIcon}
-          themed
-        />
-      )}
-    </div>
-  );
-};
+    const toggleHandler = () => {
+      switch (type) {
+        case ToggleType.Debug: {
+          toggle(!appContext.isDebug);
+          break;
+        }
+        case ToggleType.Magic: {
+          toggle(!appContext.isMagic);
+          break;
+        }
+        case ToggleType.Theme: {
+          isChecked = theme.type === ThemeType.Dark;
+          toggle(!isChecked);
+          break;
+        }
+      }
+    };
+
+    return (
+      <div className={styles.toggleContainer}>
+        {isChecked ? (
+          <Image
+            ariaLabel='toggle inactive icon'
+            className={styles.toggleIcon}
+            glow={glow}
+            onClick={toggleHandler}
+            rotate360OnHover={rotate360OnHover}
+            Svg={activeIcon}
+            themed
+          />
+        ) : (
+          <Image
+            ariaLabel='toggle active icon'
+            className={styles.toggleIcon}
+            glow={glow}
+            onClick={toggleHandler}
+            rotate360OnHover={rotate360OnHover}
+            Svg={inactiveIcon}
+            themed
+          />
+        )}
+      </div>
+    );
+  }
+);

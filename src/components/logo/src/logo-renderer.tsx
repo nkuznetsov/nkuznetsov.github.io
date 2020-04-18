@@ -6,7 +6,7 @@ import { ThemeType } from '../../../models';
 import { useTheme } from 'react-jss';
 import logoStyle from './style/logo-style';
 
-export const LogoRenderer = () => {
+export const LogoRenderer: React.FunctionComponent = () => {
   const theme: any = useTheme();
   const styles = logoStyle(theme);
   const [hovered, setHovered] = useState(false);
