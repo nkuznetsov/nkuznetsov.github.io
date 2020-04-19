@@ -37,6 +37,8 @@ export const AppContainer: React.FunctionComponent = () => {
   };
 
   const toggleMagic = () => {
+    // Looping through magic items with a 'no magic' option.
+    // This is not random - one magic at a time in turn.
     let newMagic = [...isMagic];
     let nextMagic = 0;
     for (let i = 0; i < newMagic.length; i++) {
