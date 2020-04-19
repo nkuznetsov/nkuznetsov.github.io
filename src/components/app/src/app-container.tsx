@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
-import { randomInt } from '../../../utils';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from '../../../models';
 import messages from '../../../messages';
