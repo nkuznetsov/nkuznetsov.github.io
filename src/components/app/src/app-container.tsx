@@ -37,14 +37,22 @@ export const AppContainer: React.FunctionComponent = () => {
   };
 
   const toggleMagic = () => {
-    const idx = randomInt(0, isMagic.length);
-
-    const newMagic = isMagic.map((magic, i) => {
-      if (i === idx) {
-        return !magic;
+    let newMagic = [...isMagic];
+    let nextMagic = 0;
+    for (let i = 0; i < newMagic.length; i++) {
+      if (newMagic[i]) {
+        nextMagic = i + 1;
+        break;
       }
-      return magic;
-    });
+    }
+    newMagic = newMagic.map(m => false);
+
+    if (nextMagic === newMagic.length) {
+      nextMagic = 0;
+    } else {
+      newMagic[nextMagic] = true;
+    }
+
     setIsMagic(newMagic);
   };
 

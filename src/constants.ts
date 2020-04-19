@@ -4,7 +4,10 @@ const debug = false;
 export const defaultIsDebug = debug;
 export const showDebug = debug;
 
-/** Collection of switches for magic components */
+/**
+ * Collection of switches for magic components
+ * Logo, header, header image, slideout image
+ * */
 export const defaultIsMagic = [false, false, false, false];
 
 export const defaultThemeType = ThemeType.Dark;

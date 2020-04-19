@@ -23,7 +23,7 @@ const lightTheme: ITheme = {
   base: baseTheme,
 
   type: ThemeType.Light,
-  background: colors.white,
+  background: colors.gray[100],
   onBackground: colors.brown,
 
   isDebug: defaultIsDebug
