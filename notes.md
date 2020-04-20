@@ -21,4 +21,3 @@ https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 - Component library: material ui
 - CSS-in-JS solution: react-jss
 - Internatiolization: react-intl
-- Icons: flaticon.com
