@@ -6,7 +6,7 @@ import { Stars } from '../../stars';
 import { useTheme } from 'react-jss';
 import styleResets from './style/app-style';
 
-export const AppRenderer: React.FunctionComponent<IAppRendererProps> = React.memo(
+export const AppRenderer: React.FC<IAppRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     const theme: any = useTheme();
     styleResets(theme);

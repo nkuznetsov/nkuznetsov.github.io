@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from 'react-jss';
 import headerStyle from './style/header-style';
 
-export const HeaderRenderer: React.FunctionComponent = () => {
+export const HeaderRenderer: React.FC = () => {
   const theme = useTheme();
   const styles = headerStyle(theme);
 

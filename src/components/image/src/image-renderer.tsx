@@ -3,7 +3,7 @@ import { IImageProps } from './image-interface';
 import { useTheme } from 'react-jss';
 import imageStyle from './style/image-style';
 
-export const ImageRenderer: React.FunctionComponent<IImageProps> = React.memo(
+export const ImageRenderer: React.FC<IImageProps> = React.memo(
   ({
     ariaLabel,
     className,

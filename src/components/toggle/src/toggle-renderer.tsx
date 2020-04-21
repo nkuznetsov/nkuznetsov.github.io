@@ -12,7 +12,7 @@ import { ReactComponent as WrenchInactiveImage } from './style/wrench_light.svg'
 import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
-export const ToggleRenderer: React.FunctionComponent<IToggleProps> = React.memo(
+export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
   ({ glow, rotate360OnHover, toggle, type }) => {
     const theme = useTheme() as ITheme;
     const styles = headerStyle(theme);

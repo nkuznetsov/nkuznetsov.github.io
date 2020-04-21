@@ -15,7 +15,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import homeStyle from './style/home-style';
 
-export const HomeRenderer: React.FunctionComponent<IHomeRendererProps> = React.memo(
+export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     const theme: any = useTheme();
     const styles = homeStyle(theme);

@@ -18,7 +18,7 @@ export const AppContext = React.createContext({
   isDebug: defaultIsDebug
 });
 
-export const AppContainer: React.FunctionComponent = () => {
+export const AppContainer: React.FC = () => {
   const locale = defaultLocale;
   const translations = messages[locale];
   const [theme, setTheme] = useState(themes[defaultThemeType]);
