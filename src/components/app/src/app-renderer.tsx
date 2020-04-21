@@ -15,7 +15,7 @@ import { useTheme } from 'react-jss';
 import appStyle from './style/app-style';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-// import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link, Element, animateScroll as scroll } from 'react-scroll';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export const AppRenderer: React.FunctionComponent<IAppRendererProps> = React.memo(
@@ -39,16 +39,6 @@ export const AppRenderer: React.FunctionComponent<IAppRendererProps> = React.mem
                     {isMagic[2] ? <HeaderImage /> : null}
                     <MyName />
                     <SocialMediaLinks />
-                    {/* <Link
-                  activeClass='active'
-                  to='section1'
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  link to section 1
-                </Link> */}
                   </Grid>
                 </Grid>
                 <Grid container item xs={2} className={styles.rightContainer}>
@@ -70,9 +60,6 @@ export const AppRenderer: React.FunctionComponent<IAppRendererProps> = React.mem
                   </Grid>
                 </Grid>
                 {isMagic[3] ? <SlideoutImage /> : null}
-                {/* <div title='Section 1' id='section1'>
-              section 1
-            </div> */}
               </Grid>
               <Stars />
             </Box>
