@@ -18,8 +18,5 @@ export default createUseStyles(theme => ({
       maxWidth: '100%',
       height: 'auto'
     }
-  },
-  app: {
-    overflow: 'hidden'
   }
 }));

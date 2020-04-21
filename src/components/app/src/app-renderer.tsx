@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Home } from '../../home';
 import { IAppRendererProps } from './app-interface';
+import { Portfolio } from '../../portfolio';
 import { Stars } from '../../stars';
 import { useTheme } from 'react-jss';
 import styleResets from './style/app-style';
@@ -21,7 +22,9 @@ export const AppRenderer: React.FC<IAppRendererProps> = React.memo(
               toggleTheme={toggleTheme}
             />
           </Route>
-          <Route exact path='/portfolio'></Route>
+          <Route exact path='/portfolio'>
+            <Portfolio />
+          </Route>
         </Switch>
         <Stars />
       </Router>
