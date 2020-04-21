@@ -7,10 +7,10 @@ import { ThemeType } from '../../../models';
 import messages from '../../../messages';
 import themes from '../../../style/themes';
 import {
-  defaultThemeType,
-  defaultLocale,
+  defaultIsDebug,
   defaultIsMagic,
-  defaultIsDebug
+  defaultLocale,
+  defaultThemeType
 } from '../../../constants';
 
 export const AppContext = React.createContext({
