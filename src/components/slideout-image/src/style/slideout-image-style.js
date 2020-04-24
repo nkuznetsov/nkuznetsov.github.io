@@ -1,29 +1,37 @@
 import { createUseStyles } from 'react-jss';
 import colors from '../../../../style/colors';
 
+const size = '10rem';
+
 export default createUseStyles(theme => ({
   catImage: {
     background: theme.isDebug ? colors.brown : colors.transparent,
-    transform: 'translateY(10rem)',
-    animation: '$popup 10s 0.5s ease infinite',
+    transform: `translateY(${size})`,
+    animation: '$slideout 10s 0.5s ease infinite',
     position: 'absolute',
     bottom: '0',
     right: '0',
-    width: '10rem',
-    height: '10rem'
+    width: `${size}`,
+    height: `${size}`
   },
-  '@keyframes popup': {
+  '@keyframes slideout': {
     '0%': {
-      transform: 'translateY(10rem)'
+      transform: 'translateX(10rem)'
+    },
+    '30%': {
+      transform: 'rotate(-25deg)'
     },
     '34%': {
-      transform: 'translateY(2rem)'
+      transform: 'translateX(2rem)'
     },
     '37%': {
-      transform: 'translateY(15rem)'
+      transform: 'translateX(15rem)'
+    },
+    '99%': {
+      transform: 'rotate(0deg)'
     },
     '100%': {
-      transform: 'translateY(15rem)'
+      transform: 'translateX(15rem)'
     }
   }
 }));

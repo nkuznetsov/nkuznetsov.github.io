@@ -5,7 +5,7 @@ export default createUseStyles(theme => ({
     html: {
       margin: '0',
       padding: '0',
-      overflowX: 'none',
+      overflowX: 'hidden',
       overflowY: 'auto',
       boxSizing: 'border-box'
     },
