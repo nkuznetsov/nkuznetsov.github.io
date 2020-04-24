@@ -9,17 +9,70 @@ export const randomInt = (min: number, max: number) => {
 };
 
 export const randomColor = () => {
-  let val = colors.black;
-  if (randomInt(0, 5) === 1) {
-    val = colors.yellow[100];
-  } else if (randomInt(0, 5) === 2) {
-    val = colors.yellow[200];
-  } else if (randomInt(0, 5) === 3) {
-    val = colors.red[200];
-  } else if (randomInt(0, 5) === 4) {
-    val = colors.teal[200];
-  } else {
-    val = colors.purple[100];
+  const random = randomInt(0, 5);
+
+  switch (random) {
+    case 1: {
+      return colors.yellow[100];
+    }
+    case 2: {
+      return colors.yellow[200];
+    }
+    case 3: {
+      return colors.red[200];
+    }
+    case 4: {
+      return colors.teal[200];
+    }
+    default: {
+      return colors.purple[100];
+    }
   }
-  return val;
+};
+
+const isSmoothScrollSupported = ((document || {}).documentElement || {}).style
+  ? 'scrollBehavior' in document.documentElement.style
+  : false;
+
+export const toTop = () => {
+  if (isSmoothScrollSupported) {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    window.scrollTo(0, 0);
+  }
+};
+
+export const to = (ycoordinate: number) => {
+  if (isSmoothScrollSupported) {
+    window.scroll({
+      top: ycoordinate,
+      left: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    window.scrollTo(0, ycoordinate);
+  }
+};
+
+export const toElement = (element: Element) => {
+  if (element) {
+    if (isSmoothScrollSupported) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      element.scrollIntoView();
+    }
+  }
+};
+
+export default {
+  toTop,
+  to,
+  toElement
 };

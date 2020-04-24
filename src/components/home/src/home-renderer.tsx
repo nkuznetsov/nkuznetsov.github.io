@@ -14,12 +14,19 @@ import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import homeStyle from './style/home-style';
+import { toElement } from '../../../utils';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     const theme: any = useTheme();
     const styles = homeStyle(theme);
     const { isMagic } = useContext(AppContext);
+
+    const scrollTo = () => {
+      const pageSelector = '.portfolio-page' as any;
+      const page = document.querySelector(pageSelector);
+      toElement(page);
+    };
 
     return (
       <Box className={styles.home}>
@@ -33,6 +40,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               {isMagic[2] ? <HeaderImage /> : null}
               <MyName />
               <SocialMediaLinks />
+              <button onClick={e => scrollTo()}>btn</button>
             </Grid>
           </Grid>
           <Grid container item xs={2} className={styles.rightContainer}>

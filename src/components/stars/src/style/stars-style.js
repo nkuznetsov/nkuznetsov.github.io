@@ -23,11 +23,15 @@ const getStars = numberOfStars => {
   return stars;
 };
 
-const smallStar = getStars(800);
-const mediumStar = getStars(300);
+const smallStar = getStars(700);
+const mediumStar = getStars(200);
 const largeStar = getStars(100);
 
 export default createUseStyles(theme => ({
+  parallax: {
+    position: 'fixed',
+    zIndex: 1
+  },
   stars1: {
     width: smallStarSize,
     height: smallStarSize,

@@ -7,10 +7,10 @@ export const StarsRenderer: React.FC = () => {
   const styles = starsStyle(theme);
 
   return (
-    <>
-      <div className={styles.stars1}></div>
-      <div className={styles.stars2}></div>
-      <div className={styles.stars3}></div>
-    </>
+    <div className={styles.parallax}>
+      <div className={styles.stars1} />
+      <div className={styles.stars2} />
+      <div className={styles.stars3} />
+    </div>
   );
 };

@@ -16,17 +16,15 @@ export const AppRenderer: React.FC<IAppRendererProps> = React.memo(
       <Router>
         <Switch>
           <Route exact path='/'>
+            <Stars />
             <Home
               toggleDebug={toggleDebug}
               toggleMagic={toggleMagic}
               toggleTheme={toggleTheme}
             />
-          </Route>
-          <Route exact path='/portfolio'>
             <Portfolio />
           </Route>
         </Switch>
-        <Stars />
       </Router>
     );
   }

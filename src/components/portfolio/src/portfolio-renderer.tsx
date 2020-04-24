@@ -7,5 +7,11 @@ export const PortfolioRenderer: React.FC = () => {
   const theme: any = useTheme();
   const styles = portfolioStyle(theme);
 
-  return <Box>Portfolio page</Box>;
+  const composedClass = [styles.portfolio, 'portfolio-page'].join(' ');
+
+  return (
+    <Box className={composedClass}>
+      <p>Portfolio</p>
+    </Box>
+  );
 };
