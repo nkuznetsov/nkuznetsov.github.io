@@ -46,15 +46,15 @@ export const toTop = () => {
   }
 };
 
-export const to = (ycoordinate: number) => {
+export const to = (y: number) => {
   if (isSmoothScrollSupported) {
     window.scroll({
-      top: ycoordinate,
+      top: y,
       left: 0,
       behavior: 'smooth'
     });
   } else {
-    window.scrollTo(0, ycoordinate);
+    window.scrollTo(0, y);
   }
 };
 

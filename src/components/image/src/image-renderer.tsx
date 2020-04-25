@@ -7,6 +7,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
   ({
     ariaLabel,
     className,
+    customCursor,
     glow,
     link,
     onClick,
@@ -48,6 +49,12 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         composedClass = [composedClass, classToAdd].join(' ');
       }
 
+      composedClass = [composedClass, styles.base].join(' ');
+
+      if (customCursor) {
+        composedClass = [composedClass, styles.customCursor].join(' ');
+      }
+
       setComposedClass(composedClass);
     }, [
       className,
@@ -57,24 +64,32 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       rotate360OnHover,
       setComposedClass,
       styles,
-      themed
+      themed,
+      customCursor
     ]);
 
-    return (
-      <div
+    const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (link) {
+        window.location.href = link;
+        return;
+      }
+
+      if (onClick) {
+        onClick(event);
+      }
+    };
+
+    return Svg ? (
+      <Svg
+        className={composedClass}
+        onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {Svg ? (
-          <a href={link}>
-            <Svg className={composedClass} onClick={onClick}>
-              {ariaLabel}
-            </Svg>
-          </a>
-        ) : (
-          <img src={src} alt={ariaLabel} className={composedClass} />
-        )}
-      </div>
+        {ariaLabel}
+      </Svg>
+    ) : (
+      <img src={src} alt={ariaLabel} className={composedClass} />
     );
   }
 );

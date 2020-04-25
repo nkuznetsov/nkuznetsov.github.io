@@ -18,7 +18,7 @@ export default createUseStyles(theme => ({
   },
   container: {
     background: theme.isDebug ? colors.brown : colors.transparent,
-    height: '100%'
+    padding: 0
   },
   leftContainer: {
     background: theme.isDebug ? colors.pink[100] : colors.transparent,
@@ -30,15 +30,29 @@ export default createUseStyles(theme => ({
   centerContainer: {
     background: theme.isDebug ? colors.pink[200] : colors.transparent,
     display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    paddingBottom: '15%'
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignContent: 'center'
+  },
+  centerSubContainer: {
+    background: theme.isDebug ? colors.teal[100] : colors.transparent,
+    paddingTop: '15%'
   },
   rightContainer: {
-    background: theme.isDebug ? colors.pink[300] : colors.transparent
-  },
-  rightSubContainer: {
-    display: 'flex',
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
     justifyContent: 'flex-end'
+  },
+  portfolioIcon: {
+    background: theme.isDebug ? colors.pink[100] : colors.transparent,
+    width: '5rem',
+    height: '5rem',
+    padding: '1rem'
+  },
+  nextPageNavIcon: {
+    background: theme.isDebug ? colors.teal[100] : colors.transparent,
+    width: '3rem',
+    height: '3rem',
+    padding: '1rem',
+    margin: '0 auto'
   }
 }));

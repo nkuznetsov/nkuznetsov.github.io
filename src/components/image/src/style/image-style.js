@@ -1,8 +1,15 @@
 import { createUseStyles } from 'react-jss';
+import { cursorSvg } from '../../../../constants';
 import { ThemeType } from '../../../../models';
 import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
+  base: {
+    cursor: 'pointer'
+  },
+  customCursor: {
+    cursor: `url("${cursorSvg}"), pointer`
+  },
   themed: {
     borderRadius: '30%',
     background: theme.isDebug
@@ -28,7 +35,7 @@ export default createUseStyles(theme => ({
   rotateClockwiseAndGlow: { animation: '$rotateClockwiseAndGlow 1.5s' },
   '@keyframes rotateClockwiseAndGlow': {
     '0%': { transform: 'rotate(0deg)', background: colors.gray[300] },
-    '50%': { background: colors.red[100] },
+    '50%': { background: colors.pink[300] },
     '100%': { transform: 'rotate(360deg)', background: colors.gray[300] }
   },
   resetImage: { animation: '$resetImage 1.5s ease-out' },

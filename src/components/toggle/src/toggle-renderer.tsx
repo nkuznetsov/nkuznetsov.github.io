@@ -13,7 +13,7 @@ import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
 export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
-  ({ glow, rotate360OnHover, toggle, type }) => {
+  ({ customCursor, glow, rotate360OnHover, toggle, type }) => {
     const theme = useTheme() as ITheme;
     const styles = headerStyle(theme);
     const appContext = useContext(AppContext);
@@ -67,6 +67,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
           <Image
             ariaLabel='toggle inactive icon'
             className={styles.toggleIcon}
+            customCursor={customCursor}
             glow={glow}
             onClick={toggleHandler}
             rotate360OnHover={rotate360OnHover}
@@ -77,6 +78,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
           <Image
             ariaLabel='toggle active icon'
             className={styles.toggleIcon}
+            customCursor={customCursor}
             glow={glow}
             onClick={toggleHandler}
             rotate360OnHover={rotate360OnHover}

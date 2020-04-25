@@ -5,6 +5,7 @@ export enum ToggleType {
 }
 
 export interface IToggleProps {
+  customCursor?: boolean;
   glow?: boolean;
   rotate360OnHover?: boolean;
   toggle: (isChecked: boolean) => void;

@@ -1,6 +1,7 @@
 export interface IImageProps {
   ariaLabel?: string;
   className?: string;
+  customCursor?: boolean;
   glow?: boolean;
   link?: string;
   onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void;
