@@ -1,6 +1,6 @@
-![website](https://img.shields.io/website?down_message=offline&label=fluffyoyster.cc&up_message=online&url=https%3A%2F%2Ffluffyoyster.cc%2F?style=for-the-badge&logo=javascript)
-![version](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json?style=for-the-badge&logo=react)
-![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge&logo=npm)
+![website](https://img.shields.io/website?down_message=offline&label=fluffyoyster.cc&up_message=online&url=https%3A%2F%2Ffluffyoyster.cc%2F?style=for-the-badge&logo=react)
+![version](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json)
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 # Fluffy Oyster
 
