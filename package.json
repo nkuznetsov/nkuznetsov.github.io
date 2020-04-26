@@ -1,8 +1,18 @@
 {
-  "name": "personal",
-  "version": "0.1.0",
+  "name": "fluffy-oyster",
+  "version": "1.0.0",
   "private": true,
+  "description": "Repository for the website fluffyoyster.cc",
+  "author": "Nikita K <kuznetsov.nikita@gmail.com>",
   "homepage": "https://fluffyoyster.cc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nkuznetsov/personal"
+  },
+  "bugs": {
+    "url": "https://github.com/nkuznetsov/personal/issues"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.8",
     "@material-ui/icons": "^4.9.1",
