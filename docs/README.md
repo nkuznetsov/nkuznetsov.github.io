@@ -18,7 +18,7 @@ yarn
 - start
 
 ```bash
-yarn
+yarn start
 ```
 
 ## Authors
