@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=fluffyoyster&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json)
+
 # Fluffy Oyster
 
 Playground for a fluffy oyster.
@@ -11,7 +13,3 @@ Playground for a fluffy oyster.
 ## Authors
 
 - **Nikita K** - _initial work_
-
-https://img.shields.io/badge/dynamic/json?color=blueviolet&label=fluffyoyster&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json
-
-![rudeshko.net - CICD](https://github.com/rudeshko/rudeshko.net/workflows/rudeshko.net%20-%20CICD/badge.svg)
