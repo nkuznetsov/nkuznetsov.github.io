@@ -1,6 +1,5 @@
-![Website](https://img.shields.io/website?down_message=offline&label=rudeshko.net&up_message=online&url=https%3A%2F%2Frudeshko.net%2F)
-
-![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=fluffyoyster&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json)
+![website](https://img.shields.io/website?down_message=offline&label=fluffyoyster.cc&up_message=online&url=https%3A%2F%2Ffluffyoyster.cc%2F)
+![version](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=fluffyoyster&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fnkuznetsov%2Fpersonal%2Fmaster%2Fpackage.json)
 
 # Fluffy Oyster
 
