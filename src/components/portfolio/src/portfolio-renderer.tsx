@@ -11,7 +11,7 @@ export const PortfolioRenderer: React.FC = () => {
 
   return (
     <Box className={composedClass}>
-      <p>Portfolio</p>
+      <p>Portfolio coming soon</p>
     </Box>
   );
 };
