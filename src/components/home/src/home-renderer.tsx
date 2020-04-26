@@ -3,26 +3,29 @@ import { AppContext } from '../../app';
 import { Header } from '../../header';
 import { HeaderImage } from '../../header-image';
 import { IHomeRendererProps } from './home-interface';
+import { Image } from '../../image';
 import { Logo } from '../../logo';
 import { MyName } from '../../my-name';
+import { ReactComponent as ArrowDownImg } from './style/arrow_down.svg';
+import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
 import { showDebug, portfolioPage } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
+import { toElement } from '../../../utils';
 import { Toggle } from '../../toggle';
 import { ToggleType } from '../../toggle/src/toggle-interface';
+import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import homeStyle from './style/home-style';
-import { toElement } from '../../../utils';
-import { Image } from '../../image';
-import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
-import { ReactComponent as ArrowDownImg } from './style/arrow_down.svg';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     const theme: any = useTheme();
     const styles = homeStyle(theme);
+    const { formatMessage } = useIntl();
+
     const { isMagic } = useContext(AppContext);
 
     const scrollToPortfolio = () => {
@@ -45,7 +48,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               <MyName />
               <SocialMediaLinks />
               <Image
-                ariaLabel='Portfolio'
+                ariaLabel={formatMessage({ id: 'home.portfolio' })}
                 className={styles.portfolioIcon}
                 onClick={scrollToPortfolio}
                 popOutOnHover
@@ -54,7 +57,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               />
             </Grid>
             <Image
-              ariaLabel='Next page'
+              ariaLabel={formatMessage({ id: 'home.nextPage' })}
               className={styles.nextPageNavIcon}
               onClick={scrollToPortfolio}
               Svg={ArrowDownImg}

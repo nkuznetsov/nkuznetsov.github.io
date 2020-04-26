@@ -9,6 +9,7 @@ import { ReactComponent as WandActiveImage } from './style/wand_dark.svg';
 import { ReactComponent as WandInactiveImage } from './style/wand_light.svg';
 import { ReactComponent as WrenchActiveImage } from './style/wrench_dark.svg';
 import { ReactComponent as WrenchInactiveImage } from './style/wrench_light.svg';
+import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
@@ -16,6 +17,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
   ({ customCursor, glow, rotate360OnHover, toggle, type }) => {
     const theme = useTheme() as ITheme;
     const styles = headerStyle(theme);
+    const { formatMessage } = useIntl();
     const appContext = useContext(AppContext);
 
     let isChecked;
@@ -65,7 +67,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
       <div className={styles.toggleContainer}>
         {isChecked ? (
           <Image
-            ariaLabel='toggle inactive icon'
+            ariaLabel={formatMessage({ id: 'home.toggleInactiveIcon' })}
             className={styles.toggleIcon}
             customCursor={customCursor}
             glow={glow}
@@ -76,7 +78,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
           />
         ) : (
           <Image
-            ariaLabel='toggle active icon'
+            ariaLabel={formatMessage({ id: 'home.toggleActiveIcon' })}
             className={styles.toggleIcon}
             customCursor={customCursor}
             glow={glow}
