@@ -4,7 +4,7 @@ import { Image } from '../../image';
 import { ITheme, ThemeType } from '../../../models';
 import { IToggleProps, ToggleType } from './toggle-interface';
 import { ReactComponent as DarkThemeActiveImage } from './style/moon_light.svg';
-import { ReactComponent as darkThemeInactiveImage } from './style/moon_dark.svg';
+import { ReactComponent as DarkThemeInactiveImage } from './style/moon_dark.svg';
 import { ReactComponent as WandActiveImage } from './style/wand_dark.svg';
 import { ReactComponent as WandInactiveImage } from './style/wand_light.svg';
 import { ReactComponent as WrenchActiveImage } from './style/wrench_dark.svg';
@@ -40,7 +40,7 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
       case ToggleType.Theme: {
         isChecked = theme.type === ThemeType.Dark;
         activeIcon = DarkThemeActiveImage;
-        inactiveIcon = darkThemeInactiveImage;
+        inactiveIcon = DarkThemeInactiveImage;
         break;
       }
     }

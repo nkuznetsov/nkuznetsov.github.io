@@ -9,6 +9,7 @@ export default {
     'home.oyster': 'oyster',
     'home.portfolio': 'portfolio',
     'home.toggleActiveIcon': 'toggle active icon',
-    'home.toggleInactiveIcon': 'toggle inactive icon'
+    'home.toggleInactiveIcon': 'toggle inactive icon',
+    'home.toTop': 'to top'
   }
 };
