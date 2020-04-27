@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.97345bd5.chunk.js",
-    "main.js.map": "/static/js/main.97345bd5.chunk.js.map",
+    "main.js": "/static/js/main.d62c9b66.chunk.js",
+    "main.js.map": "/static/js/main.d62c9b66.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f05c415c.js",
     "runtime-main.js.map": "/static/js/runtime-main.f05c415c.js.map",
-    "static/js/2.81947329.chunk.js": "/static/js/2.81947329.chunk.js",
-    "static/js/2.81947329.chunk.js.map": "/static/js/2.81947329.chunk.js.map",
+    "static/js/2.33f9546d.chunk.js": "/static/js/2.33f9546d.chunk.js",
+    "static/js/2.33f9546d.chunk.js.map": "/static/js/2.33f9546d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4677bb2aeceaeff7cf7de13dbe3856ec.js": "/precache-manifest.4677bb2aeceaeff7cf7de13dbe3856ec.js",
+    "precache-manifest.c958c90d8282a4dcbe90e51985c914b5.js": "/precache-manifest.c958c90d8282a4dcbe90e51985c914b5.js",
     "service-worker.js": "/service-worker.js",
-    "static/media/arrow_down.7da2026c.svg": "/static/media/arrow_down.7da2026c.svg",
+    "static/media/arrow_down_dark.7da2026c.svg": "/static/media/arrow_down_dark.7da2026c.svg",
+    "static/media/arrow_down_light.e80dde4f.svg": "/static/media/arrow_down_light.e80dde4f.svg",
     "static/media/cat.png": "/static/media/cat.47998525.png",
     "static/media/dark_oyster.13036fb9.svg": "/static/media/dark_oyster.13036fb9.svg",
     "static/media/github.91653da1.svg": "/static/media/github.91653da1.svg",
@@ -19,6 +20,8 @@
     "static/media/logo_light.ea0765c8.svg": "/static/media/logo_light.ea0765c8.svg",
     "static/media/moon_dark.58aa28da.svg": "/static/media/moon_dark.58aa28da.svg",
     "static/media/moon_light.44f2b284.svg": "/static/media/moon_light.44f2b284.svg",
+    "static/media/rocket_dark.bbc8acea.svg": "/static/media/rocket_dark.bbc8acea.svg",
+    "static/media/rocket_light.b8269dcb.svg": "/static/media/rocket_light.b8269dcb.svg",
     "static/media/suitcase.445ef102.svg": "/static/media/suitcase.445ef102.svg",
     "static/media/wand_dark.2996ef8e.svg": "/static/media/wand_dark.2996ef8e.svg",
     "static/media/wand_light.fefb27b1.svg": "/static/media/wand_light.fefb27b1.svg",
@@ -27,7 +30,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f05c415c.js",
-    "static/js/2.81947329.chunk.js",
-    "static/js/main.97345bd5.chunk.js"
+    "static/js/2.33f9546d.chunk.js",
+    "static/js/main.d62c9b66.chunk.js"
   ]
 }
