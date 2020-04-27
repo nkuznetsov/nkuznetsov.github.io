@@ -33,6 +33,7 @@ export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
       const page = document.querySelector(to);
       if (page) {
         toElement(page);
+        return;
       }
     }
 
