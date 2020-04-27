@@ -47,12 +47,5 @@ export default createUseStyles(theme => ({
     width: '5rem',
     height: '5rem',
     padding: '1rem'
-  },
-  nextPageNavIcon: {
-    background: theme.isDebug ? colors.teal[100] : colors.transparent,
-    width: '3rem',
-    height: '3rem',
-    padding: '1rem',
-    margin: '0 auto'
   }
 }));

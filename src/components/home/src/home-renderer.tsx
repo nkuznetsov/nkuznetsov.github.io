@@ -3,26 +3,29 @@ import { AppContext } from '../../app';
 import { Header } from '../../header';
 import { HeaderImage } from '../../header-image';
 import { IHomeRendererProps } from './home-interface';
+import { Image } from '../../image';
 import { Logo } from '../../logo';
 import { MyName } from '../../my-name';
+import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
+import { Scroll } from '../../scroll';
 import { showDebug, portfolioPage } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
+import { toElement } from '../../../utils';
 import { Toggle } from '../../toggle';
 import { ToggleType } from '../../toggle/src/toggle-interface';
+import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import homeStyle from './style/home-style';
-import { toElement } from '../../../utils';
-import { Image } from '../../image';
-import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
-import { ReactComponent as ArrowDownImg } from './style/arrow_down.svg';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
-    const theme: any = useTheme();
+    const theme = useTheme();
     const styles = homeStyle(theme);
+    const { formatMessage } = useIntl();
+
     const { isMagic } = useContext(AppContext);
 
     const scrollToPortfolio = () => {
@@ -35,17 +38,18 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
     return (
       <Box className={styles.home}>
         <Grid container className={styles.container}>
-          <Grid xs={2} className={styles.leftContainer}>
+          <Grid item xs={2} className={styles.leftContainer}>
             {isMagic[0] ? <Logo /> : null}
           </Grid>
-          <Grid container xs={8} className={styles.centerContainer}>
+
+          <Grid container item xs={8} className={styles.centerContainer}>
             <Grid item className={styles.centerSubContainer}>
               {isMagic[1] ? <Header /> : null}
               {isMagic[2] ? <HeaderImage /> : null}
               <MyName />
               <SocialMediaLinks />
               <Image
-                ariaLabel='Portfolio'
+                ariaLabel={formatMessage({ id: 'home.portfolio' })}
                 className={styles.portfolioIcon}
                 onClick={scrollToPortfolio}
                 popOutOnHover
@@ -53,35 +57,31 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                 themed
               />
             </Grid>
-            <Image
-              ariaLabel='Next page'
-              className={styles.nextPageNavIcon}
-              onClick={scrollToPortfolio}
-              Svg={ArrowDownImg}
-              popOutOnHover
-            />
+            <Scroll to={portfolioPage} />
           </Grid>
-          <Grid container xs={2} className={styles.rightContainer}>
+
+          <Grid container item xs={2} className={styles.rightContainer}>
             {showDebug ? (
               <Toggle
-                type={ToggleType.Debug}
-                toggle={toggleDebug}
                 rotate360OnHover
+                toggle={toggleDebug}
+                type={ToggleType.Debug}
               />
             ) : null}
             <Toggle
-              glow
               customCursor
-              type={ToggleType.Magic}
-              toggle={toggleMagic}
+              glow
               rotate360OnHover
+              toggle={toggleMagic}
+              type={ToggleType.Magic}
             />
             <Toggle
-              type={ToggleType.Theme}
-              toggle={toggleTheme}
               rotate360OnHover
+              toggle={toggleTheme}
+              type={ToggleType.Theme}
             />
           </Grid>
+
           {isMagic[3] ? <SlideoutImage /> : null}
         </Grid>
       </Box>

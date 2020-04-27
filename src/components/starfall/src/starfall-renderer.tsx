@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTheme } from 'react-jss';
-import starsStyle from './style/stars-style';
+import starfallStyle from './style/starfall-style';
 
-export const StarsRenderer: React.FC = () => {
+export const StarfallRenderer: React.FC = () => {
   const theme = useTheme();
-  const styles = starsStyle(theme);
+  const styles = starfallStyle(theme);
 
   return (
     <div className={styles.parallax}>

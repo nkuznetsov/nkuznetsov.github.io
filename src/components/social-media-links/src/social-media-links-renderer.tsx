@@ -3,12 +3,14 @@ import { gitHubLink, linkedInLink } from '../../../constants';
 import { Image } from '../../image';
 import { ReactComponent as GitHubLogo } from './style/github.svg';
 import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
+import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import socialMediaLinksStyle from './style/social-media-links-style';
 
 export const SocialMediaLinksRenderer: React.FC = () => {
   const theme = useTheme();
   const styles = socialMediaLinksStyle(theme);
+  const { formatMessage } = useIntl();
 
   return (
     <div className={styles.socialIconsContainer}>
@@ -18,7 +20,7 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         link={gitHubLink}
         Svg={GitHubLogo}
         className={styles.socialIcon}
-        ariaLabel='GitHub'
+        ariaLabel={formatMessage({ id: 'home.github' })}
       />
       <Image
         popOutOnHover
@@ -26,7 +28,7 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         link={linkedInLink}
         Svg={LinkedInLogo}
         className={styles.socialIcon}
-        ariaLabel='LinkedIn'
+        ariaLabel={formatMessage({ id: 'home.linkedin' })}
       />
     </div>
   );
