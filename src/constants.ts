@@ -13,6 +13,7 @@ export const defaultIsMagic = [false, false, false, false];
 export const defaultThemeType = ThemeType.Dark;
 
 export const defaultLocale = 'en';
+export const scrollbarWidth = '17px'; // have to account for scrollbar width
 export const gitHubLink = 'https://github.com/nkuznetsov';
 export const linkedInLink = 'https://www.linkedin.com/in/kuznetsovnikita/';
 export const cursorSvg =
@@ -22,4 +23,4 @@ export const cursorSvg =
  * Below constants are used for scrolling
  */
 export const homePage = '.home-page';
-export const portfolioPage = '.portfolio-page';
+export const experiencePage = '.experience-page';

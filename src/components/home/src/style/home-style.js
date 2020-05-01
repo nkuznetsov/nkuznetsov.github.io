@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { scrollbarWidth } from '../../../../constants';
 import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
@@ -18,7 +19,8 @@ export default createUseStyles(theme => ({
   },
   container: {
     background: theme.isDebug ? colors.brown : colors.transparent,
-    padding: 0
+    padding: 0,
+    marginLeft: scrollbarWidth
   },
   leftContainer: {
     background: theme.isDebug ? colors.pink[100] : colors.transparent,
@@ -42,7 +44,7 @@ export default createUseStyles(theme => ({
     background: theme.isDebug ? colors.pink[300] : colors.transparent,
     justifyContent: 'flex-end'
   },
-  portfolioIcon: {
+  experienceIcon: {
     background: theme.isDebug ? colors.pink[100] : colors.transparent,
     width: '5rem',
     height: '5rem',

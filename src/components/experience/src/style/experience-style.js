@@ -1,16 +1,16 @@
 import { createUseStyles } from 'react-jss';
+import { scrollbarWidth } from '../../../../constants';
 import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
-  portfolio: {
+  experience: {
     background: theme.isDebug ? colors.teal[200] : theme.background,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     width: '100%',
     height: '100vh',
-    color: theme.onBackground,
-    textAlign: 'center'
+    color: theme.onBackground
   },
   toTopNavIcon: {
     background: theme.isDebug ? colors.teal[100] : colors.transparent,
@@ -19,20 +19,21 @@ export default createUseStyles(theme => ({
     padding: '1rem'
   },
   main: {
+    background: theme.isDebug ? colors.pink[100] : colors.transparent,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
     alignContent: 'center',
-    alignItems: 'center',
-    height: '100%'
+    height: '100%',
+    marginLeft: scrollbarWidth
   },
   toTopContainer: {
+    background: theme.isDebug ? colors.pink[200] : colors.transparent,
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-end',
-    alignContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-end'
+  },
+  experiencesContainer: {
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
+    height: '50%'
   }
 }));

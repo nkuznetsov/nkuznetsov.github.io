@@ -8,7 +8,7 @@ import { Logo } from '../../logo';
 import { MyName } from '../../my-name';
 import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
 import { Scroll } from '../../scroll';
-import { showDebug, portfolioPage } from '../../../constants';
+import { showDebug, experiencePage } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
 import { toElement } from '../../../utils';
@@ -28,8 +28,8 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
 
     const { isMagic } = useContext(AppContext);
 
-    const scrollToPortfolio = () => {
-      const page = document.querySelector(portfolioPage);
+    const scrollToExperience = () => {
+      const page = document.querySelector(experiencePage);
       if (page) {
         toElement(page);
       }
@@ -49,15 +49,15 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               <MyName />
               <SocialMediaLinks />
               <Image
-                ariaLabel={formatMessage({ id: 'home.portfolio' })}
-                className={styles.portfolioIcon}
-                onClick={scrollToPortfolio}
+                ariaLabel={formatMessage({ id: 'home.experience' })}
+                className={styles.experienceIcon}
+                onClick={scrollToExperience}
                 popOutOnHover
                 Svg={SuitcaseImg}
                 themed
               />
             </Grid>
-            <Scroll to={portfolioPage} />
+            <Scroll to={experiencePage} />
           </Grid>
 
           <Grid container item xs={2} className={styles.rightContainer}>
