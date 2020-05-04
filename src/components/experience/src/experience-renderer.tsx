@@ -21,11 +21,7 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
     <Box className={composedClass}>
       {areExperiencesVisible ? (
         <Box className={styles.main}>
-          <Grid
-            container
-            spacing={4} // has to be hardcoded
-            className={styles.experiencesContainer}
-          >
+          <Grid container className={styles.experiencesContainer}>
             {experiences.map((exp, index) => (
               <ExperienceCardRenderer key={index} experience={exp} />
             ))}

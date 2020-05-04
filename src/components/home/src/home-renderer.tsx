@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../app';
+import { Cursor } from '../../image/src/image-interface';
 import { Header } from '../../header';
 import { HeaderImage } from '../../header-image';
 import { IHomeRendererProps } from './home-interface';
@@ -8,10 +9,10 @@ import { Logo } from '../../logo';
 import { MyName } from '../../my-name';
 import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
 import { Scroll } from '../../scroll';
+import { scrollToElement } from '../../../utils/utils';
 import { showDebug, experiencePage } from '../../../constants';
 import { SlideoutImage } from '../../slideout-image';
 import { SocialMediaLinks } from '../../social-media-links';
-import { toElement } from '../../../utils';
 import { Toggle } from '../../toggle';
 import { ToggleType } from '../../toggle/src/toggle-interface';
 import { useIntl } from 'react-intl';
@@ -31,7 +32,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
     const scrollToExperience = () => {
       const page = document.querySelector(experiencePage);
       if (page) {
-        toElement(page);
+        scrollToElement(page);
       }
     };
 
@@ -69,7 +70,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               />
             ) : null}
             <Toggle
-              customCursor
+              cursor={Cursor.Wand}
               glow
               rotate360OnHover
               toggle={toggleMagic}

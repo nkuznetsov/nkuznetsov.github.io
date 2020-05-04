@@ -29,6 +29,8 @@ interface ITheme {
   background: string;
   onBackground: string;
 
+  secondaryBackground: string;
+
   isDebug: boolean;
 }
 

@@ -26,6 +26,8 @@ const lightTheme: ITheme = {
   background: colors.gray[100],
   onBackground: colors.brown,
 
+  secondaryBackground: colors.gray[250],
+
   isDebug: defaultIsDebug
 };
 
@@ -35,6 +37,8 @@ const darkTheme: ITheme = {
   type: ThemeType.Dark,
   background: colors.gray[800],
   onBackground: colors.white,
+
+  secondaryBackground: colors.gray[300],
 
   isDebug: defaultIsDebug
 };

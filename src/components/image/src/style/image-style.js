@@ -1,14 +1,14 @@
 import { createUseStyles } from 'react-jss';
-import { cursorSvg } from '../../../../constants';
+import { wandSvg } from '../../../../constants';
 import { ThemeType } from '../../../../models';
 import colors from '../../../../style/colors';
 
 export default createUseStyles(theme => ({
-  base: {
+  pointerCursor: {
     cursor: 'pointer'
   },
-  customCursor: {
-    cursor: `url("${cursorSvg}"), pointer`
+  wandCursor: {
+    cursor: `url("${wandSvg}"), pointer`
   },
   themed: {
     borderRadius: '30%',

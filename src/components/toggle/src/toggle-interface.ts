@@ -1,3 +1,5 @@
+import { Cursor } from '../../image/src/image-interface';
+
 export enum ToggleType {
   Debug,
   Magic,
@@ -5,7 +7,7 @@ export enum ToggleType {
 }
 
 export interface IToggleProps {
-  customCursor?: boolean;
+  cursor?: Cursor;
   glow?: boolean;
   rotate360OnHover?: boolean;
   toggle: (isChecked: boolean) => void;

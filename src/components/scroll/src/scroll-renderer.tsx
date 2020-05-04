@@ -6,7 +6,7 @@ import { ReactComponent as ArrowDownDarkImg } from './style/arrow_down_dark.svg'
 import { ReactComponent as ArrowDownLightImg } from './style/arrow_down_light.svg';
 import { ReactComponent as RocketDarkImg } from './style/rocket_dark.svg';
 import { ReactComponent as RocketLightImg } from './style/rocket_light.svg';
-import { toElement, toTop } from '../../../utils';
+import { scrollToElement, scrollToTop } from '../../../utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import scrollStyle from './style/scroll-style';
@@ -32,12 +32,12 @@ export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
     if (to) {
       const page = document.querySelector(to);
       if (page) {
-        toElement(page);
+        scrollToElement(page);
         return;
       }
     }
 
-    toTop();
+    scrollToTop();
   };
 
   return (

@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import { randomInt, randomColor } from '../../../../utils';
+import { randomInt, randomColor } from '../../../../utils/utils';
 import colors from '../../../../style/colors';
 
 const starSkySize = 2600;

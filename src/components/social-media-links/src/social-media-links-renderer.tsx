@@ -1,4 +1,5 @@
 import React from 'react';
+import { Cursor } from '../../image/src/image-interface';
 import { gitHubLink, linkedInLink } from '../../../constants';
 import { Image } from '../../image';
 import { ReactComponent as GitHubLogo } from './style/github.svg';
@@ -15,20 +16,22 @@ export const SocialMediaLinksRenderer: React.FC = () => {
   return (
     <div className={styles.socialIconsContainer}>
       <Image
-        popOutOnHover
-        themed
-        link={gitHubLink}
-        Svg={GitHubLogo}
-        className={styles.socialIcon}
         ariaLabel={formatMessage({ id: 'home.github' })}
+        className={styles.socialIcon}
+        cursor={Cursor.Pointer}
+        link={gitHubLink}
+        popOutOnHover
+        Svg={GitHubLogo}
+        themed
       />
       <Image
-        popOutOnHover
-        themed
-        link={linkedInLink}
-        Svg={LinkedInLogo}
-        className={styles.socialIcon}
         ariaLabel={formatMessage({ id: 'home.linkedin' })}
+        className={styles.socialIcon}
+        cursor={Cursor.Pointer}
+        link={linkedInLink}
+        popOutOnHover
+        Svg={LinkedInLogo}
+        themed
       />
     </div>
   );

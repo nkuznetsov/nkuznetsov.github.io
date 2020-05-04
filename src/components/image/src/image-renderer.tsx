@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IImageProps } from './image-interface';
+import { IImageProps, Cursor } from './image-interface';
 import { useTheme } from 'react-jss';
 import imageStyle from './style/image-style';
 
@@ -7,7 +7,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
   ({
     ariaLabel,
     className,
-    customCursor,
+    cursor,
     glow,
     link,
     onClick,
@@ -15,7 +15,8 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     rotate360OnHover,
     src,
     Svg,
-    themed
+    themed,
+    tooltip
   }) => {
     const [hovered, setHovered] = useState(false);
     const [composedClass, setComposedClass] = useState<string | undefined>('');
@@ -49,10 +50,15 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         composedClass = [composedClass, classToAdd].join(' ');
       }
 
-      composedClass = [composedClass, styles.base].join(' ');
+      if (cursor !== undefined) {
+        let classToAdd;
 
-      if (customCursor) {
-        composedClass = [composedClass, styles.customCursor].join(' ');
+        if (cursor === Cursor.Wand) {
+          classToAdd = styles.wandCursor;
+        } else if (cursor === Cursor.Pointer) {
+          classToAdd = styles.pointerCursor;
+        }
+        composedClass = [composedClass, classToAdd].join(' ');
       }
 
       setComposedClass(composedClass);
@@ -65,7 +71,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       setComposedClass,
       styles,
       themed,
-      customCursor
+      cursor
     ]);
 
     const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,6 +91,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        title={tooltip}
       >
         {ariaLabel}
       </Svg>
