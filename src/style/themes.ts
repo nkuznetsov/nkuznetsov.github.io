@@ -1,9 +1,9 @@
 // Reference:
 // https://material.io/design/material-theming/implementing-your-theme.html#
 
-import { IBaseTheme, ITheme, ThemeType } from '../models';
+import { defaultIsDebug } from 'utils/constants';
+import { IBaseTheme, ITheme, ThemeType } from 'models';
 import colors from './colors';
-import { defaultIsDebug } from '../constants';
 
 const baseTheme: IBaseTheme = {
   primary: colors.teal[100],

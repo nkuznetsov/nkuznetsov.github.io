@@ -3,15 +3,15 @@ import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'react-jss';
-import { ThemeType } from '../../../models';
-import messages from '../../../messages';
-import themes from '../../../style/themes';
+import { ThemeType } from 'models';
+import messages from 'messages';
+import themes from 'style/themes';
 import {
   defaultIsDebug,
   defaultIsMagic,
   defaultLocale,
   defaultThemeType
-} from '../../../constants';
+} from 'utils/constants';
 
 export const AppContext = React.createContext({
   isMagic: defaultIsMagic,

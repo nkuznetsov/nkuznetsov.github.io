@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import colors from '../../../../style/colors';
+import colors from 'style/colors';
 
 const logoWidth = '10rem';
 const logoHeight = '10rem';

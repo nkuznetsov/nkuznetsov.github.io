@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image } from '../../image';
+import { Image } from 'components/image';
 import { ReactComponent as DarkOysterImage } from './style/dark_oyster.svg';
 import { ReactComponent as LightOysterImage } from './style/light_oyster.svg';
-import { ThemeType } from '../../../models';
+import { ThemeType } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import headerStyle from './style/header-image-style';

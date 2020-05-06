@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home } from '../../home';
+import { Experience } from 'components/experience';
+import { Home } from 'components/home';
 import { IAppRendererProps } from './app-interface';
-import { Experience } from '../../experience';
-import { Starfall } from '../../starfall';
+import { Starfall } from 'components/starfall';
 import { useTheme } from 'react-jss';
 import styleResets from './style/app-style';
 

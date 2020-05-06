@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Image } from '../../image';
+import { Image } from 'components/image';
 import { ReactComponent as DarkLogo } from './style/logo_dark.svg';
 import { ReactComponent as LightLogo } from './style/logo_light.svg';
-import { ThemeType } from '../../../models';
+import { ThemeType } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import logoStyle from './style/logo-style';

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Image } from '../../image';
+import { Image } from 'components/image';
 import { IScrollProps } from './scroll-interface';
-import { ITheme, ThemeType } from '../../../models';
+import { ITheme, ThemeType } from 'models';
 import { ReactComponent as ArrowDownDarkImg } from './style/arrow_down_dark.svg';
 import { ReactComponent as ArrowDownLightImg } from './style/arrow_down_light.svg';
 import { ReactComponent as RocketDarkImg } from './style/rocket_dark.svg';
 import { ReactComponent as RocketLightImg } from './style/rocket_light.svg';
-import { scrollToElement, scrollToTop } from '../../../utils/utils';
+import { scrollToElement, scrollToTop } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import scrollStyle from './style/scroll-style';

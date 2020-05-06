@@ -1,6 +1,6 @@
 import { Tech } from './utils-interface';
-import colors from '../style/colors';
-import { ThemeType } from '../models';
+import { ThemeType } from 'models';
+import colors from 'style/colors';
 
 // Tech icons
 import { ReactComponent as ReactDarkLogo } from './images/reactDark.svg';

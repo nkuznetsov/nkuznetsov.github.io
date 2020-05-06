@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '../../image';
+import { Image } from 'components/image';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import catImage from './style/cat.png';

@@ -2,7 +2,7 @@ import React from 'react';
 import { ExperienceRenderer } from './experience-renderer';
 import { ReactComponent as MicrosoftLogo } from './style/microsoftLogo.svg';
 import { ReactComponent as RbcLogo } from './style/rbcLogo.svg';
-import { Tech } from '../../../utils/utils-interface';
+import { Tech } from 'utils/utils-interface';
 import { useIntl } from 'react-intl';
 import billmoLogo from './style/billmoLogo.png';
 import storeforceLogo from './style/storeforceLogo.jpg';

@@ -1,4 +1,4 @@
-import { Cursor } from '../../image/src/image-interface';
+import { Cursor } from 'components/image';
 
 export enum ToggleType {
   Debug,

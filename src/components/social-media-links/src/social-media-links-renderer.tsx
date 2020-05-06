@@ -1,7 +1,6 @@
 import React from 'react';
-import { Cursor } from '../../image/src/image-interface';
-import { gitHubLink, linkedInLink } from '../../../constants';
-import { Image } from '../../image';
+import { gitHubLink, linkedInLink } from 'utils/constants';
+import { Image, Cursor } from 'components/image';
 import { ReactComponent as GitHubLogo } from './style/github.svg';
 import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
 import { useIntl } from 'react-intl';

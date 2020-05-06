@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
-import { wandSvg } from '../../../../constants';
-import { ThemeType } from '../../../../models';
-import colors from '../../../../style/colors';
+import { ThemeType } from 'models';
+import { wandSvg } from 'utils/constants';
+import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   pointerCursor: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExperienceCardRenderer } from './experience-card-renderer';
 import { IExperienceRendererProps } from './experience-interface';
-import { Scroll } from '../../scroll';
+import { Scroll } from 'components/scroll';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';

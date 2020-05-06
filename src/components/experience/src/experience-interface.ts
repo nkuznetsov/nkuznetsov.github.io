@@ -1,4 +1,4 @@
-import { Tech } from '../../../utils/utils-interface';
+import { Tech } from 'utils/utils-interface';
 
 export interface IExperienceRendererProps {
   experiences: IExperience[];

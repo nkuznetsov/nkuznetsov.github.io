@@ -1,4 +1,4 @@
-import { ThemeType } from './models';
+import { ThemeType } from 'models';
 
 const debug = false;
 export const defaultIsDebug = debug;

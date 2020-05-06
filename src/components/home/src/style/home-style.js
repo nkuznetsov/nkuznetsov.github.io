@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
-import { scrollbarWidth } from '../../../../constants';
-import colors from '../../../../style/colors';
+import { scrollbarWidth } from 'utils/constants';
+import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   home: {

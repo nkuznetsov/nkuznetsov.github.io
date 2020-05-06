@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { IExperienceCardRendererProps } from './experience-interface';
-import { Image } from '../../image';
-import { Tech } from '../../../utils/utils-interface';
-import { techLogo } from '../../../utils/utils';
+import { Image } from 'components/image';
+import { Tech } from 'utils/utils-interface';
+import { techLogo } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';

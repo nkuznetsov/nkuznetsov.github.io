@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../app';
-import { Image } from '../../image';
-import { ITheme, ThemeType } from '../../../models';
+import { AppContext } from 'components/app';
+import { Image } from 'components/image';
+import { ITheme, ThemeType } from 'models';
 import { IToggleProps, ToggleType } from './toggle-interface';
 import { ReactComponent as DarkThemeActiveImage } from './style/moon_light.svg';
 import { ReactComponent as DarkThemeInactiveImage } from './style/moon_dark.svg';
