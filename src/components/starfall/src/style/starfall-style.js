@@ -32,7 +32,7 @@ export default createUseStyles(theme => ({
     position: 'fixed',
     zIndex: 1
   },
-  stars1: {
+  smallStars: {
     width: smallStarSize,
     height: smallStarSize,
     borderRadius: '50%',
@@ -51,7 +51,7 @@ export default createUseStyles(theme => ({
       boxShadow: smallStar
     }
   },
-  stars2: {
+  mediumStars: {
     width: mediumStarSize,
     height: mediumStarSize,
     borderRadius: '50%',
@@ -70,7 +70,7 @@ export default createUseStyles(theme => ({
       boxShadow: mediumStar
     }
   },
-  stars3: {
+  largeStars: {
     width: largeStarSize,
     height: largeStarSize,
     borderRadius: '50%',

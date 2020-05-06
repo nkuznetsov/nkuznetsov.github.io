@@ -8,9 +8,9 @@ export const StarfallRenderer: React.FC = () => {
 
   return (
     <div className={styles.parallax}>
-      <div className={styles.stars1} />
-      <div className={styles.stars2} />
-      <div className={styles.stars3} />
+      <div className={styles.smallStars} />
+      <div className={styles.mediumStars} />
+      <div className={styles.largeStars} />
     </div>
   );
 };
