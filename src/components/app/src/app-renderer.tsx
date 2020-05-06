@@ -9,7 +9,7 @@ import styleResets from './style/app-style';
 
 export const AppRenderer: React.FC<IAppRendererProps> = React.memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
-    const theme: any = useTheme();
+    const theme = useTheme();
     styleResets(theme);
 
     return (

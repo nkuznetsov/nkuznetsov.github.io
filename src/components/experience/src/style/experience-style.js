@@ -40,21 +40,21 @@ export default createUseStyles(theme => ({
   },
   logoSection: {
     background: theme.isDebug ? colors.teal[100] : colors.transparent,
-    maxHeight: '28%'
+    maxHeight: '32%'
   },
   titleSection: {
     background: theme.isDebug ? colors.teal[200] : colors.transparent,
     display: 'flex',
     justifyContent: 'start',
     alignItems: 'center',
-    height: '28%',
+    height: '32%',
     paddingLeft: '0.5rem'
   },
   middleSection: {
     background: theme.isDebug ? colors.teal[300] : colors.transparent,
     textAlign: 'center',
     border: '1px solid blue',
-    height: '62%'
+    height: '58%'
   },
   bottomSection: {
     // background: 'theme.isDebug ? colors.red[100] : colors.transparent',
@@ -71,13 +71,16 @@ export default createUseStyles(theme => ({
     height: '100%'
   },
   experienceCardContainer: {
-    maxWidth: '20%',
+    maxWidth: '23%',
     padding: '1rem',
     borderRadius: '1rem',
     background: theme.secondaryBackground
   },
   techLogo: {
     width: '3rem',
-    height: '3rem'
+    height: '3rem',
+    margin: '1px'
+    // border: '1px solid red'
+    // background: 'pink'
   }
 }));

@@ -1,9 +1,12 @@
 import { Tech } from './utils-interface';
 import colors from '../style/colors';
+import { ThemeType } from '../models';
 
 // Tech icons
-import { ReactComponent as ReactLogo } from './images/react.svg';
-import { ReactComponent as ReduxLogo } from './images/redux.svg';
+import { ReactComponent as ReactDarkLogo } from './images/reactDark.svg';
+import { ReactComponent as ReactLightLogo } from './images/reactLight.svg';
+import { ReactComponent as ReduxDarkLogo } from './images/reduxDark.svg';
+import { ReactComponent as ReduxLightLogo } from './images/reduxLight.svg';
 import { ReactComponent as NodeLogo } from './images/node.svg';
 import { ReactComponent as MongoDbLogo } from './images/mongodb.svg';
 import { ReactComponent as TypeScriptLogo } from './images/typescript.svg';
@@ -15,6 +18,25 @@ import { ReactComponent as TeamCityLogo } from './images/teamcity.svg';
 import { ReactComponent as HerokuLogo } from './images/heroku.svg';
 import { ReactComponent as BrazeLogo } from './images/braze.svg';
 import { ReactComponent as FirebaseLogo } from './images/firebase.svg';
+import { ReactComponent as AngularLogo } from './images/angular.svg';
+import { ReactComponent as GraphQlLogo } from './images/graphql.svg';
+import { ReactComponent as ApolloLogo } from './images/apollo.svg';
+import { ReactComponent as FigmaLogo } from './images/figma.svg';
+import { ReactComponent as Html5Logo } from './images/html5.svg';
+import { ReactComponent as Css3Logo } from './images/css3.svg';
+import { ReactComponent as JQueryLogo } from './images/jquery.svg';
+import { ReactComponent as CSharpLogo } from './images/csharp.svg';
+import { ReactComponent as JavaLogo } from './images/java.svg';
+import { ReactComponent as SqlLightLogo } from './images/sqlLight.svg';
+import { ReactComponent as SqlDarkLogo } from './images/sqlDark.svg';
+import { ReactComponent as JavaScriptLogo } from './images/javascript.svg';
+import { ReactComponent as DotNetCoreLogo } from './images/dotnetcore.svg';
+import { ReactComponent as VsCodeLogo } from './images/vscode.svg';
+import { ReactComponent as VisualStudioLogo } from './images/visualstudio.svg';
+import { ReactComponent as MySqlDarkLogo } from './images/mysqlDark.svg';
+import { ReactComponent as MySqlLightLogo } from './images/mysqlLight.svg';
+import { ReactComponent as AndroidLogo } from './images/android.svg';
+import { ReactComponent as IOsLogo } from './images/ios.svg';
 
 export const randomInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -87,47 +109,67 @@ export const scrollToElement = (element: Element) => {
   }
 };
 
-export const techLogo = (tech: Tech): any => {
+export const techLogo = (tech: Tech, themeType: ThemeType): any => {
   switch (tech) {
-    case Tech.React: {
-      return ReactLogo;
-    }
-    case Tech.Redux: {
-      return ReduxLogo;
-    }
-    case Tech.Node: {
+    case Tech.React:
+      return themeType === ThemeType.Light ? ReactDarkLogo : ReactLightLogo;
+    case Tech.Redux:
+      return themeType === ThemeType.Light ? ReduxDarkLogo : ReduxLightLogo;
+    case Tech.Sql:
+      return themeType === ThemeType.Light ? SqlDarkLogo : SqlLightLogo;
+    case Tech.MySql:
+      return themeType === ThemeType.Light ? MySqlDarkLogo : MySqlLightLogo;
+    case Tech.Node:
       return NodeLogo;
-    }
-    case Tech.MongoDb: {
+    case Tech.MongoDb:
       return MongoDbLogo;
-    }
-    case Tech.TypeScript: {
+    case Tech.TypeScript:
       return TypeScriptLogo;
-    }
-    case Tech.Es6: {
+    case Tech.ES6:
       return Es6Logo;
-    }
-    case Tech.Xamarin: {
+    case Tech.Xamarin:
       return XamarinLogo;
-    }
-    case Tech.Aws: {
+    case Tech.AWS:
       return AwsLogo;
-    }
-    case Tech.Atlassian: {
+    case Tech.Atlassian:
       return AtlassianLogo;
-    }
-    case Tech.TeamCity: {
+    case Tech.TeamCity:
       return TeamCityLogo;
-    }
-    case Tech.Heroku: {
+    case Tech.Heroku:
       return HerokuLogo;
-    }
-    case Tech.Braze: {
+    case Tech.Braze:
       return BrazeLogo;
-    }
-    case Tech.Firebase: {
+    case Tech.Firebase:
       return FirebaseLogo;
-    }
+    case Tech.Angular:
+      return AngularLogo;
+    case Tech.GraphQL:
+      return GraphQlLogo;
+    case Tech.Apollo:
+      return ApolloLogo;
+    case Tech.Figma:
+      return FigmaLogo;
+    case Tech.Html5:
+      return Html5Logo;
+    case Tech.Css3:
+      return Css3Logo;
+    case Tech.JQuery:
+      return JQueryLogo;
+    case Tech.CSharp:
+      return CSharpLogo;
+    case Tech.Java:
+      return JavaLogo;
+    case Tech.VisualStudio:
+      return VisualStudioLogo;
+    case Tech.VsCode:
+      return VsCodeLogo;
+    case Tech.DotNetCore:
+      return DotNetCoreLogo;
+    case Tech.JavaScript:
+      return JavaScriptLogo;
+    case Tech.IOs:
+      return IOsLogo;
+    case Tech.Android:
+      return AndroidLogo;
   }
-  return null;
 };

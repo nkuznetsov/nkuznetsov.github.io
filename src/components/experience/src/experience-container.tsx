@@ -26,12 +26,14 @@ const getExperiences = (formatMessage: any) => {
       description: formatMessage({ id: 'experience.microsoftDescription' }),
       logo: MicrosoftLogo,
       tech: [
-        Tech.React
-        // Tech.TypeScript,
-        // Tech.Angular,
-        // Tech.FluentUI,
-        // Tech.GraphQL,
-        // Tech.Apollo
+        Tech.React,
+        Tech.TypeScript,
+        Tech.Angular,
+        Tech.ES6,
+        Tech.GraphQL,
+        Tech.Apollo,
+        Tech.Figma,
+        Tech.VsCode
       ]
     },
     {
@@ -42,18 +44,23 @@ const getExperiences = (formatMessage: any) => {
       logo: billmoLogo,
       tech: [
         Tech.React,
+        Tech.ES6,
         Tech.Redux,
         Tech.Node,
         Tech.MongoDb,
         Tech.TypeScript,
-        Tech.Es6,
-        Tech.Xamarin,
-        Tech.Aws,
-        Tech.Atlassian,
-        Tech.TeamCity,
         Tech.Heroku,
+        Tech.VsCode,
+        Tech.CSharp,
+        Tech.Xamarin,
+        Tech.AWS,
+        Tech.Atlassian,
         Tech.Braze,
-        Tech.Firebase
+        Tech.Firebase,
+        Tech.TeamCity,
+        Tech.VisualStudio,
+        Tech.Android,
+        Tech.IOs
       ]
     },
     {
@@ -63,23 +70,19 @@ const getExperiences = (formatMessage: any) => {
       description: formatMessage({ id: 'experience.storeforceDescription' }),
       logo: storeforceLogo,
       tech: [
-        // Tech.Knockout,
-        // Tech.TypeScript,
-        // Tech.Html5,
-        // Tech.Css3,
-        // Tech.Jquery,
-        // Tech.JqueryUi,
-        // Tech.Xamarin,
-        // Tech.CSharp,
-        // Tech.DotNet,
-        // Tech.Silverlight,
-        // Tech.Java,
-        // Tech.Eclipse,
-        // Tech.Wcf,
-        // Tech.Ssms,
-        // Tech.SqlServer,
-        // Tech.TSql,
-        // Tech.Tfs
+        Tech.TypeScript,
+        Tech.JQuery,
+        Tech.Html5,
+        Tech.Css3,
+        Tech.Xamarin,
+        Tech.CSharp,
+        Tech.DotNetCore,
+        Tech.VisualStudio,
+        Tech.Sql,
+        Tech.MySql,
+        Tech.Java,
+        Tech.Android,
+        Tech.IOs
       ]
     },
     {
@@ -88,15 +91,7 @@ const getExperiences = (formatMessage: any) => {
       position: formatMessage({ id: 'experience.rbcPosition' }),
       description: formatMessage({ id: 'experience.rbcDescription' }),
       logo: RbcLogo,
-      tech: [
-        // Tech.CSharp,
-        // Tech.JavaScript,
-        // Tech.DotNet,
-        // Tech.SqlServer,
-        // Tech.Hpqc,
-        // Tech.VisualStudio,
-        // Tech.Uml
-      ]
+      tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql]
     }
   ];
 };

@@ -96,7 +96,12 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         {ariaLabel}
       </Svg>
     ) : (
-      <img src={src} alt={ariaLabel} className={composedClass} />
+      <img
+        alt={ariaLabel}
+        className={composedClass}
+        src={src}
+        title={tooltip}
+      />
     );
   }
 );

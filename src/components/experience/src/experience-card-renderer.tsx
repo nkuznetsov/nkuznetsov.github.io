@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { IExperienceCardRendererProps } from './experience-interface';
+import { Image } from '../../image';
+import { Tech } from '../../../utils/utils-interface';
+import { techLogo } from '../../../utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';
 import Grid from '@material-ui/core/Grid';
-import { Image } from '../../image';
 import Typography from '@material-ui/core/Typography';
-import { techLogo } from '../../../utils/utils';
-import { Tech } from '../../../utils/utils-interface';
 
 export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
   experience
 }) => {
-  const theme = useTheme();
+  const theme: any = useTheme();
   const styles = experienceStyle(theme);
   const { formatMessage } = useIntl();
 
@@ -41,14 +41,21 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
         <Box>{experience.description}</Box>
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>
-        {experience.tech.map(tech => (
-          <Image
-            ariaLabel={Tech[tech]}
-            className={styles.techLogo}
-            Svg={techLogo(tech)}
-            tooltip={Tech[tech]}
-          />
-        ))}
+        {experience.tech.map(tech => {
+          const logo = techLogo(tech, theme.type);
+          const src = typeof logo === 'string' ? logo : undefined;
+          const svg = typeof logo === 'string' ? null : logo;
+
+          return (
+            <Image
+              ariaLabel={Tech[tech]}
+              className={styles.techLogo}
+              Svg={svg}
+              src={src}
+              tooltip={Tech[tech]}
+            />
+          );
+        })}
       </Grid>
     </Grid>
   );
