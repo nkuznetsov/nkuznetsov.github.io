@@ -48,24 +48,16 @@ const getExperiences = (formatMessage: any) => {
       ],
       logo: billmoLogo,
       tech: [
-        Tech.React,
-        Tech.Es6,
         Tech.Redux,
+        Tech.Es6,
         Tech.Node,
         Tech.MongoDb,
-        Tech.TypeScript,
         Tech.Heroku,
-        Tech.VsCode,
-        Tech.CSharp,
         Tech.Xamarin,
         Tech.Aws,
-        Tech.Atlassian,
         Tech.Braze,
         Tech.Firebase,
-        Tech.TeamCity,
-        Tech.VisualStudio,
-        Tech.Android,
-        Tech.IOs
+        Tech.TeamCity
       ]
     },
     {
@@ -75,14 +67,11 @@ const getExperiences = (formatMessage: any) => {
       description: [
         formatMessage({ id: 'experience.storeforceDescription1' }),
         formatMessage({ id: 'experience.storeforceDescription2' }),
-        formatMessage({ id: 'experience.storeforceDescription3' }),
-        formatMessage({ id: 'experience.storeforceDescription4' }),
-        formatMessage({ id: 'experience.storeforceDescription5' })
+        formatMessage({ id: 'experience.storeforceDescription3' })
       ],
       logo: storeforceLogo,
       tech: [
         Tech.TypeScript,
-        Tech.JQuery,
         Tech.Html5,
         Tech.Css3,
         Tech.Xamarin,
@@ -90,8 +79,6 @@ const getExperiences = (formatMessage: any) => {
         Tech.DotNetCore,
         Tech.VisualStudio,
         Tech.Sql,
-        Tech.MySql,
-        Tech.Java,
         Tech.Android,
         Tech.IOs
       ]

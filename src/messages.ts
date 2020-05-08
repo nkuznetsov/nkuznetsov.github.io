@@ -10,29 +10,25 @@ export default {
     'experience.storeforce': 'StoreForce',
     'experience.rbc': 'Royal Bank of Canada',
 
-    'experience.microsoftDescription':
-      'Working on Microsoft Teams Calling functionality',
-    'experience.billmoDescription1': 'Money transfer & mobile wallet app',
+    'experience.microsoftDescription': 'Working on Microsoft Teams',
+    'experience.billmoDescription1':
+      'Worked on money transfer & mobile wallet app',
     'experience.billmoDescription2':
-      'Delivered cross-platform iOS/Android money transfer app that processes 70,000+ transactions per day',
+      'Cross-platform solution, processes 70k+ transactions daily',
     'experience.billmoDescription3':
       '100% remote-first, distributed teams environment',
     'experience.storeforceDescription1':
-      'Development & support of web line-of-business-oriented RIA (rich internet application), which is used by major specialty retail stores to facilitate store operations all over the world',
+      'Developed a rich internet app used by specialty retail stores',
     'experience.storeforceDescription2':
-      'Completed a knockout.js solution to replace an existing Silverlight RIA',
+      'Delivered a mobile native app using cutting-edge tech',
     'experience.storeforceDescription3':
-      'Delivered an Android native app using cutting-edge Xamarin tech',
-    'experience.storeforceDescription4':
-      'Converted an existing Java app to C#, optimizing it for use on phones, phablets, and tablets',
-    'experience.storeforceDescription5':
-      'Enhanced task, event, and real-time performance control, labor scheduling, retail reporting (SSRS), and customer processing product features',
+      'Converted Java app to C#, optimized performance',
     'experience.rbcDescription1':
-      'Multi-tier development, testing, technical writing, support, and consulting in financial enterprise banking',
-    'experience.rbcDescription2':
       'Refactored and enhanced funds management web app',
+    'experience.rbcDescription2':
+      'Dev, testing, tech writing, support, and consulting',
     'experience.rbcDescription3':
-      'Connected with clients to gather requirements, understand business needs, and then relay them to dev team; excellent team & client communications and relationship building',
+      'Gathered requirements and business needs from clients',
 
     'experience.microsoftPosition': 'Sr. Software Engineer',
     'experience.billmoPosition': 'Sr. Software Engineer',

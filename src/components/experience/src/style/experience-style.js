@@ -41,14 +41,14 @@ export default createUseStyles(theme => ({
   },
   logoSection: {
     background: theme.isDebug ? colors.teal[100] : colors.transparent,
-    maxHeight: '32%'
+    height: '30%'
   },
   titleSection: {
     background: theme.isDebug ? colors.teal[200] : colors.transparent,
     display: 'flex',
     justifyContent: 'start',
     alignItems: 'center',
-    height: '32%',
+    height: '30%',
     paddingLeft: '0.5rem'
   },
   middleSection: {
@@ -56,7 +56,7 @@ export default createUseStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '58%'
+    height: '60%'
   },
   bottomSection: {
     background: theme.isDebug ? colors.red[100] : colors.transparent,
@@ -76,7 +76,7 @@ export default createUseStyles(theme => ({
     paddingLeft: '1rem',
     paddingTop: '1rem',
     paddingRight: '1rem',
-    paddingBottom: '0.2rem',
+    paddingBottom: '0rem',
     borderRadius: '1rem',
     background: theme.secondaryBackground
   },
@@ -85,5 +85,8 @@ export default createUseStyles(theme => ({
     width: '3rem',
     height: '3rem',
     margin: '1px'
+  },
+  description: {
+    textAlign: 'center'
   }
 }));

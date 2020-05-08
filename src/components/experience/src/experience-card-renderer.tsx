@@ -37,7 +37,7 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
         </Box>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>
-        <Box>
+        <Box className={styles.description}>
           {experience.description.map((description, index) => (
             <p key={index}>{description}</p>
           ))}

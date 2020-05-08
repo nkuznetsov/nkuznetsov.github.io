@@ -13,7 +13,6 @@ import { ReactComponent as TypeScriptLogo } from './images/typescript.svg';
 import { ReactComponent as Es6Logo } from './images/es6.svg';
 import { ReactComponent as XamarinLogo } from './images/xamarin.svg';
 import { ReactComponent as AwsLogo } from './images/aws.svg';
-import { ReactComponent as AtlassianLogo } from './images/atlassian.svg';
 import { ReactComponent as TeamCityLogo } from './images/teamcity.svg';
 import { ReactComponent as HerokuLogo } from './images/heroku.svg';
 import { ReactComponent as BrazeLogo } from './images/braze.svg';
@@ -24,17 +23,13 @@ import { ReactComponent as ApolloLogo } from './images/apollo.svg';
 import { ReactComponent as FigmaLogo } from './images/figma.svg';
 import { ReactComponent as Html5Logo } from './images/html5.svg';
 import { ReactComponent as Css3Logo } from './images/css3.svg';
-import { ReactComponent as JQueryLogo } from './images/jquery.svg';
 import { ReactComponent as CSharpLogo } from './images/csharp.svg';
-import { ReactComponent as JavaLogo } from './images/java.svg';
 import { ReactComponent as SqlLightLogo } from './images/sqlLight.svg';
 import { ReactComponent as SqlDarkLogo } from './images/sqlDark.svg';
 import { ReactComponent as JavaScriptLogo } from './images/javascript.svg';
 import { ReactComponent as DotNetCoreLogo } from './images/dotnetcore.svg';
 import { ReactComponent as VsCodeLogo } from './images/vscode.svg';
 import { ReactComponent as VisualStudioLogo } from './images/visualstudio.svg';
-import { ReactComponent as MySqlDarkLogo } from './images/mysqlDark.svg';
-import { ReactComponent as MySqlLightLogo } from './images/mysqlLight.svg';
 import { ReactComponent as AndroidLogo } from './images/android.svg';
 import { ReactComponent as IOsLogo } from './images/ios.svg';
 import { ReactComponent as YarnLogo } from './images/yarn.svg';
@@ -118,8 +113,6 @@ export const techLogo = (tech: string, themeType: ThemeType): any => {
       return themeType === ThemeType.Light ? ReduxDarkLogo : ReduxLightLogo;
     case Tech.Sql.name:
       return themeType === ThemeType.Light ? SqlDarkLogo : SqlLightLogo;
-    case Tech.MySql.name:
-      return themeType === ThemeType.Light ? MySqlDarkLogo : MySqlLightLogo;
     case Tech.Node.name:
       return NodeLogo;
     case Tech.MongoDb.name:
@@ -132,8 +125,6 @@ export const techLogo = (tech: string, themeType: ThemeType): any => {
       return XamarinLogo;
     case Tech.Aws.name:
       return AwsLogo;
-    case Tech.Atlassian.name:
-      return AtlassianLogo;
     case Tech.TeamCity.name:
       return TeamCityLogo;
     case Tech.Heroku.name:
@@ -154,12 +145,8 @@ export const techLogo = (tech: string, themeType: ThemeType): any => {
       return Html5Logo;
     case Tech.Css3.name:
       return Css3Logo;
-    case Tech.JQuery.name:
-      return JQueryLogo;
     case Tech.CSharp.name:
       return CSharpLogo;
-    case Tech.Java.name:
-      return JavaLogo;
     case Tech.VisualStudio.name:
       return VisualStudioLogo;
     case Tech.VsCode.name:
