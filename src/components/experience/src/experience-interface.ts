@@ -1,5 +1,3 @@
-import { Tech } from 'utils/utils-interface';
-
 export interface IExperienceRendererProps {
   experiences: IExperience[];
 }
@@ -16,7 +14,7 @@ export interface IExperience {
    * Translation is based on the display name
    */
   displayName: string;
-  description: string;
+  description: string[];
   logo: any;
-  tech: Tech[];
+  tech: any[];
 }

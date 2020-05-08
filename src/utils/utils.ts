@@ -37,6 +37,7 @@ import { ReactComponent as MySqlDarkLogo } from './images/mysqlDark.svg';
 import { ReactComponent as MySqlLightLogo } from './images/mysqlLight.svg';
 import { ReactComponent as AndroidLogo } from './images/android.svg';
 import { ReactComponent as IOsLogo } from './images/ios.svg';
+import { ReactComponent as YarnLogo } from './images/yarn.svg';
 
 export const randomInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -109,67 +110,69 @@ export const scrollToElement = (element: Element) => {
   }
 };
 
-export const techLogo = (tech: Tech, themeType: ThemeType): any => {
+export const techLogo = (tech: string, themeType: ThemeType): any => {
   switch (tech) {
-    case Tech.React:
+    case Tech.React.name:
       return themeType === ThemeType.Light ? ReactDarkLogo : ReactLightLogo;
-    case Tech.Redux:
+    case Tech.Redux.name:
       return themeType === ThemeType.Light ? ReduxDarkLogo : ReduxLightLogo;
-    case Tech.Sql:
+    case Tech.Sql.name:
       return themeType === ThemeType.Light ? SqlDarkLogo : SqlLightLogo;
-    case Tech.MySql:
+    case Tech.MySql.name:
       return themeType === ThemeType.Light ? MySqlDarkLogo : MySqlLightLogo;
-    case Tech.Node:
+    case Tech.Node.name:
       return NodeLogo;
-    case Tech.MongoDb:
+    case Tech.MongoDb.name:
       return MongoDbLogo;
-    case Tech.TypeScript:
+    case Tech.TypeScript.name:
       return TypeScriptLogo;
-    case Tech.ES6:
+    case Tech.Es6.name:
       return Es6Logo;
-    case Tech.Xamarin:
+    case Tech.Xamarin.name:
       return XamarinLogo;
-    case Tech.AWS:
+    case Tech.Aws.name:
       return AwsLogo;
-    case Tech.Atlassian:
+    case Tech.Atlassian.name:
       return AtlassianLogo;
-    case Tech.TeamCity:
+    case Tech.TeamCity.name:
       return TeamCityLogo;
-    case Tech.Heroku:
+    case Tech.Heroku.name:
       return HerokuLogo;
-    case Tech.Braze:
+    case Tech.Braze.name:
       return BrazeLogo;
-    case Tech.Firebase:
+    case Tech.Firebase.name:
       return FirebaseLogo;
-    case Tech.Angular:
+    case Tech.Angular.name:
       return AngularLogo;
-    case Tech.GraphQL:
+    case Tech.GraphQL.name:
       return GraphQlLogo;
-    case Tech.Apollo:
+    case Tech.Apollo.name:
       return ApolloLogo;
-    case Tech.Figma:
+    case Tech.Figma.name:
       return FigmaLogo;
-    case Tech.Html5:
+    case Tech.Html5.name:
       return Html5Logo;
-    case Tech.Css3:
+    case Tech.Css3.name:
       return Css3Logo;
-    case Tech.JQuery:
+    case Tech.JQuery.name:
       return JQueryLogo;
-    case Tech.CSharp:
+    case Tech.CSharp.name:
       return CSharpLogo;
-    case Tech.Java:
+    case Tech.Java.name:
       return JavaLogo;
-    case Tech.VisualStudio:
+    case Tech.VisualStudio.name:
       return VisualStudioLogo;
-    case Tech.VsCode:
+    case Tech.VsCode.name:
       return VsCodeLogo;
-    case Tech.DotNetCore:
+    case Tech.DotNetCore.name:
       return DotNetCoreLogo;
-    case Tech.JavaScript:
+    case Tech.JavaScript.name:
       return JavaScriptLogo;
-    case Tech.IOs:
+    case Tech.IOs.name:
       return IOsLogo;
-    case Tech.Android:
+    case Tech.Android.name:
       return AndroidLogo;
+    case Tech.Yarn.name:
+      return YarnLogo;
   }
 };

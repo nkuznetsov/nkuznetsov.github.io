@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { IExperienceCardRendererProps } from './experience-interface';
 import { Image } from 'components/image';
-import { Tech } from 'utils/utils-interface';
 import { techLogo } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
@@ -38,21 +37,26 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
         </Box>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>
-        <Box>{experience.description}</Box>
+        <Box>
+          {experience.description.map((description, index) => (
+            <p key={index}>{description}</p>
+          ))}
+        </Box>
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>
-        {experience.tech.map(tech => {
-          const logo = techLogo(tech, theme.type);
+        {experience.tech.map((tech, index) => {
+          const logo = techLogo(tech.name, theme.type);
           const src = typeof logo === 'string' ? logo : undefined;
           const svg = typeof logo === 'string' ? null : logo;
 
           return (
             <Image
-              ariaLabel={Tech[tech]}
+              ariaLabel={tech.displayName}
               className={styles.techLogo}
-              Svg={svg}
+              key={index}
               src={src}
-              tooltip={Tech[tech]}
+              Svg={svg}
+              tooltip={tech.displayName}
             />
           );
         })}

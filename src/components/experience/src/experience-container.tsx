@@ -23,16 +23,17 @@ const getExperiences = (formatMessage: any) => {
       name: 'microsoft',
       displayName: formatMessage({ id: 'experience.microsoft' }),
       position: formatMessage({ id: 'experience.microsoftPosition' }),
-      description: formatMessage({ id: 'experience.microsoftDescription' }),
+      description: [formatMessage({ id: 'experience.microsoftDescription' })],
       logo: MicrosoftLogo,
       tech: [
         Tech.React,
         Tech.TypeScript,
         Tech.Angular,
-        Tech.ES6,
+        Tech.Es6,
         Tech.GraphQL,
         Tech.Apollo,
         Tech.Figma,
+        Tech.Yarn,
         Tech.VsCode
       ]
     },
@@ -40,11 +41,15 @@ const getExperiences = (formatMessage: any) => {
       name: 'billmo',
       displayName: formatMessage({ id: 'experience.billmo' }),
       position: formatMessage({ id: 'experience.billmoPosition' }),
-      description: formatMessage({ id: 'experience.billmoDescription' }),
+      description: [
+        formatMessage({ id: 'experience.billmoDescription1' }),
+        formatMessage({ id: 'experience.billmoDescription2' }),
+        formatMessage({ id: 'experience.billmoDescription3' })
+      ],
       logo: billmoLogo,
       tech: [
         Tech.React,
-        Tech.ES6,
+        Tech.Es6,
         Tech.Redux,
         Tech.Node,
         Tech.MongoDb,
@@ -53,7 +58,7 @@ const getExperiences = (formatMessage: any) => {
         Tech.VsCode,
         Tech.CSharp,
         Tech.Xamarin,
-        Tech.AWS,
+        Tech.Aws,
         Tech.Atlassian,
         Tech.Braze,
         Tech.Firebase,
@@ -67,7 +72,13 @@ const getExperiences = (formatMessage: any) => {
       name: 'storeforce',
       displayName: formatMessage({ id: 'experience.storeforce' }),
       position: formatMessage({ id: 'experience.storeforcePosition' }),
-      description: formatMessage({ id: 'experience.storeforceDescription' }),
+      description: [
+        formatMessage({ id: 'experience.storeforceDescription1' }),
+        formatMessage({ id: 'experience.storeforceDescription2' }),
+        formatMessage({ id: 'experience.storeforceDescription3' }),
+        formatMessage({ id: 'experience.storeforceDescription4' }),
+        formatMessage({ id: 'experience.storeforceDescription5' })
+      ],
       logo: storeforceLogo,
       tech: [
         Tech.TypeScript,
@@ -89,7 +100,11 @@ const getExperiences = (formatMessage: any) => {
       name: 'rbc',
       displayName: formatMessage({ id: 'experience.rbc' }),
       position: formatMessage({ id: 'experience.rbcPosition' }),
-      description: formatMessage({ id: 'experience.rbcDescription' }),
+      description: [
+        formatMessage({ id: 'experience.rbcDescription1' }),
+        formatMessage({ id: 'experience.rbcDescription2' }),
+        formatMessage({ id: 'experience.rbcDescription3' })
+      ],
       logo: RbcLogo,
       tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql]
     }

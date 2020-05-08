@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { scrollbarWidth } from 'utils/constants';
 import colors from 'style/colors';
+import { wandSvg } from 'utils/constants';
 
 export default createUseStyles(theme => ({
   experience: {
@@ -52,13 +53,13 @@ export default createUseStyles(theme => ({
   },
   middleSection: {
     background: theme.isDebug ? colors.teal[300] : colors.transparent,
-    textAlign: 'center',
-    border: '1px solid blue',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     height: '58%'
   },
   bottomSection: {
-    // background: 'theme.isDebug ? colors.red[100] : colors.transparent',
-    // background: 'cyan',
+    background: theme.isDebug ? colors.red[100] : colors.transparent,
     textAlign: 'center',
     height: '10%',
     display: 'flex',
@@ -72,15 +73,17 @@ export default createUseStyles(theme => ({
   },
   experienceCardContainer: {
     maxWidth: '23%',
-    padding: '1rem',
+    paddingLeft: '1rem',
+    paddingTop: '1rem',
+    paddingRight: '1rem',
+    paddingBottom: '0.2rem',
     borderRadius: '1rem',
     background: theme.secondaryBackground
   },
   techLogo: {
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
     width: '3rem',
     height: '3rem',
     margin: '1px'
-    // border: '1px solid red'
-    // background: 'pink'
   }
 }));

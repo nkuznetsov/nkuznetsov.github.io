@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { IImageProps, Cursor } from './image-interface';
+import { Cursor, IImageProps } from './image-interface';
+import { tooltipDelay } from 'utils/constants';
 import { useTheme } from 'react-jss';
+import Fade from '@material-ui/core/Fade';
 import imageStyle from './style/image-style';
+import Tooltip from '@material-ui/core/Tooltip';
 
 export const ImageRenderer: React.FC<IImageProps> = React.memo(
   ({
@@ -85,23 +88,32 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       }
     };
 
-    return Svg ? (
+    const component = Svg ? (
       <Svg
         className={composedClass}
         onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        title={tooltip}
       >
         {ariaLabel}
       </Svg>
     ) : (
-      <img
-        alt={ariaLabel}
-        className={composedClass}
-        src={src}
-        title={tooltip}
-      />
+      <img alt={ariaLabel} className={composedClass} src={src} />
     );
+
+    if (tooltip) {
+      return (
+        <Tooltip
+          TransitionComponent={Fade}
+          TransitionProps={{ timeout: tooltipDelay }}
+          title={tooltip}
+          aria-label={ariaLabel}
+          children={component}
+          arrow
+        />
+      );
+    }
+
+    return component;
   }
 );
