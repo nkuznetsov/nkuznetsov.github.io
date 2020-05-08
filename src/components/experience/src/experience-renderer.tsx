@@ -19,15 +19,16 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
 
   return (
     <Box className={composedClass}>
-      {areExperiencesVisible ? (
-        <Box className={styles.main}>
+      <Box className={styles.main}>
+        {areExperiencesVisible ? (
           <Grid container className={styles.experiencesContainer}>
             {experiences.map((exp, index) => (
               <ExperienceCardRenderer key={index} experience={exp} />
             ))}
           </Grid>
-        </Box>
-      ) : null}
+        ) : null}
+      </Box>
+
       <Box className={styles.toTopContainer}>
         <Scroll />
       </Box>

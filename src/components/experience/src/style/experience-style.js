@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import { scrollbarWidth } from 'utils/constants';
 import colors from 'style/colors';
-import { wandSvg } from 'utils/constants';
 
 export default createUseStyles(theme => ({
   experience: {
