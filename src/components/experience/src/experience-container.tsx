@@ -1,11 +1,11 @@
 import React from 'react';
 import { ExperienceRenderer } from './experience-renderer';
+import { ReactComponent as BillMoLogo } from './style/billmoLogo.svg';
 import { ReactComponent as MicrosoftLogo } from './style/microsoftLogo.svg';
 import { ReactComponent as RbcLogo } from './style/rbcLogo.svg';
+import { ReactComponent as StoreForceLogo } from './style/storeforceLogo.svg';
 import { Tech } from 'utils/utils-interface';
 import { useIntl } from 'react-intl';
-import billmoLogo from './style/billmoLogo.png';
-import storeforceLogo from './style/storeforceLogo.jpg';
 
 export const ExperienceContainer: React.FC = () => {
   const { formatMessage } = useIntl();
@@ -46,7 +46,7 @@ const getExperiences = (formatMessage: any) => {
         formatMessage({ id: 'experience.billmoDescription2' }),
         formatMessage({ id: 'experience.billmoDescription3' })
       ],
-      logo: billmoLogo,
+      logo: BillMoLogo,
       tech: [
         Tech.Redux,
         Tech.Es6,
@@ -69,7 +69,7 @@ const getExperiences = (formatMessage: any) => {
         formatMessage({ id: 'experience.storeforceDescription2' }),
         formatMessage({ id: 'experience.storeforceDescription3' })
       ],
-      logo: storeforceLogo,
+      logo: StoreForceLogo,
       tech: [
         Tech.TypeScript,
         Tech.Html5,
