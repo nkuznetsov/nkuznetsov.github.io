@@ -9,7 +9,7 @@ import { MyName } from 'components/my-name';
 import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
 import { Scroll } from 'components/scroll';
 import { scrollToElement } from 'utils/utils';
-import { showDebug, experiencePage } from 'utils/constants';
+import { SHOW_DEBUG, EXPERIENCE_PAGE } from 'utils/constants';
 import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
 import { Toggle } from 'components/toggle';
@@ -29,7 +29,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
     const { isMagic } = useContext(AppContext);
 
     const scrollToExperience = () => {
-      const page = document.querySelector(experiencePage);
+      const page = document.querySelector(EXPERIENCE_PAGE);
       if (page) {
         scrollToElement(page);
       }
@@ -57,11 +57,11 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                 themed
               />
             </Grid>
-            <Scroll to={experiencePage} />
+            <Scroll to={EXPERIENCE_PAGE} />
           </Grid>
 
           <Grid container item xs={2} className={styles.rightContainer}>
-            {showDebug ? (
+            {SHOW_DEBUG ? (
               <Toggle
                 rotate360OnHover
                 toggle={toggleDebug}

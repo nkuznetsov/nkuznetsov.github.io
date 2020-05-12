@@ -1,7 +1,7 @@
 // Reference:
 // https://material.io/design/material-theming/implementing-your-theme.html#
 
-import { defaultIsDebug } from 'utils/constants';
+import { DEFAULT_IS_DEBUG } from 'utils/constants';
 import { IBaseTheme, ITheme, ThemeType } from 'models';
 import colors from './colors';
 
@@ -26,9 +26,12 @@ const lightTheme: ITheme = {
   background: colors.gray[100],
   onBackground: colors.brown,
 
-  secondaryBackground: colors.gray[250],
+  secondaryBackground: colors.gray[200],
+  secondaryBackgroundBorder: colors.gray[250],
 
-  isDebug: defaultIsDebug
+  tooltipBackground: colors.pink[200],
+
+  isDebug: DEFAULT_IS_DEBUG
 };
 
 const darkTheme: ITheme = {
@@ -38,9 +41,12 @@ const darkTheme: ITheme = {
   background: colors.gray[800],
   onBackground: colors.white,
 
-  secondaryBackground: colors.gray[300],
+  secondaryBackground: colors.gray[400],
+  secondaryBackgroundBorder: colors.gray[300],
 
-  isDebug: defaultIsDebug
+  tooltipBackground: colors.purple[200],
+
+  isDebug: DEFAULT_IS_DEBUG
 };
 
 export default { lightTheme, darkTheme };

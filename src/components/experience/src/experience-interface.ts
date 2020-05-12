@@ -14,7 +14,9 @@ export interface IExperience {
    * Translation is based on the display name
    */
   displayName: string;
-  description: string[];
+  descriptions: string[];
   logo: any;
   tech: any[];
+  companyUrl: string;
+  workUrl?: string;
 }

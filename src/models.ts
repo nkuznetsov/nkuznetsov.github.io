@@ -30,6 +30,9 @@ interface ITheme {
   onBackground: string;
 
   secondaryBackground: string;
+  secondaryBackgroundBorder: string;
+
+  tooltipBackground: string;
 
   isDebug: boolean;
 }

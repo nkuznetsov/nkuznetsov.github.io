@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import { scrollbarWidth } from 'utils/constants';
+import { SCROLLBAR_WIDTH } from 'utils/constants';
 import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
@@ -25,7 +25,7 @@ export default createUseStyles(theme => ({
     flexWrap: 'wrap',
     alignContent: 'center',
     height: '100%',
-    marginLeft: scrollbarWidth
+    marginLeft: SCROLLBAR_WIDTH
   },
   toTopContainer: {
     background: theme.isDebug ? colors.pink[200] : colors.transparent,
@@ -53,6 +53,7 @@ export default createUseStyles(theme => ({
   middleSection: {
     background: theme.isDebug ? colors.teal[300] : colors.transparent,
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     height: '60%'
@@ -75,9 +76,9 @@ export default createUseStyles(theme => ({
     paddingLeft: '1rem',
     paddingTop: '1rem',
     paddingRight: '1rem',
-    paddingBottom: '0rem',
     borderRadius: '1rem',
-    background: theme.secondaryBackground
+    background: theme.secondaryBackground,
+    border: `0.1rem solid ${theme.secondaryBackgroundBorder}`
   },
   techLogo: {
     background: theme.isDebug ? colors.pink[300] : colors.transparent,
@@ -86,6 +87,23 @@ export default createUseStyles(theme => ({
     margin: '1px'
   },
   description: {
-    textAlign: 'center'
+    background: theme.isDebug ? colors.pink[100] : colors.transparent,
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  linkImg: {
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
+    width: '3rem',
+    height: '3rem',
+    marginBottom: '2rem'
+  },
+  companyLinkImg: {
+    background: theme.isDebug ? colors.pink[300] : colors.transparent,
+    width: '1rem',
+    height: '1rem',
+    marginLeft: '0.5rem'
   }
 }));

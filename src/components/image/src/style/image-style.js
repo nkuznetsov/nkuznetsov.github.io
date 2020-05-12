@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import { ThemeType } from 'models';
-import { wandSvg } from 'utils/constants';
+import { WAND_SVG } from 'utils/constants';
 import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
@@ -8,7 +8,7 @@ export default createUseStyles(theme => ({
     cursor: 'pointer'
   },
   wandCursor: {
-    cursor: `url("${wandSvg}"), pointer`
+    cursor: `url("${WAND_SVG}"), pointer`
   },
   themed: {
     borderRadius: '30%',
@@ -42,5 +42,8 @@ export default createUseStyles(theme => ({
   '@keyframes resetImage': {
     '0%': { opacity: 0.3 },
     '100%': { opacity: 1 }
+  },
+  tooltip: {
+    background: 'red'
   }
 }));

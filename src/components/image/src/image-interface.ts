@@ -11,9 +11,24 @@ export interface IImageProps {
   Svg?: any;
   themed?: boolean;
   tooltip?: string;
+  tooltipBackground?: string;
+  tooltipPosition?: TooltipPosition;
+  tooltipStyle?: TooltipStyle;
 }
 
 export enum Cursor {
   Pointer,
   Wand
+}
+
+export enum TooltipStyle {
+  Fade,
+  Zoom
+}
+
+export enum TooltipPosition {
+  Left,
+  Top,
+  Right,
+  Bottom
 }

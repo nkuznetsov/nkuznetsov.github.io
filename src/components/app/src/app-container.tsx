@@ -7,23 +7,23 @@ import { ThemeType } from 'models';
 import messages from 'messages';
 import themes from 'style/themes';
 import {
-  defaultIsDebug,
-  defaultIsMagic,
-  defaultLocale,
-  defaultThemeType
+  DEFAULT_IS_DEBUG,
+  DEFAULT_IS_MAGIC,
+  DEFAULT_LOCALE,
+  DEFAULT_THEME_TYPE
 } from 'utils/constants';
 
 export const AppContext = React.createContext({
-  isMagic: defaultIsMagic,
-  isDebug: defaultIsDebug
+  isMagic: DEFAULT_IS_MAGIC,
+  isDebug: DEFAULT_IS_DEBUG
 });
 
 export const AppContainer: React.FC = () => {
-  const locale = defaultLocale;
+  const locale = DEFAULT_LOCALE;
   const translations = messages[locale];
-  const [theme, setTheme] = useState(themes[defaultThemeType]);
-  const [isMagic, setIsMagic] = useState(defaultIsMagic);
-  const [isDebug, setIsDebug] = useState(defaultIsDebug);
+  const [theme, setTheme] = useState(themes[DEFAULT_THEME_TYPE]);
+  const [isMagic, setIsMagic] = useState(DEFAULT_IS_MAGIC);
+  const [isDebug, setIsDebug] = useState(DEFAULT_IS_DEBUG);
 
   const appContext: IAppContext = { isMagic, isDebug };
 

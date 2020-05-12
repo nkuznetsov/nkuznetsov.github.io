@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import { scrollbarWidth } from 'utils/constants';
+import { SCROLLBAR_WIDTH } from 'utils/constants';
 import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
@@ -20,7 +20,7 @@ export default createUseStyles(theme => ({
   container: {
     background: theme.isDebug ? colors.brown : colors.transparent,
     padding: 0,
-    marginLeft: scrollbarWidth
+    marginLeft: SCROLLBAR_WIDTH
   },
   leftContainer: {
     background: theme.isDebug ? colors.pink[100] : colors.transparent,

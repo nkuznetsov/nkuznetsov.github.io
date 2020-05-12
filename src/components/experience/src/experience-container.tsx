@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExperienceRenderer } from './experience-renderer';
+import { IExperience } from './experience-interface';
 import { ReactComponent as BillMoLogo } from './style/billmoLogo.svg';
 import { ReactComponent as MicrosoftLogo } from './style/microsoftLogo.svg';
 import { ReactComponent as RbcLogo } from './style/rbcLogo.svg';
@@ -17,13 +18,13 @@ export const ExperienceContainer: React.FC = () => {
 /**
  * Order is increasing from left to right, based on project's index
  */
-const getExperiences = (formatMessage: any) => {
+const getExperiences = (formatMessage: any): IExperience[] => {
   return [
     {
       name: 'microsoft',
       displayName: formatMessage({ id: 'experience.microsoft' }),
       position: formatMessage({ id: 'experience.microsoftPosition' }),
-      description: [formatMessage({ id: 'experience.microsoftDescription' })],
+      descriptions: [formatMessage({ id: 'experience.microsoftDescription' })],
       logo: MicrosoftLogo,
       tech: [
         Tech.React,
@@ -35,13 +36,16 @@ const getExperiences = (formatMessage: any) => {
         Tech.Figma,
         Tech.Yarn,
         Tech.VsCode
-      ]
+      ],
+      companyUrl: 'https://www.microsoft.com/',
+      workUrl:
+        'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software'
     },
     {
       name: 'billmo',
       displayName: formatMessage({ id: 'experience.billmo' }),
       position: formatMessage({ id: 'experience.billmoPosition' }),
-      description: [
+      descriptions: [
         formatMessage({ id: 'experience.billmoDescription1' }),
         formatMessage({ id: 'experience.billmoDescription2' }),
         formatMessage({ id: 'experience.billmoDescription3' })
@@ -58,13 +62,16 @@ const getExperiences = (formatMessage: any) => {
         Tech.Braze,
         Tech.Firebase,
         Tech.TeamCity
-      ]
+      ],
+      companyUrl: 'https://www.billmo.com/',
+      workUrl:
+        'https://apps.apple.com/mx/app/billmo-money-transfer-wallet/id1072459204?l=en'
     },
     {
       name: 'storeforce',
       displayName: formatMessage({ id: 'experience.storeforce' }),
       position: formatMessage({ id: 'experience.storeforcePosition' }),
-      description: [
+      descriptions: [
         formatMessage({ id: 'experience.storeforceDescription1' }),
         formatMessage({ id: 'experience.storeforceDescription2' }),
         formatMessage({ id: 'experience.storeforceDescription3' })
@@ -81,19 +88,23 @@ const getExperiences = (formatMessage: any) => {
         Tech.Sql,
         Tech.Android,
         Tech.IOs
-      ]
+      ],
+      companyUrl: 'https://www.storeforcesolutions.com/',
+      workUrl:
+        'https://play.google.com/store/apps/details?id=com.storeforce.tablet'
     },
     {
       name: 'rbc',
       displayName: formatMessage({ id: 'experience.rbc' }),
       position: formatMessage({ id: 'experience.rbcPosition' }),
-      description: [
+      descriptions: [
         formatMessage({ id: 'experience.rbcDescription1' }),
         formatMessage({ id: 'experience.rbcDescription2' }),
         formatMessage({ id: 'experience.rbcDescription3' })
       ],
       logo: RbcLogo,
-      tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql]
+      tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql],
+      companyUrl: 'https://www.rbcroyalbank.com/'
     }
   ];
 };

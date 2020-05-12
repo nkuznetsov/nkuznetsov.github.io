@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Cursor, IImageProps } from './image-interface';
-import { tooltipDelay } from 'utils/constants';
+import { makeStyles } from '@material-ui/core/styles';
+import { TOOLTIP_DELAY } from 'utils/constants';
 import { useTheme } from 'react-jss';
 import Fade from '@material-ui/core/Fade';
 import imageStyle from './style/image-style';
 import Tooltip from '@material-ui/core/Tooltip';
+import Zoom from '@material-ui/core/Zoom';
+import {
+  Cursor,
+  IImageProps,
+  TooltipPosition,
+  TooltipStyle
+} from './image-interface';
 
 export const ImageRenderer: React.FC<IImageProps> = React.memo(
   ({
@@ -19,11 +26,14 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     src,
     Svg,
     themed,
-    tooltip
+    tooltip,
+    tooltipBackground,
+    tooltipPosition,
+    tooltipStyle
   }) => {
     const [hovered, setHovered] = useState(false);
     const [composedClass, setComposedClass] = useState<string | undefined>('');
-    const theme = useTheme();
+    const theme: any = useTheme();
     const styles = imageStyle(theme);
 
     useEffect(() => {
@@ -102,14 +112,62 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     );
 
     if (tooltip) {
+      let style;
+      switch (tooltipStyle) {
+        case TooltipStyle.Zoom: {
+          style = Zoom;
+          break;
+        }
+        default: {
+          style = Fade;
+          break;
+        }
+      }
+
+      let position: any;
+      switch (tooltipPosition) {
+        case TooltipPosition.Left: {
+          position = 'left';
+          break;
+        }
+        case TooltipPosition.Top: {
+          position = 'top';
+          break;
+        }
+        case TooltipPosition.Right: {
+          position = 'right';
+          break;
+        }
+        default: {
+          position = 'bottom';
+          break;
+        }
+      }
+
+      let tooltipClasses;
+      let useStyles;
+
+      useStyles = makeStyles({
+        tooltip: {
+          background: tooltipBackground ?? theme.tooltipBackground,
+          color: theme.onBackground
+        },
+        arrow: {
+          color: tooltipBackground ?? theme.tooltipBackground
+        }
+      });
+      tooltipClasses = useStyles();
+
       return (
         <Tooltip
-          TransitionComponent={Fade}
-          TransitionProps={{ timeout: tooltipDelay }}
-          title={tooltip}
           aria-label={ariaLabel}
-          children={component}
           arrow
+          classes={tooltipClasses}
+          placement={position}
+          title={tooltip}
+          TransitionComponent={style}
+          TransitionProps={{ timeout: TOOLTIP_DELAY }}
+          children={component}
         />
       );
     }

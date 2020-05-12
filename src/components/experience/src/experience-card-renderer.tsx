@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { Cursor, Image } from 'components/image';
 import { IExperienceCardRendererProps } from './experience-interface';
-import { Image } from 'components/image';
+import { ReactComponent as LinkImg } from './style/link2.svg';
 import { techLogo } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
@@ -8,6 +9,10 @@ import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import {
+  TooltipPosition,
+  TooltipStyle
+} from 'components/image/src/image-interface';
 
 export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
   experience
@@ -15,6 +20,10 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
   const theme: any = useTheme();
   const styles = experienceStyle(theme);
   const { formatMessage } = useIntl();
+
+  const companyLinkText = `${formatMessage({
+    id: 'experience.visitCompany'
+  })} ${experience.displayName}`;
 
   return (
     <Grid container className={styles.experienceCardContainer}>
@@ -32,16 +41,37 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
             <Box>{`${experience.position}`}</Box>
           </Typography>
           <Typography component='h5' variant='h5'>
-            <Box>{`@ ${experience.displayName}`}</Box>
+            {`@ ${experience.displayName}`}
+            <Image
+              Svg={LinkImg}
+              link={experience.companyUrl}
+              tooltip={companyLinkText}
+              ariaLabel={companyLinkText}
+              className={styles.companyLinkImg}
+              tooltipStyle={TooltipStyle.Zoom}
+            />
           </Typography>
         </Box>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>
         <Box className={styles.description}>
-          {experience.description.map((description, index) => (
+          {experience.descriptions.map((description, index) => (
             <p key={index}>{description}</p>
           ))}
         </Box>
+        {experience.workUrl ? (
+          <Image
+            ariaLabel={experience.displayName}
+            className={styles.linkImg}
+            cursor={Cursor.Pointer}
+            Svg={LinkImg}
+            tooltip={formatMessage({ id: 'experience.workLinkTooltip' })}
+            tooltipPosition={TooltipPosition.Right}
+            tooltipStyle={TooltipStyle.Zoom}
+          />
+        ) : (
+          <Box className={styles.linkImg} />
+        )}
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>
         {experience.tech.map((tech, index) => {
@@ -54,6 +84,7 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
               ariaLabel={tech.displayName}
               className={styles.techLogo}
               key={index}
+              rotate360OnHover
               src={src}
               Svg={svg}
               tooltip={tech.displayName}
