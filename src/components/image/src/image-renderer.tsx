@@ -175,3 +175,5 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     return component;
   }
 );
+
+ImageRenderer.displayName = 'ImageRenderer';

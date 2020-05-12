@@ -22,3 +22,5 @@ export const HeaderImageRenderer: React.FC = () => {
     />
   );
 };
+
+HeaderImageRenderer.displayName = 'HeaderImageRenderer';

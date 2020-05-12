@@ -50,3 +50,5 @@ export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
     />
   );
 });
+
+ScrollRenderer.displayName = 'ScrollRenderer';

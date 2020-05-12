@@ -78,3 +78,5 @@ export const AppContainer: React.FC = () => {
     </IntlProvider>
   );
 };
+
+AppContainer.displayName = 'AppContainer';

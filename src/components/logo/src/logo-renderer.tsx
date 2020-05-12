@@ -26,3 +26,5 @@ export const LogoRenderer: React.FC = () => {
     </div>
   );
 };
+
+LogoRenderer.displayName = 'LogoRenderer';

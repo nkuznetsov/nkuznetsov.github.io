@@ -88,3 +88,5 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
     );
   }
 );
+
+HomeRenderer.displayName = 'HomeRenderer';

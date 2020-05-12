@@ -14,3 +14,5 @@ export const MyNameRenderer: React.FC = () => {
     </p>
   );
 };
+
+MyNameRenderer.displayName = 'MyNameRenderer';

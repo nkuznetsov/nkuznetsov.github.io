@@ -14,3 +14,5 @@ export const HeaderRenderer: React.FC = () => {
     </>
   );
 };
+
+HeaderRenderer.displayName = 'HeaderRenderer';

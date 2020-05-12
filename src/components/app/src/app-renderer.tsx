@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Experience } from 'components/experience';
 import { Home } from 'components/home';
 import { IAppRendererProps } from './app-interface';
@@ -29,3 +29,5 @@ export const AppRenderer: React.FC<IAppRendererProps> = React.memo(
     );
   }
 );
+
+AppRenderer.displayName = 'AppRenderer';

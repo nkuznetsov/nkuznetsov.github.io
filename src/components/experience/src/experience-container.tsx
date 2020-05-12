@@ -108,3 +108,5 @@ const getExperiences = (formatMessage: any): IExperience[] => {
     }
   ];
 };
+
+ExperienceContainer.displayName = 'ExperienceContainer';

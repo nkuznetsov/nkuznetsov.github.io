@@ -95,3 +95,5 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
     </Grid>
   );
 };
+
+ExperienceCardRenderer.displayName = 'ExperienceCardRenderer';

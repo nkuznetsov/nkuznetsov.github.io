@@ -14,3 +14,5 @@ export const StarfallRenderer: React.FC = () => {
     </div>
   );
 };
+
+StarfallRenderer.displayName = 'StarfallRenderer';

@@ -35,3 +35,5 @@ export const SocialMediaLinksRenderer: React.FC = () => {
     </div>
   );
 };
+
+SocialMediaLinksRenderer.displayName = 'SocialMediaLinksRenderer';

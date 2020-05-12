@@ -92,3 +92,5 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
     );
   }
 );
+
+ToggleRenderer.displayName = 'ToggleRenderer';

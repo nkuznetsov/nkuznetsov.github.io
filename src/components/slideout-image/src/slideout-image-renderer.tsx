@@ -18,3 +18,5 @@ export const SlideoutImageRenderer: React.FC = () => {
     />
   );
 };
+
+SlideoutImageRenderer.displayName = 'SlideoutImageRenderer';

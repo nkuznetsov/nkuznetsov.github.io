@@ -35,3 +35,5 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
     </Box>
   );
 };
+
+ExperienceRenderer.displayName = 'ExperienceRenderer';
