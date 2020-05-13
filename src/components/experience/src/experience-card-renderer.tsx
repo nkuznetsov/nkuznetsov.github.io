@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Cursor, Image } from 'components/image';
 import { IExperienceCardRendererProps } from './experience-interface';
-import { ReactComponent as LinkImg } from './style/link2.svg';
+import { ReactComponent as CompanyLinkImg } from './style/companyLink.svg';
+import { ReactComponent as WorkLinkImg } from './style/workLink.svg';
 import { techLogo } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
@@ -40,14 +41,19 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
           <Typography component='h4' variant='h4'>
             <Box>{`${experience.position}`}</Box>
           </Typography>
-          <Typography component='h5' variant='h5'>
+          <Typography
+            component='h5'
+            variant='h5'
+            className={styles.companyContainer}
+          >
             {`@ ${experience.displayName}`}
             <Image
-              Svg={LinkImg}
-              link={experience.companyUrl}
-              tooltip={companyLinkText}
               ariaLabel={companyLinkText}
               className={styles.companyLinkImg}
+              cursor={Cursor.Pointer}
+              link={experience.companyUrl}
+              Svg={CompanyLinkImg}
+              tooltip={companyLinkText}
               tooltipStyle={TooltipStyle.Zoom}
             />
           </Typography>
@@ -62,15 +68,15 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
         {experience.workUrl ? (
           <Image
             ariaLabel={experience.displayName}
-            className={styles.linkImg}
+            className={styles.workLinkImg}
             cursor={Cursor.Pointer}
-            Svg={LinkImg}
+            Svg={WorkLinkImg}
             tooltip={formatMessage({ id: 'experience.workLinkTooltip' })}
             tooltipPosition={TooltipPosition.Right}
             tooltipStyle={TooltipStyle.Zoom}
           />
         ) : (
-          <Box className={styles.linkImg} />
+          <Box className={styles.workLinkImg} />
         )}
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>

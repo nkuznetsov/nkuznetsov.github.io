@@ -94,7 +94,7 @@ export default createUseStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  linkImg: {
+  workLinkImg: {
     background: theme.isDebug ? colors.pink[300] : colors.transparent,
     width: '3rem',
     height: '3rem',
@@ -102,8 +102,13 @@ export default createUseStyles(theme => ({
   },
   companyLinkImg: {
     background: theme.isDebug ? colors.pink[300] : colors.transparent,
-    width: '1rem',
-    height: '1rem',
+    width: '1.5rem',
+    height: '1.5rem',
     marginLeft: '0.5rem'
+  },
+  companyContainer: {
+    display: 'flex',
+    justifyContent: 'start',
+    alignItems: 'center'
   }
 }));

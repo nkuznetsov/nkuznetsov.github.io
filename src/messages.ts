@@ -36,7 +36,7 @@ export default {
     'experience.rbcPosition': 'Software Developer',
 
     'experience.workLinkTooltip': 'explore work',
-    'experience.visitCompany': 'Visit',
+    'experience.visitCompany': 'visit',
 
     // Aria labels
     'home.cat': 'cat',
