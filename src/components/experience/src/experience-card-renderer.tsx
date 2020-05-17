@@ -37,34 +37,29 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
         />
       </Grid>
       <Grid item xs={8} className={styles.titleSection}>
-        <Box>
-          <Typography component='h4' variant='h4'>
-            <Box>{`${experience.position}`}</Box>
-          </Typography>
-          <Typography
-            component='h5'
-            variant='h5'
-            className={styles.companyContainer}
-          >
-            {`@ ${experience.displayName}`}
-            <Image
-              ariaLabel={companyLinkText}
-              className={styles.companyLinkImg}
-              cursor={Cursor.Pointer}
-              link={experience.companyUrl}
-              Svg={CompanyLinkImg}
-              tooltip={companyLinkText}
-              tooltipStyle={TooltipStyle.Zoom}
-            />
-          </Typography>
+        <Typography variant='h4'>
+          <Box>{experience.position}</Box>
+        </Typography>
+        <Box className={styles.companyContainer}>
+          <Typography variant='h5'>{`@ ${experience.displayName}`}</Typography>
+          <Image
+            ariaLabel={companyLinkText}
+            className={styles.companyLinkImg}
+            cursor={Cursor.Pointer}
+            link={experience.companyUrl}
+            Svg={CompanyLinkImg}
+            tooltip={companyLinkText}
+            tooltipStyle={TooltipStyle.Zoom}
+          />
         </Box>
+        <Typography variant='h6'>{experience.period}</Typography>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>
-        <Box className={styles.description}>
+        <Typography variant='h6' className={styles.description}>
           {experience.descriptions.map((description, index) => (
             <p key={index}>{description}</p>
           ))}
-        </Box>
+        </Typography>
         {experience.workUrl ? (
           <Image
             ariaLabel={experience.displayName}

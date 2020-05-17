@@ -19,4 +19,5 @@ export interface IExperience {
   tech: any[];
   companyUrl: string;
   workUrl?: string;
+  period?: string;
 }

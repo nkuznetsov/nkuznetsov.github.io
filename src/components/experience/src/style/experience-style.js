@@ -45,10 +45,16 @@ export default createUseStyles(theme => ({
   titleSection: {
     background: theme.isDebug ? colors.teal[200] : colors.transparent,
     display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'start',
     height: '30%',
     paddingLeft: '0.5rem'
+  },
+  companyContainer: {
+    background: theme.isDebug ? colors.teal[300] : colors.transparent,
+    display: 'flex',
+    alignItems: 'center'
   },
   middleSection: {
     background: theme.isDebug ? colors.teal[300] : colors.transparent,
@@ -105,10 +111,5 @@ export default createUseStyles(theme => ({
     width: '1.5rem',
     height: '1.5rem',
     marginLeft: '0.5rem'
-  },
-  companyContainer: {
-    display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'center'
   }
 }));
