@@ -18,7 +18,7 @@ export default createUseStyles(theme => ({
       padding: 0,
       fontFamily:
         "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-      fontSize: '20px',
+      fontSize: '100%',
       scrollbarWidth: 'none' /* Firefox */,
       '-ms-overflow-style': 'none' /* IE 10+ */
     },

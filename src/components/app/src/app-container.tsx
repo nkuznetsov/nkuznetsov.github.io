@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from 'models';
 import messages from 'messages';
 import themes from 'style/themes';
 import {
+  BREAKPOINTS,
   DEFAULT_IS_DEBUG,
   DEFAULT_IS_MAGIC,
   DEFAULT_LOCALE,
@@ -26,6 +28,12 @@ export const AppContainer: React.FC = () => {
   const [isDebug, setIsDebug] = useState(DEFAULT_IS_DEBUG);
 
   const appContext: IAppContext = { isMagic, isDebug };
+
+  const muiTheme = createMuiTheme({
+    breakpoints: {
+      values: BREAKPOINTS
+    }
+  });
 
   const toggleTheme = (isChecked: boolean) => {
     const newTheme = isChecked
@@ -68,11 +76,13 @@ export const AppContainer: React.FC = () => {
     <IntlProvider locale={locale} messages={translations}>
       <ThemeProvider theme={{ ...theme }}>
         <AppContext.Provider value={appContext}>
-          <AppRenderer
-            toggleDebug={toggleDebug}
-            toggleMagic={toggleMagic}
-            toggleTheme={toggleTheme}
-          />
+          <MuiThemeProvider theme={muiTheme}>
+            <AppRenderer
+              toggleDebug={toggleDebug}
+              toggleMagic={toggleMagic}
+              toggleTheme={toggleTheme}
+            />
+          </MuiThemeProvider>
         </AppContext.Provider>
       </ThemeProvider>
     </IntlProvider>

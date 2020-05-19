@@ -10,9 +10,7 @@ export interface IExperience {
   name: string;
   position: string;
 
-  /**
-   * Translation is based on the display name
-   */
+  /** Translation is based on the display name */
   displayName: string;
   descriptions: string[];
   logo: any;

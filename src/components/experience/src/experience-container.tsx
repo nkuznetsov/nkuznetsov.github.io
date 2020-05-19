@@ -15,9 +15,7 @@ export const ExperienceContainer: React.FC = () => {
   return <ExperienceRenderer experiences={experiences} />;
 };
 
-/**
- * Order is increasing from left to right, based on project's index
- */
+/** Order is increasing from left to right, based on project's index */
 const getExperiences = (formatMessage: any): IExperience[] => {
   return [
     {

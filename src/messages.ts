@@ -1,6 +1,4 @@
-/**
- * format: pageName.stringName: string
- */
+/** Format: pageName.stringName: string */
 export default {
   en: {
     'home.nikitaKuznetsov': 'Nikita Kuznetsov',
