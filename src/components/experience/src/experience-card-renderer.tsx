@@ -99,6 +99,7 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
               tooltip={formatMessage({ id: 'experience.workLinkTooltip' })}
               tooltipPosition={TooltipPosition.Right}
               tooltipStyle={TooltipStyle.Zoom}
+              link={experience.workUrl}
             />
           )}
         </Grid>
