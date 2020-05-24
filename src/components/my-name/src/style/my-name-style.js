@@ -3,7 +3,7 @@ import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   name: {
-    background: theme.isDebug ? colors.brown : colors.transparent,
+    background: theme.isDebug && colors.brown,
     fontSize: '3rem',
     marginTop: '2rem'
   }

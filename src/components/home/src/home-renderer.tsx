@@ -40,7 +40,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
         <Grid container className={styles.container}>
           <Hidden only='xs'>
             <Grid item sm={2} className={styles.leftContainer}>
-              {isMagic[0] ? <Logo /> : null}
+              {isMagic[3] && <Logo />}
             </Grid>
           </Hidden>
 
@@ -56,18 +56,24 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Hidden>
 
             <Grid className={styles.centerSubContainer}>
-              {isMagic[1] ? <Header /> : null}
-              {isMagic[2] ? <HeaderImage /> : null}
+              {isMagic[0] ? <Header /> : null}
+              {isMagic[1] ? <HeaderImage /> : null}
               <MyName />
-              <SocialMediaLinks />
-              <Image
-                ariaLabel={formatMessage({ id: 'home.experience' })}
-                className={styles.experienceIcon}
-                onClick={scrollToExperience}
-                popOutOnHover
-                Svg={SuitcaseImg}
-                themed
-              />
+              <Box
+                alignItems='center'
+                justifyContent='center'
+                className={styles.linksContainer}
+              >
+                <SocialMediaLinks />
+                <Image
+                  ariaLabel={formatMessage({ id: 'home.experience' })}
+                  className={styles.experienceIcon}
+                  onClick={scrollToExperience}
+                  popOutOnHover
+                  Svg={SuitcaseImg}
+                  themed
+                />
+              </Box>
             </Grid>
             <Grid>
               <Scroll to={EXPERIENCE_PAGE} />
@@ -84,7 +90,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Grid>
           </Hidden>
 
-          {isMagic[3] ? <SlideoutImage /> : null}
+          {isMagic[2] ? <SlideoutImage /> : null}
         </Grid>
       </Box>
     );

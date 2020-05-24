@@ -2,6 +2,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import myNameStyle from './style/my-name-style';
+import Typography from '@material-ui/core/Typography';
 
 export const MyNameRenderer: React.FC = () => {
   const theme = useTheme();
@@ -9,9 +10,9 @@ export const MyNameRenderer: React.FC = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <p className={styles.name}>
+    <Typography className={styles.name} variant='h2'>
       {formatMessage({ id: 'home.nikitaKuznetsov' })}
-    </p>
+    </Typography>
   );
 };
 

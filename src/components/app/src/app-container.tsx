@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from 'models';
 import messages from 'messages';
 import themes from 'style/themes';
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  responsiveFontSizes
+} from '@material-ui/core/styles';
 import {
   BREAKPOINTS,
   DEFAULT_IS_DEBUG,
@@ -29,11 +33,13 @@ export const AppContainer: React.FC = () => {
 
   const appContext: IAppContext = { isMagic, isDebug };
 
-  const muiTheme = createMuiTheme({
-    breakpoints: {
-      values: BREAKPOINTS
-    }
-  });
+  const muiTheme = responsiveFontSizes(
+    createMuiTheme({
+      breakpoints: {
+        values: BREAKPOINTS
+      }
+    })
+  );
 
   const toggleTheme = (isChecked: boolean) => {
     const newTheme = isChecked
@@ -44,8 +50,7 @@ export const AppContainer: React.FC = () => {
   };
 
   const toggleMagic = () => {
-    // Looping through magic items with a 'no magic' option.
-    // This is not random - one magic at a time in turn.
+    // Magic is not random - one magic at a time in turn
     let newMagic = [...isMagic];
     let nextMagic = 0;
     for (let i = 0; i < newMagic.length; i++) {

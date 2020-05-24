@@ -5,7 +5,6 @@ import { Scroll } from 'components/scroll';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';
-import Grid from '@material-ui/core/Grid';
 
 export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
   experiences
@@ -20,13 +19,13 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
   return (
     <Box className={composedClass}>
       <Box className={styles.main}>
-        {areExperiencesVisible ? (
-          <Grid container className={styles.experiencesContainer}>
+        {areExperiencesVisible && (
+          <Box className={styles.experiencesContainer}>
             {experiences.map((exp, index) => (
               <ExperienceCardRenderer key={index} experience={exp} />
             ))}
-          </Grid>
-        ) : null}
+          </Box>
+        )}
       </Box>
 
       <Box className={styles.toTopContainer}>

@@ -18,34 +18,43 @@ export default createUseStyles(theme => ({
     to: { opacity: '1' }
   },
   container: {
-    background: theme.isDebug ? colors.brown : colors.transparent,
+    background: theme.isDebug && colors.brown,
     padding: 0
   },
   leftContainer: {
-    background: theme.isDebug ? colors.pink[100] : colors.transparent,
+    background: theme.isDebug && colors.pink[100],
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'flex-start',
     paddingTop: '3%'
   },
   centerContainer: {
-    background: theme.isDebug ? colors.pink[200] : colors.transparent,
+    background: theme.isDebug && colors.pink[200],
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignContent: 'center'
   },
   centerSubContainer: {
-    background: theme.isDebug ? colors.teal[100] : colors.transparent,
+    background: theme.isDebug && colors.teal[100],
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
       paddingTop: 0
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
-      paddingTop: '15%'
+      paddingTop: '50%'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
+      paddingTop: '40%'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xmd}px)`]: {
+      paddingTop: '30%'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.md}px)`]: {
+      paddingTop: '20%'
     }
   },
   rightContainer: {
-    background: theme.isDebug ? colors.pink[300] : colors.transparent,
+    background: theme.isDebug && colors.pink[300],
     [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
       flexDirection: 'column',
       justifyContent: 'flex-start',
@@ -58,13 +67,31 @@ export default createUseStyles(theme => ({
     }
   },
   experienceIcon: {
-    background: theme.isDebug ? colors.pink[100] : colors.transparent,
-    width: '5rem',
-    height: '5rem',
-    padding: '1rem'
+    background: theme.isDebug && colors.pink[100],
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      width: '3rem',
+      height: '3rem',
+      padding: '0.5rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
+      width: '5rem',
+      height: '5rem',
+      padding: '1rem'
+    }
   },
   topMenu: {
+    background: theme.isDebug && colors.pink[100],
     display: 'flex',
     justifyContent: 'flex-end'
+  },
+  linksContainer: {
+    background: theme.isDebug && colors.teal[300],
+    display: 'flex',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      flexDirection: 'row'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xsm}px)`]: {
+      flexDirection: 'column'
+    }
   }
 }));

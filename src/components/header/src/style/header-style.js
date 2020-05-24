@@ -3,7 +3,7 @@ import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   fluffyText: {
-    background: theme.isDebug ? colors.teal[100] : colors.transparent,
+    background: theme.isDebug && colors.teal[100],
     fontSize: '2rem',
     marginRight: '0.3rem',
     color: colors.pink[300],
@@ -11,7 +11,7 @@ export default createUseStyles(theme => ({
     opacity: 0
   },
   oysterText: {
-    background: theme.isDebug ? colors.teal[200] : colors.transparent,
+    background: theme.isDebug && colors.teal[200],
     fontSize: '2rem',
     marginRight: '0.3rem',
     color: colors.pink[200],
@@ -19,7 +19,7 @@ export default createUseStyles(theme => ({
     opacity: 0
   },
   playgroundText: {
-    background: theme.isDebug ? colors.teal[300] : colors.transparent,
+    background: theme.isDebug && colors.teal[300],
     fontSize: '2rem',
     color: colors.pink[100],
     animation: '$hideshow 4s 3s ease infinite',

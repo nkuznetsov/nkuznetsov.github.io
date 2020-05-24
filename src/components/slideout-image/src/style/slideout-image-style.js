@@ -5,7 +5,7 @@ const size = '10rem';
 
 export default createUseStyles(theme => ({
   catImage: {
-    background: theme.isDebug ? colors.brown : colors.transparent,
+    background: theme.isDebug && colors.brown,
     transform: `translateY(${size})`,
     animation: '$slideout 10s 0.5s ease infinite',
     position: 'absolute',

@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   '@global': {
@@ -7,11 +8,11 @@ export default createUseStyles(theme => ({
       padding: 0,
       overflowX: 'hidden',
       overflowY: 'auto',
-      boxSizing: 'border-box'
-    },
-    '::-webkit-scrollbar': {
-      width: 0, // Chrome
-      background: 'transparent'
+      boxSizing: 'border-box',
+      '&::-webkit-scrollbar': {
+        width: 0, // Chrome
+        background: colors.transparent
+      }
     },
     body: {
       margin: 0,
