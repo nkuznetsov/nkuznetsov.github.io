@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "519b0f74ead355102878fa2c7fe742f2",
+    "revision": "d8a9207c20e49c11763075678631461b",
     "url": "/index.html"
   },
   {
-    "revision": "042ebdc92bf797bdca89",
+    "revision": "d680787d0df6c922cc95",
     "url": "/static/css/2.8271af8e.chunk.css"
   },
   {
-    "revision": "042ebdc92bf797bdca89",
-    "url": "/static/js/2.4cf131d6.chunk.js"
+    "revision": "d680787d0df6c922cc95",
+    "url": "/static/js/2.8b9d613f.chunk.js"
   },
   {
-    "revision": "930edacc2a63e88a0db7",
-    "url": "/static/js/main.4b41ff23.chunk.js"
+    "revision": "04d6c53e455d22179f13",
+    "url": "/static/js/main.9f78e988.chunk.js"
   },
   {
     "revision": "f378ac1b780b40d25470",
@@ -310,10 +310,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0c41ea0b1039f158e4df0608723ca0fb",
     "url": "/static/media/wand_light.0c41ea0b.svg"
-  },
-  {
-    "revision": "8a0e2475dd8c598c2c5068e727d19ee0",
-    "url": "/static/media/workLink.8a0e2475.svg"
   },
   {
     "revision": "14aee4065e817e9f6bb7ddeea1f93130",
