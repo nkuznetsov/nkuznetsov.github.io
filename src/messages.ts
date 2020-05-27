@@ -33,8 +33,7 @@ export default {
     'experience.storeforcePosition': 'Software Developer',
     'experience.rbcPosition': 'Software Developer',
 
-    'experience.workLinkTooltip': 'explore work',
-    'experience.visitCompany': 'visit',
+    'experience.workLinkTooltip': 'explore work at',
 
     // Aria labels
     'home.cat': 'cat',

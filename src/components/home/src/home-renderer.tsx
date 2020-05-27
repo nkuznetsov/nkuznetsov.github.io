@@ -71,7 +71,6 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                   onClick={scrollToExperience}
                   popOutOnHover
                   Svg={SuitcaseImg}
-                  themed
                 />
               </Box>
             </Grid>

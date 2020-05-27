@@ -66,37 +66,7 @@ export default createUseStyles(theme => ({
     display: 'flex',
     alignItems: 'center'
   },
-  middleSectionWithOneLine: {
-    background: theme.isDebug && colors.red[300],
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflowY: 'auto',
-    height: '45%'
-  },
-  middleSectionWithWorkUrl: {
-    background: theme.isDebug && colors.red[300],
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflowY: 'auto',
-    height: '45%',
-    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      paddingTop: '5.5rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.smxx}px)`]: {
-      paddingTop: '2.5rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.smx}px)`]: {
-      paddingTop: '1rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
-      paddingTop: 0
-    }
-  },
-  middleSectionWithoutWorkUrl: {
+  middleSection: {
     background: theme.isDebug && colors.red[300],
     display: 'flex',
     flexDirection: 'column',
@@ -117,15 +87,7 @@ export default createUseStyles(theme => ({
       paddingTop: 0
     }
   },
-  bottomSectionWithWorkUrl: {
-    background: theme.isDebug && colors.red[100],
-    height: '25%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  bottomSectionWithoutWorkUrl: {
+  bottomSection: {
     background: theme.isDebug && colors.red[100],
     height: '15%',
     display: 'flex',
@@ -203,33 +165,33 @@ export default createUseStyles(theme => ({
       padding: '1rem'
     }
   },
+  // workLinkImg: {
+  //   background: theme.isDebug && colors.pink[300],
+  //   [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+  //     width: '1.5rem',
+  //     height: '1.5rem',
+  //     marginBottom: '0.5rem'
+  //   },
+  //   [`@media only screen and (min-width: ${BREAKPOINTS.smxx}px)`]: {
+  //     width: '2rem',
+  //     height: '2rem',
+  //     margin: '1px'
+  //   },
+  //   [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
+  //     width: '2.5rem',
+  //     height: '2.5rem',
+  //     margin: '1px'
+  //   },
+  //   [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
+  //     width: '3rem',
+  //     height: '3rem',
+  //     marginBottom: '2rem'
+  //   }
+  // },
   workLinkImg: {
     background: theme.isDebug && colors.pink[300],
-    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      width: '1.5rem',
-      height: '1.5rem',
-      marginBottom: '0.5rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.smxx}px)`]: {
-      width: '2rem',
-      height: '2rem',
-      margin: '1px'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
-      width: '2.5rem',
-      height: '2.5rem',
-      margin: '1px'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-      width: '3rem',
-      height: '3rem',
-      marginBottom: '2rem'
-    }
-  },
-  companyLinkImg: {
-    background: theme.isDebug && colors.pink[300],
-    width: '1.5rem',
-    height: '1.5rem',
+    width: '3rem',
+    height: '3rem',
     marginLeft: '0.5rem'
   }
 }));

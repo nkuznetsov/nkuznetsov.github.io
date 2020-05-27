@@ -35,7 +35,6 @@ const getExperiences = (formatMessage: any): IExperience[] => {
         Tech.Yarn,
         Tech.VsCode
       ],
-      companyUrl: 'https://www.microsoft.com/',
       workUrl:
         'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software',
       period: 'Dec 2019 - present'
@@ -62,7 +61,6 @@ const getExperiences = (formatMessage: any): IExperience[] => {
         Tech.Firebase,
         Tech.TeamCity
       ],
-      companyUrl: 'https://www.billmo.com/',
       workUrl:
         'https://apps.apple.com/mx/app/billmo-money-transfer-wallet/id1072459204?l=en',
       period: 'Aug 2015 - present'
@@ -89,7 +87,6 @@ const getExperiences = (formatMessage: any): IExperience[] => {
         Tech.Android,
         Tech.IOs
       ],
-      companyUrl: 'https://www.storeforcesolutions.com/',
       workUrl:
         'https://play.google.com/store/apps/details?id=com.storeforce.tablet',
       period: 'Jun 2013 - Aug 2015'
@@ -105,7 +102,6 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       ],
       logo: RbcLogo,
       tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql],
-      companyUrl: 'https://www.rbcroyalbank.com/',
       period: 'May - Aug 2012'
     }
   ];

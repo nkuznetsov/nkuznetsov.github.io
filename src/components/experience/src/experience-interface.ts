@@ -15,7 +15,6 @@ export interface IExperience {
   descriptions: string[];
   logo: any;
   tech: any[];
-  companyUrl: string;
   workUrl?: string;
   period?: string;
 }
