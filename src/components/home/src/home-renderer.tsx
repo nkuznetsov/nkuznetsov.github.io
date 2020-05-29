@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { AppContext } from 'components/app';
+import { Cursor, Image } from 'components/image';
 import { EXPERIENCE_PAGE } from 'utils/constants';
 import { Header } from 'components/header';
 import { HeaderImage } from 'components/header-image';
 import { IHomeRendererProps } from './home-interface';
-import { Image } from 'components/image';
 import { Logo } from 'components/logo';
 import { Menu } from 'components/menu';
 import { MyName } from 'components/my-name';
@@ -44,7 +44,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Grid>
           </Hidden>
 
-          <Grid container sm={8} className={styles.centerContainer}>
+          <Grid item container sm={8} className={styles.centerContainer}>
             <Hidden smUp>
               <Grid container className={styles.topMenu}>
                 <Menu
@@ -71,6 +71,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                   onClick={scrollToExperience}
                   popOutOnHover
                   Svg={SuitcaseImg}
+                  cursor={Cursor.Pointer}
                 />
               </Box>
             </Grid>

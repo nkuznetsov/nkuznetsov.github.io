@@ -32,3 +32,8 @@ export enum TooltipPosition {
   Right,
   Bottom
 }
+
+export enum Interaction {
+  Click,
+  Touch
+}

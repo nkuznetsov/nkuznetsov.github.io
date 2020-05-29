@@ -37,7 +37,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       ],
       workUrl:
         'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software',
-      period: 'Dec 2019 - present'
+      period: 'Dec 2019 - now'
     },
     {
       name: 'billmo',
@@ -63,7 +63,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       ],
       workUrl:
         'https://apps.apple.com/mx/app/billmo-money-transfer-wallet/id1072459204?l=en',
-      period: 'Aug 2015 - present'
+      period: 'Aug 2015 - Dec 2019'
     },
     {
       name: 'storeforce',

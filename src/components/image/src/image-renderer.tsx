@@ -9,6 +9,7 @@ import Zoom from '@material-ui/core/Zoom';
 import {
   Cursor,
   IImageProps,
+  Interaction,
   TooltipPosition,
   TooltipStyle
 } from './image-interface';
@@ -87,7 +88,12 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       cursor
     ]);
 
-    const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleClick = (type: Interaction) => (event: any) => {
+      // Only care about left click
+      if (type === Interaction.Click && event.button !== 0) {
+        return;
+      }
+
       if (link) {
         window.location.href = link;
         return;
@@ -101,9 +107,10 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     const component = Svg ? (
       <Svg
         className={composedClass}
-        onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onMouseDown={handleClick(Interaction.Click)}
+        onTouchEnd={handleClick(Interaction.Touch)}
       >
         {ariaLabel}
       </Svg>
