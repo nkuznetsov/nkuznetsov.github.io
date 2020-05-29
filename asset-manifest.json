@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/static/js/main.9f78e988.chunk.js",
-    "main.js.map": "/static/js/main.9f78e988.chunk.js.map",
+    "main.js": "/static/js/main.bc996274.chunk.js",
+    "main.js.map": "/static/js/main.bc996274.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f05c415c.js",
     "runtime-main.js.map": "/static/js/runtime-main.f05c415c.js.map",
     "static/css/2.8271af8e.chunk.css": "/static/css/2.8271af8e.chunk.css",
     "static/js/2.8b9d613f.chunk.js": "/static/js/2.8b9d613f.chunk.js",
     "static/js/2.8b9d613f.chunk.js.map": "/static/js/2.8b9d613f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.472a5092a03a8c72d430cbcdd5b6f4c6.js": "/precache-manifest.472a5092a03a8c72d430cbcdd5b6f4c6.js",
+    "precache-manifest.cf62c77a2ab1f50a27194c00b4638eb2.js": "/precache-manifest.cf62c77a2ab1f50a27194c00b4638eb2.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.8271af8e.chunk.css.map": "/static/css/2.8271af8e.chunk.css.map",
     "static/media/android.311810c2.svg": "/static/media/android.311810c2.svg",
@@ -70,6 +70,6 @@
     "static/js/runtime-main.f05c415c.js",
     "static/css/2.8271af8e.chunk.css",
     "static/js/2.8b9d613f.chunk.js",
-    "static/js/main.9f78e988.chunk.js"
+    "static/js/main.bc996274.chunk.js"
   ]
 }
