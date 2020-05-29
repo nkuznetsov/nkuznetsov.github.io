@@ -44,10 +44,8 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
             <Box>{experience.position}</Box>
           </Typography>
 
-          <Typography variant='h5'>{`@ ${experience.displayName}`}</Typography>
-
-          <Box className={styles.periodContainer}>
-            <Typography variant='h6'>{experience.period}</Typography>
+          <Box className={styles.workLinkContainer}>
+            <Typography variant='h5'>{`@ ${experience.displayName}`}</Typography>
             {experience.workUrl && (
               <Image
                 ariaLabel={workLinkText}
@@ -60,6 +58,8 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
               />
             )}
           </Box>
+
+          <Typography variant='h6'>{experience.period}</Typography>
         </Grid>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>

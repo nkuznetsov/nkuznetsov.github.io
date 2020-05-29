@@ -61,7 +61,7 @@ export default createUseStyles(theme => ({
     alignItems: 'start',
     paddingLeft: '0.5rem'
   },
-  periodContainer: {
+  workLinkContainer: {
     background: theme.isDebug && colors.teal[300],
     display: 'flex',
     alignItems: 'center'
