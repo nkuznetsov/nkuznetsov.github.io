@@ -104,11 +104,15 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       }
     };
 
+    const changeHover = (hovered: boolean) => () => {
+      setHovered(hovered);
+    };
+
     const component = Svg ? (
       <Svg
         className={composedClass}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={changeHover(true)}
+        onMouseLeave={changeHover(false)}
         onMouseDown={handleClick(Interaction.Click)}
         onTouchEnd={handleClick(Interaction.Touch)}
       >
