@@ -23,7 +23,12 @@ export const MenuRenderer: React.FC<IMenuRendererProps> = React.memo(
           toggle={toggleMagic}
           type={ToggleType.Magic}
         />
-        <Toggle rotate360OnHover toggle={toggleTheme} type={ToggleType.Theme} />
+        <Toggle
+          rotate360OnHover
+          toggle={toggleTheme}
+          type={ToggleType.Theme}
+          cursor={Cursor.Pointer}
+        />
       </>
     );
   }

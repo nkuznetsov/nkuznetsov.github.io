@@ -4,7 +4,7 @@ export interface IImageProps {
   cursor?: Cursor;
   glow?: boolean;
   link?: string;
-  onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: (event: any) => void;
   popOutOnHover?: boolean;
   rotate360OnHover?: boolean;
   src?: string;
@@ -31,9 +31,4 @@ export enum TooltipPosition {
   Top,
   Right,
   Bottom
-}
-
-export enum Interaction {
-  Click,
-  Touch
 }
