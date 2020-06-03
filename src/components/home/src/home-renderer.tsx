@@ -85,9 +85,8 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               />
             </Grid>
           </Hidden>
-
-          {isMagic[2] ? <SlideoutImage /> : null}
         </Grid>
+        {isMagic[2] ? <SlideoutImage /> : null}
       </Box>
     );
   }
