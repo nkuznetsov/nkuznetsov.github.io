@@ -4,6 +4,7 @@ import colors from 'style/colors';
 export default createUseStyles(theme => ({
   '@global': {
     html: {
+      width: '100%',
       margin: 0,
       padding: 0,
       overflowX: 'hidden',
@@ -15,6 +16,8 @@ export default createUseStyles(theme => ({
       }
     },
     body: {
+      width: '100%',
+      overflowX: 'hidden',
       margin: 0,
       padding: 0,
       fontFamily:

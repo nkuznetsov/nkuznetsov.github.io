@@ -11,7 +11,8 @@ export default createUseStyles(theme => ({
     background: theme.background,
     textAlign: 'center',
     animationName: '$fadein',
-    animationDuration: '2s'
+    animationDuration: '2s',
+    overflowX: 'hidden'
   },
   '@keyframes fadein': {
     from: { opacity: '0.6' },
