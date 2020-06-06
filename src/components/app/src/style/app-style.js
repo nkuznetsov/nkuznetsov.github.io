@@ -6,6 +6,7 @@ export default createUseStyles(theme => ({
     html: {
       margin: 0,
       padding: 0,
+      width: '100%',
       overflowX: 'hidden',
       overflowY: 'auto',
       boxSizing: 'border-box',
@@ -15,6 +16,7 @@ export default createUseStyles(theme => ({
       }
     },
     body: {
+      width: '100%',
       margin: 0,
       padding: 0,
       fontFamily:
