@@ -98,7 +98,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Grid>
           </Hidden>
         </Grid>
-        {isMagic[1] ? <SlideoutImage /> : null}
+        {isMagic[1] && <SlideoutImage />}
       </Box>
     );
   }

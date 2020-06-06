@@ -6,7 +6,7 @@ export default createUseStyles(theme => ({
     html: {
       margin: 0,
       padding: 0,
-      overflowX: 'auto',
+      overflowX: 'hidden',
       overflowY: 'auto',
       boxSizing: 'border-box',
       '&::-webkit-scrollbar': {
