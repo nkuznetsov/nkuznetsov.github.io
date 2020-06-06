@@ -54,7 +54,7 @@ export default createUseStyles(theme => ({
     }
   },
   placeholder: {
-    height: '10rem'
+    height: '6rem'
   },
   rightContainer: {
     background: theme.isDebug && colors.pink[300],
