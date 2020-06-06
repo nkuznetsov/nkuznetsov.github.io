@@ -53,6 +53,9 @@ export default createUseStyles(theme => ({
       paddingTop: '20%'
     }
   },
+  placeholder: {
+    height: '3rem'
+  },
   rightContainer: {
     background: theme.isDebug && colors.pink[300],
     [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
