@@ -6,8 +6,7 @@ export default createUseStyles(theme => ({
     html: {
       margin: 0,
       padding: 0,
-      width: '100%',
-      overflowX: 'hidden',
+      overflowX: 'auto',
       overflowY: 'auto',
       boxSizing: 'border-box',
       '&::-webkit-scrollbar': {
@@ -16,8 +15,6 @@ export default createUseStyles(theme => ({
       }
     },
     body: {
-      position: 'relative',
-      width: '100%',
       margin: 0,
       padding: 0,
       fontFamily:
