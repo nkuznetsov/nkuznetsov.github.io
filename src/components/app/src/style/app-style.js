@@ -16,6 +16,7 @@ export default createUseStyles(theme => ({
       }
     },
     body: {
+      position: 'relative',
       width: '100%',
       margin: 0,
       padding: 0,
@@ -23,10 +24,7 @@ export default createUseStyles(theme => ({
         "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
       fontSize: '100%',
       scrollbarWidth: 'none' /* Firefox */,
-      '-ms-overflow-style': 'none' /* IE 10+ */,
-      '-webkit-box-sizing': 'border-box',
-      '-moz-box-sizing': 'border-box',
-      'box-sizing': 'border-box'
+      '-ms-overflow-style': 'none' /* IE 10+ */
     },
     img: {
       maxWidth: '100%',
