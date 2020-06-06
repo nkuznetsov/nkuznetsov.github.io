@@ -21,13 +21,11 @@ export const BREAKPOINTS = {
 
 /**
  * Collection of switches for magic components
- * Header, header image, slideout image, logo
+ * Header and header image, slideout image, logo
  * Not accounting for logo if window.innerWidth < 520px - left pane is hidden
  */
 export const DEFAULT_IS_MAGIC =
-  window.innerWidth < BREAKPOINTS.sm
-    ? [false, false, false]
-    : [false, false, false, false];
+  window.innerWidth < BREAKPOINTS.sm ? [false, false] : [false, false, false];
 
 export const DEFAULT_THEME_TYPE = ThemeType.Dark;
 export const DEFAULT_LOCALE = 'en';

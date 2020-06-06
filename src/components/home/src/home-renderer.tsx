@@ -40,7 +40,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
         <Grid container className={styles.container}>
           <Hidden only='xs'>
             <Grid item sm={2} className={styles.leftContainer}>
-              {isMagic[3] && <Logo />}
+              {isMagic[2] && <Logo />}
             </Grid>
           </Hidden>
 
@@ -56,8 +56,12 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Hidden>
 
             <Grid className={styles.centerSubContainer}>
-              {isMagic[0] ? <Header /> : null}
-              {isMagic[1] ? <HeaderImage /> : null}
+              {isMagic[0] && (
+                <Box className={styles.header}>
+                  <HeaderImage />
+                  <Header />
+                </Box>
+              )}
               <MyName />
               <Box
                 alignItems='center'
@@ -94,7 +98,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
             </Grid>
           </Hidden>
         </Grid>
-        {isMagic[2] ? <SlideoutImage /> : null}
+        {isMagic[1] ? <SlideoutImage /> : null}
       </Box>
     );
   }

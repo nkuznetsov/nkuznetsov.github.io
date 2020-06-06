@@ -56,6 +56,13 @@ export default createUseStyles(theme => ({
   placeholder: {
     height: '6rem'
   },
+  header: {
+    background: theme.isDebug && colors.pink[100],
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   rightContainer: {
     background: theme.isDebug && colors.pink[300],
     [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
