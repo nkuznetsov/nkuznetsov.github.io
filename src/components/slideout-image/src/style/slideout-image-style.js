@@ -11,7 +11,6 @@ export default createUseStyles(theme => ({
     position: 'absolute',
     bottom: '0',
     right: '0',
-    overflowX: 'hidden',
     width: `${size}`,
     height: `${size}`
   },
