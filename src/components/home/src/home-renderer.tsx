@@ -9,6 +9,7 @@ import { Logo } from 'components/logo';
 import { Menu } from 'components/menu';
 import { MyName } from 'components/my-name';
 import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
+import { Scroll } from 'components/scroll';
 import { scrollToElement } from 'utils/utils';
 import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
@@ -74,7 +75,13 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                 />
               </Box>
             </Grid>
-            <Box className={styles.placeholder}></Box>
+            <Hidden xsDown>
+              <Scroll to={EXPERIENCE_PAGE} />
+            </Hidden>
+
+            <Hidden smUp>
+              <Box className={styles.placeholder} />
+            </Hidden>
           </Grid>
 
           <Hidden only='xs'>

@@ -46,12 +46,16 @@ export default createUseStyles(theme => ({
   },
   topSection: {
     background: theme.isDebug && colors.red[100],
-    height: '30%',
-    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {},
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {}
+    height: '30%'
   },
   logoSection: {
-    background: theme.isDebug && colors.teal[100]
+    background: theme.isDebug && colors.teal[100],
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      width: '20%'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.smx}px)`]: {
+      width: '30%'
+    }
   },
   titleSection: {
     background: theme.isDebug && colors.teal[300],
@@ -59,7 +63,14 @@ export default createUseStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'start',
-    paddingLeft: '0.5rem'
+    paddingLeft: '0.5rem',
+    overflowY: 'auto',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      width: '80%'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.smx}px)`]: {
+      width: '70%'
+    }
   },
   workLinkContainer: {
     background: theme.isDebug && colors.teal[300],
@@ -67,25 +78,13 @@ export default createUseStyles(theme => ({
     alignItems: 'center'
   },
   middleSection: {
-    background: theme.isDebug && colors.red[300],
+    background: theme.isDebug && colors.red[200],
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     overflowY: 'auto',
-    height: '55%',
-    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      paddingTop: '5.5rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.smxx}px)`]: {
-      paddingTop: '2.5rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.smx}px)`]: {
-      paddingTop: '1rem'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
-      paddingTop: 0
-    }
+    height: '55%'
   },
   bottomSection: {
     background: theme.isDebug && colors.red[100],
@@ -165,33 +164,16 @@ export default createUseStyles(theme => ({
       padding: '1rem'
     }
   },
-  // workLinkImg: {
-  //   background: theme.isDebug && colors.pink[300],
-  //   [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-  //     width: '1.5rem',
-  //     height: '1.5rem',
-  //     marginBottom: '0.5rem'
-  //   },
-  //   [`@media only screen and (min-width: ${BREAKPOINTS.smxx}px)`]: {
-  //     width: '2rem',
-  //     height: '2rem',
-  //     margin: '1px'
-  //   },
-  //   [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
-  //     width: '2.5rem',
-  //     height: '2.5rem',
-  //     margin: '1px'
-  //   },
-  //   [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-  //     width: '3rem',
-  //     height: '3rem',
-  //     marginBottom: '2rem'
-  //   }
-  // },
   workLinkImg: {
     background: theme.isDebug && colors.pink[300],
-    width: '3rem',
-    height: '3rem',
-    marginLeft: '0.5rem'
+    marginLeft: '0.5rem',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      width: '2rem',
+      height: '2rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.smx}px)`]: {
+      width: '3rem',
+      height: '3rem'
+    }
   }
 }));

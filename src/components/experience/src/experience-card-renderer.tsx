@@ -25,7 +25,7 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
   return (
     <Grid container className={styles.experienceCardContainer}>
       <Grid container item xs={12} className={styles.topSection}>
-        <Grid item xs={4} className={styles.logoSection}>
+        <Grid item className={styles.logoSection}>
           <Image
             ariaLabel={formatMessage({
               id: `experience.${experience.name}Logo`
@@ -39,10 +39,8 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
             className={styles.experienceLogo}
           />
         </Grid>
-        <Grid item xs={8} className={styles.titleSection}>
-          <Typography variant='h4'>
-            <Box>{experience.position}</Box>
-          </Typography>
+        <Grid item className={styles.titleSection}>
+          <Typography variant='h4'>{experience.position}</Typography>
 
           <Box className={styles.workLinkContainer}>
             <Typography variant='h5'>{`@ ${experience.displayName}`}</Typography>
