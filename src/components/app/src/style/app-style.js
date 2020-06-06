@@ -23,7 +23,10 @@ export default createUseStyles(theme => ({
         "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
       fontSize: '100%',
       scrollbarWidth: 'none' /* Firefox */,
-      '-ms-overflow-style': 'none' /* IE 10+ */
+      '-ms-overflow-style': 'none' /* IE 10+ */,
+      '-webkit-box-sizing': 'border-box',
+      '-moz-box-sizing': 'border-box',
+      'box-sizing': 'border-box'
     },
     img: {
       maxWidth: '100%',
