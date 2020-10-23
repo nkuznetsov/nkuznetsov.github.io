@@ -59,7 +59,7 @@ export const AppContainer: React.FC = () => {
         break;
       }
     }
-    newMagic = newMagic.map(m => false);
+    newMagic = newMagic.map(_m => false);
 
     if (nextMagic === newMagic.length) {
       nextMagic = 0;
