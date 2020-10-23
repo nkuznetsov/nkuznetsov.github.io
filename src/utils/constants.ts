@@ -5,11 +5,13 @@ export const DEFAULT_IS_DEBUG = DEBUG;
 export const SHOW_DEBUG = DEBUG;
 
 export const BREAKPOINTS = {
+  // default breakpoints need to be left as are
   xs: 0, // default
-  xxsm: 280,
-  xsm: 335,
-  smxx: 420,
-  smx: 480,
+  xxxxxsm: 320,
+  xxxxsm: 335,
+  xxxsm: 390,
+  xxsm: 420,
+  xsm: 480,
   sm: 520, // default
   xxxmd: 565,
   xxmd: 740,

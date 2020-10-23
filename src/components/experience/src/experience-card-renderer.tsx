@@ -40,14 +40,27 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
           />
         </Grid>
         <Grid item className={styles.titleSection}>
-          <Typography variant='h4'>{experience.position}</Typography>
+          <Typography className={styles.positionLargeFont} variant='h4'>
+            {experience.position}
+          </Typography>
+          <Typography className={styles.positionSmallFont} variant='body2'>
+            {experience.position}
+          </Typography>
 
           <Box className={styles.workLinkContainer}>
-            <Typography variant='h5'>{`@ ${experience.displayName}`}</Typography>
+            <Typography
+              className={styles.displayNameLargeFont}
+              variant='h5'
+            >{`@ ${experience.displayName}`}</Typography>
+            <Typography
+              className={styles.displayNameSmallFont}
+              variant='body2'
+            >{`@ ${experience.displayName}`}</Typography>
+
             {experience.workUrl && (
               <Image
                 ariaLabel={workLinkText}
-                className={styles.workLinkImg}
+                className={styles.workLinkImgLarge}
                 cursor={Cursor.Pointer}
                 link={experience.workUrl}
                 Svg={CompanyLinkImg}
@@ -57,7 +70,24 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
             )}
           </Box>
 
-          <Typography variant='h6'>{experience.period}</Typography>
+          <Typography className={styles.periodLargeFont} variant='h6'>
+            {experience.period}
+          </Typography>
+          <Typography className={styles.periodSmallFont} variant='body2'>
+            {experience.period}
+          </Typography>
+
+          {experience.workUrl && (
+            <Image
+              ariaLabel={workLinkText}
+              className={styles.workLinkImgSmall}
+              cursor={Cursor.Pointer}
+              link={experience.workUrl}
+              Svg={CompanyLinkImg}
+              tooltip={workLinkText}
+              tooltipStyle={TooltipStyle.Zoom}
+            />
+          )}
         </Grid>
       </Grid>
       <Grid item xs={12} className={styles.middleSection}>

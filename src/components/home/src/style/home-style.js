@@ -100,7 +100,7 @@ export default createUseStyles(theme => ({
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
       flexDirection: 'row'
     },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xsm}px)`]: {
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxxxsm}px)`]: {
       flexDirection: 'column'
     }
   }
