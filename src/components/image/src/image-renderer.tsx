@@ -94,7 +94,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       }
 
       if (link) {
-        window.location.href = link;
+        window.open(link, '_blank');
         return;
       }
 
