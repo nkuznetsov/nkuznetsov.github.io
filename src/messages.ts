@@ -2,7 +2,9 @@
 export default {
   en: {
     'home.nikitaKuznetsov': 'Nikita Kuznetsov',
+    'noData.noDataText': 'Oops. No data to display here',
 
+    // Experience
     'experience.microsoft': 'Microsoft',
     'experience.billmo': 'BillMo',
     'experience.storeforce': 'StoreForce',
