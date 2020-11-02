@@ -1,7 +1,7 @@
 import React from 'react';
-import { ExperienceCardRenderer } from './experience-card-renderer';
+import { ExperienceCardRenderer as Card } from './experience-card-renderer';
 import { IExperienceRendererProps } from './experience-interface';
-import { NoDataToDisplay } from 'components/app/no-data-to-display';
+import { NoDataToDisplay } from 'components/no-data-to-display';
 import { Scroll } from 'components/scroll';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
@@ -23,7 +23,7 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = ({
         {areExperiencesVisible ? (
           <Box className={styles.experiencesContainer}>
             {experiences.map((exp, index) => (
-              <ExperienceCardRenderer key={index} experience={exp} />
+              <Card key={index} experience={exp} />
             ))}
           </Box>
         ) : (

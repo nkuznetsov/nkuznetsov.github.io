@@ -1,5 +1,6 @@
 import React from 'react';
 import { Cursor, Image } from 'components/image';
+import { ICardSideRendererProps } from './experience-interface';
 import { ReactComponent as CompanyLinkImg } from './style/companyLink.svg';
 import { techLogo } from 'utils/utils';
 import { TooltipStyle } from 'components/image/src/image-interface';
@@ -9,10 +10,11 @@ import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { ICardFrontRendererProps } from './experience-interface';
 
-export const CardFrontRenderer: React.FC<ICardFrontRendererProps> = ({
-  experience
+export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
+  experience,
+  onFlip,
+  cardContainerStyle
 }) => {
   const theme: any = useTheme();
   const styles = experienceStyle(theme);
@@ -22,8 +24,13 @@ export const CardFrontRenderer: React.FC<ICardFrontRendererProps> = ({
     id: 'experience.workLinkTooltip'
   })} ${experience.displayName}`;
 
+  const flip = (e: any) => {
+    e.preventDefault();
+    onFlip && onFlip(true);
+  };
+
   return (
-    <Grid container className={styles.experienceCardContainer}>
+    <Grid container className={cardContainerStyle}>
       <Grid container item xs={12} className={styles.topSection}>
         <Grid item className={styles.logoSection}>
           <Image
@@ -96,6 +103,7 @@ export const CardFrontRenderer: React.FC<ICardFrontRendererProps> = ({
             {description}
           </Typography>
         ))}
+        {onFlip && <button onClick={flip}> Flip card to back </button>}
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>
         <Grid item>

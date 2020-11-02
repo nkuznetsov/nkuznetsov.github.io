@@ -38,7 +38,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       workUrl:
         'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software',
       period: 'Dec 2019 - now',
-      effect: ExperienceCardEffect.Flip
+      effect: ExperienceCardEffect.None
     },
     {
       name: 'billmo',

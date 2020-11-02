@@ -14,9 +14,9 @@ export default createUseStyles(theme => ({
   },
   toTopNavIcon: {
     background: theme.isDebug && colors.teal[100],
-    width: '3em',
-    height: '3em',
-    padding: '1em'
+    width: '3rem',
+    height: '3rem',
+    padding: '1rem'
   },
   main: {
     background: theme.isDebug && colors.purple[300],
@@ -67,7 +67,7 @@ export default createUseStyles(theme => ({
       display: 'flex',
       width: '80%',
       height: '40%',
-      paddingBottom: '1em'
+      paddingBottom: '1rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxsm}px)`]: {
       width: '20%',
@@ -83,7 +83,7 @@ export default createUseStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'start',
-    paddingLeft: '0.5em',
+    paddingLeft: '0.5rem',
     overflowY: 'auto',
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
       width: '100%',
@@ -183,64 +183,73 @@ export default createUseStyles(theme => ({
     width: '100%',
     height: '100%'
   },
-  experienceCardContainer: {
-    background: theme.isDebug ? colors.yellow[200] : theme.secondaryBackground,
-    margin: '1em',
-    paddingTop: '1em',
-    borderRadius: '1em',
+  // This style is shared between experience card container and card flip renderer container
+  experienceCardOuterContainer: {
+    margin: '1rem',
     maxWidth: '23%',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      minWidth: '12rem',
+      height: '12rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxxxxsm}px)`]: {
+      minWidth: '18rem',
+      height: '18rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxxsm}px)`]: {
+      minWidth: '22rem',
+      height: '22rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxsm}px)`]: {
+      minWidth: '24rem',
+      height: '24rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xsm}px)`]: {
+      minWidth: '28rem',
+      height: '28rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
+      minWidth: '32rem',
+      height: '32rem'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
+      minWidth: '38rem',
+      height: '38rem'
+    }
+  },
+  experienceCardInnerContainer: {
+    width: '100%',
+    height: '100%',
+    paddingTop: '1rem',
+    background: theme.isDebug ? colors.yellow[200] : theme.secondaryBackground,
+    borderRadius: '1rem',
     border: `0.1em solid ${theme.secondaryBackgroundBorder}`,
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      minWidth: '12em',
-      height: '12em',
       paddingLeft: 0,
       paddingRight: 0
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxxxsm}px)`]: {
-      minWidth: '18em',
-      height: '18em',
-      paddingLeft: '1em',
-      paddingRight: '1em'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxxsm}px)`]: {
-      minWidth: '22em',
-      height: '22em'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxsm}px)`]: {
-      minWidth: '24em',
-      height: '24em'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xsm}px)`]: {
-      minWidth: '28em',
-      height: '28em'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
-      minWidth: '32em',
-      height: '32em'
-    },
-    [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-      minWidth: '38em',
-      height: '38em'
+      paddingLeft: '1rem',
+      paddingRight: '1rem'
     }
   },
   techLogo: {
     background: theme.isDebug && colors.pink[300],
     margin: '1px',
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      width: '1.5em',
-      height: '1.5em'
+      width: '1.5rem',
+      height: '1.5rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxsm}px)`]: {
-      width: '2em',
-      height: '2em'
+      width: '2rem',
+      height: '2rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
-      width: '2.5em',
-      height: '2.5em'
+      width: '2.5rem',
+      height: '2.5rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-      width: '3em',
-      height: '3em'
+      width: '3rem',
+      height: '3rem'
     }
   },
   description: {
@@ -249,44 +258,44 @@ export default createUseStyles(theme => ({
     flexDirection: 'column',
     textAlign: 'center',
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
-      padding: '0.1em'
+      padding: '0.1rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxmd}px)`]: {
-      padding: '0.7em'
+      padding: '0.7rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-      padding: '1em'
+      padding: '1rem'
     }
   },
   workLinkImgLarge: {
     background: theme.isDebug && colors.pink[300],
-    marginLeft: '0.5em',
+    marginLeft: '0.5rem',
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
       display: 'none'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxxxsm}px)`]: {
       display: 'flex',
-      width: '2em',
-      height: '2em'
+      width: '2rem',
+      height: '2rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xsm}px)`]: {
-      width: '3em',
-      height: '3em'
+      width: '3rem',
+      height: '3rem'
     }
   },
   workLinkImgSmall: {
     background: theme.isDebug && colors.pink[300],
-    marginLeft: '0.5em',
+    marginLeft: '0.5rem',
     [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
       display: 'flex',
-      width: '2em',
-      height: '2em',
-      paddingTop: '1em'
+      width: '2rem',
+      height: '2rem',
+      paddingTop: '1rem'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxxxsm}px)`]: {
       display: 'none',
-      width: '2em',
-      height: '2em'
+      width: '2rem',
+      height: '2rem'
     }
   }
 }));
