@@ -1,6 +1,6 @@
 import React from 'react';
+import { CardEffect, IExperience } from './experience-interface';
 import { ExperienceRenderer } from './experience-renderer';
-import { ExperienceCardEffect, IExperience } from './experience-interface';
 import { ReactComponent as BillMoLogo } from './style/billmoLogo.svg';
 import { ReactComponent as MicrosoftLogo } from './style/microsoftLogo.svg';
 import { ReactComponent as RbcLogo } from './style/rbcLogo.svg';
@@ -38,7 +38,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       workUrl:
         'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software',
       period: 'Dec 2019 - now',
-      effect: ExperienceCardEffect.None
+      effect: CardEffect.None
     },
     {
       name: 'billmo',
@@ -65,7 +65,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       workUrl:
         'https://apps.apple.com/mx/app/billmo-money-transfer-wallet/id1072459204?l=en',
       period: 'Aug 2015 - Dec 2019',
-      effect: ExperienceCardEffect.None
+      effect: CardEffect.None
     },
     {
       name: 'storeforce',
@@ -92,7 +92,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       workUrl:
         'https://play.google.com/store/apps/details?id=com.storeforce.tablet',
       period: 'Jun 2013 - Aug 2015',
-      effect: ExperienceCardEffect.None
+      effect: CardEffect.None
     },
     {
       name: 'rbc',
@@ -106,7 +106,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       logo: RbcLogo,
       tech: [Tech.JavaScript, Tech.CSharp, Tech.VisualStudio, Tech.Sql],
       period: 'May - Aug 2012',
-      effect: ExperienceCardEffect.None
+      effect: CardEffect.None
     }
   ];
 };

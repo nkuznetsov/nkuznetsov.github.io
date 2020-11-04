@@ -1,29 +1,35 @@
 import React from 'react';
 import { Cursor, Image } from 'components/image';
-import { ICardSideRendererProps } from './experience-interface';
+import { getTechLogo } from 'utils/utils';
+import { ICardSideRendererProps } from './card-interface';
 import { ReactComponent as CompanyLinkImg } from './style/companyLink.svg';
-import { techLogo } from 'utils/utils';
-import { TooltipStyle } from 'components/image/src/image-interface';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
-import experienceStyle from './style/experience-style';
+import cardStyle from './style/card-style';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import {
+  ImageEffect,
+  TooltipPosition,
+  TooltipStyle
+} from 'components/image/src/image-interface';
 
 export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
   experience,
+  cardContainerStyle,
   onFlip,
-  cardContainerStyle
+  flipImage
 }) => {
   const theme: any = useTheme();
-  const styles = experienceStyle(theme);
+  const styles = cardStyle(theme);
   const { formatMessage } = useIntl();
 
   const workLinkText = `${formatMessage({
     id: 'experience.workLinkTooltip'
   })} ${experience.displayName}`;
 
+  const flipImgText = formatMessage({ id: 'experience.moreImgText' });
   const flip = (e: any) => {
     e.preventDefault();
     onFlip && onFlip(true);
@@ -43,10 +49,25 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
             Svg={
               experience.logo instanceof Object ? experience.logo : undefined
             }
-            className={styles.experienceLogo}
+            className={styles.cardLogo}
           />
         </Grid>
         <Grid item className={styles.titleSection}>
+          {onFlip && (
+            <Box className={styles.flipImgContainer}>
+              <Image
+                ariaLabel={flipImgText}
+                className={styles.flipImg}
+                cursor={Cursor.Pointer}
+                Svg={flipImage}
+                tooltip={flipImgText}
+                tooltipPosition={TooltipPosition.Top}
+                tooltipStyle={TooltipStyle.Fade}
+                onClick={flip}
+              />
+            </Box>
+          )}
+
           <Typography className={styles.positionLargeFont} variant='h4'>
             {experience.position}
           </Typography>
@@ -84,6 +105,7 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
             {experience.period}
           </Typography>
 
+          {/* This is displayed when screen width is very small */}
           {experience.workUrl && (
             <Image
               ariaLabel={workLinkText}
@@ -103,12 +125,11 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
             {description}
           </Typography>
         ))}
-        {onFlip && <button onClick={flip}> Flip card to back </button>}
       </Grid>
       <Grid item xs={12} className={styles.bottomSection}>
         <Grid item>
           {experience.tech.map((tech, index) => {
-            const logo = techLogo(tech.name, theme.type);
+            const logo = getTechLogo(tech.name, theme.type);
             const src = typeof logo === 'string' ? logo : undefined;
             const svg = typeof logo === 'string' ? null : logo;
 
@@ -117,7 +138,7 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = ({
                 ariaLabel={tech.displayName}
                 className={styles.techLogo}
                 key={index}
-                rotate360OnHover
+                effect={ImageEffect.Rotate360OnHover}
                 src={src}
                 Svg={svg}
                 tooltip={tech.displayName}

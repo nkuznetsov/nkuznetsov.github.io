@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from 'components/image';
+import { ImageEffect } from 'components/image/src/image-interface';
 import { IScrollProps } from './scroll-interface';
 import { ITheme, ThemeType } from 'models';
 import { ReactComponent as ArrowDownDarkImg } from './style/arrow_down_dark.svg';
@@ -45,7 +46,7 @@ export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
       ariaLabel={ariaLabel}
       className={imgStyle}
       onClick={scroll}
-      popOutOnHover
+      effect={ImageEffect.PopOutOnHover}
       Svg={scrollImg}
     />
   );

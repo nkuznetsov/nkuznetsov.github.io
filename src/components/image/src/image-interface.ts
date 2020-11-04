@@ -5,8 +5,7 @@ export interface IImageProps {
   glow?: boolean;
   link?: string;
   onClick?: (event: any) => void;
-  popOutOnHover?: boolean;
-  rotate360OnHover?: boolean;
+  effect?: ImageEffect;
   src?: string;
   Svg?: any;
   themed?: boolean;
@@ -14,6 +13,12 @@ export interface IImageProps {
   tooltipBackground?: string;
   tooltipPosition?: TooltipPosition;
   tooltipStyle?: TooltipStyle;
+}
+
+export enum ImageEffect {
+  None,
+  PopOutOnHover,
+  Rotate360OnHover
 }
 
 export enum Cursor {

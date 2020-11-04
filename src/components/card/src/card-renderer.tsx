@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { Box } from '@material-ui/core';
 import { CardBackRenderer as CardBack } from './card-back-renderer';
+import { CardEffect } from 'components/experience/src/experience-interface';
 import { CardFlip } from 'components/card-flip';
 import { CardFlipDirection } from 'components/card-flip/src/card-flip-interface';
 import { CardFrontRenderer as CardFront } from './card-front-renderer';
+import { ICardRendererProps } from './card-interface';
+import { ReactComponent as FlipHorizontalImg } from './style/flip-horizontal.svg';
+import { ReactComponent as FlipVerticalImg } from './style/flip-vertical.svg';
 import { useTheme } from 'react-jss';
-import experienceStyle from './style/experience-style';
+import cardStyle from './style/card-style';
 import {
   CARD_Z_INDEX,
   FLIP_SPEED_BACK_TO_FRONT,
   FLIP_SPEED_FRONT_TO_BACK,
   IS_INFINITE_ROTATION
 } from 'utils/constants';
-import {
-  ExperienceCardEffect,
-  IExperienceCardRendererProps
-} from './experience-interface';
 
-export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
-  experience
-}) => {
+export const CardRenderer: React.FC<ICardRendererProps> = ({ experience }) => {
   const theme = useTheme();
-  const styles = experienceStyle(theme);
+  const styles = cardStyle(theme);
 
   const [flipped, setFlipped] = useState(false);
 
@@ -31,10 +29,9 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
 
   const effect = experience.effect;
   const hasFlipEffect =
-    effect === ExperienceCardEffect.FlipHorizontal ||
-    effect === ExperienceCardEffect.FlipVertical;
-
+    effect === CardEffect.FlipHorizontal || effect === CardEffect.FlipVertical;
   const flipDirection = getFlipDirection(effect);
+  const flipImage = getFlipImage(flipDirection);
 
   const content = hasFlipEffect ? (
     <CardFlip
@@ -44,24 +41,26 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
       flipSpeedBackToFront={FLIP_SPEED_BACK_TO_FRONT}
       infinite={IS_INFINITE_ROTATION}
       cardZIndex={CARD_Z_INDEX}
-      containerStyle={styles.experienceCardOuterContainer}
+      containerStyle={styles.cardOuterContainer}
     >
       <CardFront
         experience={experience}
         onFlip={flip}
-        cardContainerStyle={styles.experienceCardInnerContainer}
+        cardContainerStyle={styles.cardInnerContainer}
+        flipImage={flipImage}
       />
       <CardBack
         experience={experience}
         onFlip={flip}
-        cardContainerStyle={styles.experienceCardInnerContainer}
+        cardContainerStyle={styles.cardInnerContainer}
+        flipImage={flipImage}
       />
     </CardFlip>
   ) : (
-    <Box className={styles.experienceCardOuterContainer}>
+    <Box className={styles.cardOuterContainer}>
       <CardFront
         experience={experience}
-        cardContainerStyle={styles.experienceCardInnerContainer}
+        cardContainerStyle={styles.cardInnerContainer}
       />
     </Box>
   );
@@ -69,12 +68,12 @@ export const ExperienceCardRenderer: React.FC<IExperienceCardRendererProps> = ({
   return content;
 };
 
-const getFlipDirection = (effect: ExperienceCardEffect) => {
+const getFlipDirection = (effect: CardEffect): CardFlipDirection => {
   switch (effect) {
-    case ExperienceCardEffect.FlipHorizontal: {
+    case CardEffect.FlipHorizontal: {
       return CardFlipDirection.Horizontal;
     }
-    case ExperienceCardEffect.FlipVertical: {
+    case CardEffect.FlipVertical: {
       return CardFlipDirection.Vertical;
     }
     default: {
@@ -83,4 +82,18 @@ const getFlipDirection = (effect: ExperienceCardEffect) => {
   }
 };
 
-ExperienceCardRenderer.displayName = 'ExperienceCardRenderer';
+const getFlipImage = (flipDirection: CardFlipDirection): any => {
+  switch (flipDirection) {
+    case CardFlipDirection.Horizontal: {
+      return FlipHorizontalImg;
+    }
+    case CardFlipDirection.Vertical: {
+      return FlipVerticalImg;
+    }
+    default: {
+      return null;
+    }
+  }
+};
+
+CardRenderer.displayName = 'CardRenderer';

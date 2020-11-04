@@ -2,16 +2,6 @@ export interface IExperienceRendererProps {
   experiences: IExperience[];
 }
 
-export interface ICardSideRendererProps {
-  experience: IExperience;
-  onFlip?: (isFlipped: boolean) => void;
-  cardContainerStyle: string;
-}
-
-export interface IExperienceCardRendererProps {
-  experience: IExperience;
-}
-
 export interface IExperience {
   name: string;
   position: string;
@@ -24,10 +14,10 @@ export interface IExperience {
   tech: any[];
   workUrl?: string;
   period?: string;
-  effect: ExperienceCardEffect;
+  effect: CardEffect;
 }
 
-export enum ExperienceCardEffect {
+export enum CardEffect {
   None,
   FlipVertical,
   FlipHorizontal

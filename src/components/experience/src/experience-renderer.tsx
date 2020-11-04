@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExperienceCardRenderer as Card } from './experience-card-renderer';
+import { Card } from 'components/card';
 import { IExperienceRendererProps } from './experience-interface';
 import { NoDataToDisplay } from 'components/no-data-to-display';
 import { Scroll } from 'components/scroll';

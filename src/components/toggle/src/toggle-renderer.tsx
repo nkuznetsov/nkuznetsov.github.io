@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from 'components/app';
 import { Image } from 'components/image';
+import { ImageEffect } from 'components/image/src/image-interface';
 import { ITheme, ThemeType } from 'models';
 import { IToggleProps, ToggleType } from './toggle-interface';
 import { ReactComponent as DarkThemeActiveImage } from './style/moon_light.svg';
@@ -72,7 +73,9 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
             cursor={cursor}
             glow={glow}
             onClick={toggleHandler}
-            rotate360OnHover={rotate360OnHover}
+            effect={
+              rotate360OnHover ? ImageEffect.Rotate360OnHover : ImageEffect.None
+            }
             Svg={activeIcon}
             themed
           />
@@ -83,7 +86,9 @@ export const ToggleRenderer: React.FC<IToggleProps> = React.memo(
             cursor={cursor}
             glow={glow}
             onClick={toggleHandler}
-            rotate360OnHover={rotate360OnHover}
+            effect={
+              rotate360OnHover ? ImageEffect.Rotate360OnHover : ImageEffect.None
+            }
             Svg={inactiveIcon}
             themed
           />

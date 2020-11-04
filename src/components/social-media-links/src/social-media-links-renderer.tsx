@@ -1,6 +1,7 @@
 import React from 'react';
 import { GITHUB_LINK, LINKEDIN_LINK } from 'utils/constants';
 import { Image, Cursor } from 'components/image';
+import { ImageEffect } from 'components/image/src/image-interface';
 import { ReactComponent as GitHubLogo } from './style/github.svg';
 import { ReactComponent as LinkedInLogo } from './style/linkedin.svg';
 import { useIntl } from 'react-intl';
@@ -19,7 +20,7 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         className={styles.socialIcon}
         cursor={Cursor.Pointer}
         link={GITHUB_LINK}
-        popOutOnHover
+        effect={ImageEffect.PopOutOnHover}
         Svg={GitHubLogo}
         themed
       />
@@ -28,7 +29,7 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         className={styles.socialIcon}
         cursor={Cursor.Pointer}
         link={LINKEDIN_LINK}
-        popOutOnHover
+        effect={ImageEffect.PopOutOnHover}
         Svg={LinkedInLogo}
         themed
       />

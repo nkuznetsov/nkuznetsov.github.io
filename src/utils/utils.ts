@@ -105,7 +105,7 @@ export const scrollToElement = (element: Element) => {
   }
 };
 
-export const techLogo = (tech: string, themeType: ThemeType): any => {
+export const getTechLogo = (tech: string, themeType: ThemeType): any => {
   switch (tech) {
     case Tech.React.name:
       return themeType === ThemeType.Light ? ReactDarkLogo : ReactLightLogo;

@@ -9,6 +9,7 @@ import Zoom from '@material-ui/core/Zoom';
 import {
   Cursor,
   IImageProps,
+  ImageEffect,
   TooltipPosition,
   TooltipStyle
 } from './image-interface';
@@ -21,8 +22,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     glow,
     link,
     onClick,
-    popOutOnHover,
-    rotate360OnHover,
+    effect,
     src,
     Svg,
     themed,
@@ -41,7 +41,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         ? [className, styles.themed].join(' ')
         : className;
 
-      if (popOutOnHover) {
+      if (effect === ImageEffect.PopOutOnHover) {
         composedClass = [
           composedClass,
           hovered ? styles.popOut : styles.popIn,
@@ -49,7 +49,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         ].join(' ');
       }
 
-      if (rotate360OnHover) {
+      if (effect === ImageEffect.Rotate360OnHover) {
         let classToAdd;
 
         if (hovered) {
@@ -79,8 +79,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       className,
       glow,
       hovered,
-      popOutOnHover,
-      rotate360OnHover,
+      effect,
       setComposedClass,
       styles,
       themed,

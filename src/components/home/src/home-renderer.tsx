@@ -5,6 +5,7 @@ import { EXPERIENCE_PAGE } from 'utils/constants';
 import { Header } from 'components/header';
 import { HeaderImage } from 'components/header-image';
 import { IHomeRendererProps } from './home-interface';
+import { ImageEffect } from 'components/image/src/image-interface';
 import { Logo } from 'components/logo';
 import { Menu } from 'components/menu';
 import { MyName } from 'components/my-name';
@@ -73,7 +74,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
                   ariaLabel={formatMessage({ id: 'home.experience' })}
                   className={styles.experienceIcon}
                   onClick={scrollToExperience}
-                  popOutOnHover
+                  effect={ImageEffect.PopOutOnHover}
                   Svg={SuitcaseImg}
                   cursor={Cursor.Pointer}
                 />
