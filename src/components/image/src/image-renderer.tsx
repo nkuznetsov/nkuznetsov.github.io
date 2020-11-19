@@ -42,38 +42,41 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
         ? [className, styles.themed].join(' ')
         : className;
 
-      if (effect === ImageEffect.PopOutOnHover) {
-        composedClass = [
-          composedClass,
-          hovered ? styles.popOut : styles.popIn,
-          styles.hoverTransition
-        ].join(' ');
-      }
-
-      if (effect === ImageEffect.PopOutOnHoverSmall) {
-        composedClass = [
-          composedClass,
-          hovered ? styles.popOutSmall : styles.popIn,
-          styles.hoverTransitionSmall
-        ].join(' ');
-      }
-
-      if (effect === ImageEffect.Rotate360OnHover) {
-        let classToAdd;
-
-        if (hovered) {
-          classToAdd = glow
-            ? styles.rotateClockwiseAndGlow
-            : styles.rotateClockwise;
-        } else {
-          classToAdd = styles.resetImage;
+      switch (effect) {
+        case ImageEffect.PopOutOnHover: {
+          composedClass = [
+            composedClass,
+            hovered ? styles.popOut : styles.popIn,
+            styles.hoverTransition
+          ].join(' ');
+          break;
         }
+        case ImageEffect.PopOutOnHoverSmall: {
+          composedClass = [
+            composedClass,
+            hovered ? styles.popOutSmall : styles.popIn,
+            styles.hoverTransitionSmall
+          ].join(' ');
+          break;
+        }
+        case ImageEffect.Rotate360OnHover: {
+          let classToAdd;
 
-        composedClass = [composedClass, classToAdd].join(' ');
-      }
+          if (hovered) {
+            classToAdd = glow
+              ? styles.rotateClockwiseAndGlow
+              : styles.rotateClockwise;
+          } else {
+            classToAdd = styles.resetImage;
+          }
 
-      if (effect === ImageEffect.ShakeOnHover) {
-        composedClass = [composedClass, hovered && styles.shake].join(' ');
+          composedClass = [composedClass, classToAdd].join(' ');
+          break;
+        }
+        case ImageEffect.ShakeOnHover: {
+          composedClass = [composedClass, hovered && styles.shake].join(' ');
+          break;
+        }
       }
 
       if (cursor !== undefined) {
@@ -152,41 +155,10 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
     );
 
     if (tooltip) {
-      let style;
-      switch (tooltipStyle) {
-        case TooltipStyle.Zoom: {
-          style = Zoom;
-          break;
-        }
-        default: {
-          style = Fade;
-          break;
-        }
-      }
+      const style = getStyleFromTooltipStyle(tooltipStyle);
+      const position = getPositionFromTooltipPosition(tooltipPosition);
 
-      let position: any;
-      switch (tooltipPosition) {
-        case TooltipPosition.Left: {
-          position = 'left';
-          break;
-        }
-        case TooltipPosition.Top: {
-          position = 'top';
-          break;
-        }
-        case TooltipPosition.Right: {
-          position = 'right';
-          break;
-        }
-        default: {
-          position = 'bottom';
-          break;
-        }
-      }
-
-      let tooltipClasses;
-      let useStyles;
-      useStyles = makeStyles({
+      const useStyles = makeStyles({
         tooltip: {
           background: tooltipBackground ?? theme.tooltipBackground,
           color: theme.onBackground
@@ -195,7 +167,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
           color: tooltipBackground ?? theme.tooltipBackground
         }
       });
-      tooltipClasses = useStyles();
+      const tooltipClasses = useStyles();
 
       return (
         <Tooltip
@@ -214,5 +186,35 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
     return component;
   }
 );
+
+const getStyleFromTooltipStyle = (tooltipStyle: TooltipStyle | undefined) => {
+  switch (tooltipStyle) {
+    case TooltipStyle.Zoom: {
+      return Zoom;
+    }
+    default: {
+      return Fade;
+    }
+  }
+};
+
+const getPositionFromTooltipPosition = (
+  tooltipPosition: TooltipPosition | undefined
+) => {
+  switch (tooltipPosition) {
+    case TooltipPosition.Left: {
+      return 'left';
+    }
+    case TooltipPosition.Top: {
+      return 'top';
+    }
+    case TooltipPosition.Right: {
+      return 'right';
+    }
+    default: {
+      return 'bottom';
+    }
+  }
+};
 
 ImageRenderer.displayName = 'ImageRenderer';
