@@ -1,3 +1,5 @@
+import { IImage } from 'components/gallery/src/gallery-interface';
+
 export interface IExperienceRendererProps {
   experiences: IExperience[];
 }
@@ -14,11 +16,24 @@ export interface IExperience {
   tech: any[];
   workUrl?: string;
   period?: string;
-  effect: CardEffect;
+
+  /** Details to show on the back side */
+  details?: IDetails;
 }
 
-export enum CardEffect {
+export interface IDetails {
+  flipEffect: FlipEffect;
+  flipIconBackStyle: FlipIconStyle;
+  images: IImage[];
+}
+
+export enum FlipEffect {
   None,
   FlipVertical,
   FlipHorizontal
+}
+
+export enum FlipIconStyle {
+  Dark,
+  Light
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useIntl } from 'react-intl';
 import Typography from '@material-ui/core/Typography';
 
-export const NoDataToDisplayRenderer: React.FC = () => {
+export const NoDataToDisplayRenderer: React.FC = memo(() => {
   const { formatMessage } = useIntl();
 
   return (
@@ -10,6 +10,6 @@ export const NoDataToDisplayRenderer: React.FC = () => {
       {formatMessage({ id: 'noData.noDataText' })}
     </Typography>
   );
-};
+});
 
 NoDataToDisplayRenderer.displayName = 'NoDataToDisplayRenderer';

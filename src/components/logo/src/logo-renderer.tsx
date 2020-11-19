@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Image } from 'components/image';
-import { ReactComponent as DarkLogo } from './style/logo_dark.svg';
-import { ReactComponent as LightLogo } from './style/logo_light.svg';
+import { ReactComponent as DarkLogo } from './style/logo-dark.svg';
+import { ReactComponent as LightLogo } from './style/logo-light.svg';
 import { ThemeType } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import logoStyle from './style/logo-style';
 
-export const LogoRenderer: React.FC = () => {
+export const LogoRenderer: React.FC = memo(() => {
   const theme: any = useTheme();
   const styles = logoStyle(theme);
   const { formatMessage } = useIntl();
@@ -20,11 +20,11 @@ export const LogoRenderer: React.FC = () => {
     <div onMouseEnter={() => setHovered(!hovered)}>
       <Image
         Svg={svgLogo}
-        ariaLabel={formatMessage({ id: 'home.logo' })}
+        alt={formatMessage({ id: 'home.logo' })}
         className={hovered ? styles.logoCounterclockwise : styles.logoClockwise}
       />
     </div>
   );
-};
+});
 
 LogoRenderer.displayName = 'LogoRenderer';

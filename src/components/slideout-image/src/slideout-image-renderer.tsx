@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image } from 'components/image';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import catImage from './style/cat.png';
 import headerStyle from './style/slideout-image-style';
 
-export const SlideoutImageRenderer: React.FC = () => {
+export const SlideoutImageRenderer: React.FC = memo(() => {
   const theme = useTheme();
   const styles = headerStyle(theme);
   const { formatMessage } = useIntl();
@@ -13,10 +13,10 @@ export const SlideoutImageRenderer: React.FC = () => {
   return (
     <Image
       src={catImage}
-      ariaLabel={formatMessage({ id: 'home.cat' })}
+      alt={formatMessage({ id: 'home.cat' })}
       className={styles.catImage}
     />
   );
-};
+});
 
 SlideoutImageRenderer.displayName = 'SlideoutImageRenderer';

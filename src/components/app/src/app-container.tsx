@@ -41,15 +41,18 @@ export const AppContainer: React.FC = () => {
     })
   );
 
-  const toggleTheme = (isChecked: boolean) => {
-    const newTheme = isChecked
-      ? themes[ThemeType.Dark]
-      : themes[ThemeType.Light];
-    newTheme.isDebug = isDebug;
-    setTheme(newTheme);
-  };
+  const toggleTheme = React.useCallback(
+    (isChecked: boolean) => {
+      const newTheme = isChecked
+        ? themes[ThemeType.Dark]
+        : themes[ThemeType.Light];
+      newTheme.isDebug = isDebug;
+      setTheme(newTheme);
+    },
+    [isDebug]
+  );
 
-  const toggleMagic = () => {
+  const toggleMagic = React.useCallback(() => {
     // Magic is not random - one magic at a time in turn
     let newMagic = [...isMagic];
     let nextMagic = 0;
@@ -68,14 +71,17 @@ export const AppContainer: React.FC = () => {
     }
 
     setIsMagic(newMagic);
-  };
+  }, [isMagic]);
 
-  const toggleDebug = (isDebug: boolean) => {
-    setIsDebug(isDebug);
-    const newTheme = theme;
-    newTheme.isDebug = isDebug;
-    setTheme(newTheme);
-  };
+  const toggleDebug = React.useCallback(
+    (isDebug: boolean) => {
+      setIsDebug(isDebug);
+      const newTheme = theme;
+      newTheme.isDebug = isDebug;
+      setTheme(newTheme);
+    },
+    [theme]
+  );
 
   return (
     <IntlProvider locale={locale} messages={translations}>

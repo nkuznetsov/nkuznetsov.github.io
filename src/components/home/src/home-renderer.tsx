@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { memo, useCallback, useContext } from 'react';
 import { AppContext } from 'components/app';
 import { Cursor, Image } from 'components/image';
 import { EXPERIENCE_PAGE } from 'utils/constants';
@@ -21,7 +21,7 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import homeStyle from './style/home-style';
 
-export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
+export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     const theme = useTheme();
     const styles = homeStyle(theme);
@@ -29,12 +29,12 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
 
     const { isMagic } = useContext(AppContext);
 
-    const scrollToExperience = () => {
+    const scrollToExperience = useCallback(() => {
       const page = document.querySelector(EXPERIENCE_PAGE);
       if (page) {
         scrollToElement(page);
       }
-    };
+    }, []);
 
     return (
       <Box className={styles.home}>
@@ -71,7 +71,7 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = React.memo(
               >
                 <SocialMediaLinks />
                 <Image
-                  ariaLabel={formatMessage({ id: 'home.experience' })}
+                  alt={formatMessage({ id: 'home.experience' })}
                   className={styles.experienceIcon}
                   onClick={scrollToExperience}
                   effect={ImageEffect.PopOutOnHover}

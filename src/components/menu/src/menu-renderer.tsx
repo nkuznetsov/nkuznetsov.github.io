@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Cursor } from 'components/image';
 import { IMenuRendererProps } from './menu-interface';
 import { SHOW_DEBUG } from 'utils/constants';
 import { Toggle } from 'components/toggle';
 import { ToggleType } from 'components/toggle/src/toggle-interface';
 
-export const MenuRenderer: React.FC<IMenuRendererProps> = React.memo(
+export const MenuRenderer: React.FC<IMenuRendererProps> = memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
     return (
       <>

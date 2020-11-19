@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { Box } from '@material-ui/core';
 import { useTheme } from 'react-jss';
 import starfallStyle from './style/starfall-style';
 
-export const StarfallRenderer: React.FC = () => {
+export const StarfallRenderer: React.FC = memo(() => {
   const theme = useTheme();
   const styles = starfallStyle(theme);
 
   return (
-    <div className={styles.parallax}>
-      <div className={styles.smallStars} />
-      <div className={styles.mediumStars} />
-      <div className={styles.largeStars} />
-    </div>
+    <Box className={styles.parallax}>
+      <Box className={styles.smallStars} />
+      <Box className={styles.mediumStars} />
+      <Box className={styles.largeStars} />
+    </Box>
   );
-};
+});
 
 StarfallRenderer.displayName = 'StarfallRenderer';

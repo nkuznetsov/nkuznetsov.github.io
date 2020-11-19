@@ -1,18 +1,16 @@
 import { createUseStyles } from 'react-jss';
 import colors from 'style/colors';
 
-const size = '10rem';
-
 export default createUseStyles(theme => ({
   catImage: {
     background: theme.isDebug && colors.brown,
-    transform: `translateY(${size})`,
+    transform: `translateY(10rem)`,
     animation: '$slideout 10s 0.5s ease infinite',
     position: 'absolute',
     bottom: '0',
     right: '0',
-    width: `${size}`,
-    height: `${size}`
+    width: '10rem',
+    height: '10rem'
   },
   '@keyframes slideout': {
     '0%': {

@@ -36,9 +36,8 @@ export default {
     'experience.rbcPosition': 'Software Developer',
 
     'experience.workLinkTooltip': 'explore work at',
-    'experience.moreImgText': 'more',
 
-    // Aria labels
+    // Alt labels
     'home.cat': 'cat',
     'home.github': 'GitHub',
     'home.linkedin': 'LinkedIn',
@@ -49,9 +48,23 @@ export default {
     'home.toTop': 'to top',
     'home.toggleActiveIcon': 'toggle active icon',
     'home.toggleInactiveIcon': 'toggle inactive icon',
+
+    // Experience logos
     'experience.microsoftLogo': 'Microsoft Logo',
     'experience.billmoLogo': 'BillMo Logo',
     'experience.storeforceLogo': 'StoreForce Logo',
-    'experience.rbcLogo': 'Royal Bank of Canada Logo'
+    'experience.rbcLogo': 'Royal Bank of Canada Logo',
+
+    'experience.flipImgFrontText': 'see more',
+    'experience.flipImgBackText': 'go back',
+
+    // Experience card images
+    'experience.storeforceAdvancedDashboard': 'StoreForce advanced dashboard',
+    'experience.storeforceDashboardKpis': 'StoreForce dashboard KPIs',
+    'experience.storeforceHierarchy': 'StoreForce hierarchy',
+    'experience.storeforceHierarchySelection': 'StoreForce hierarchy selection',
+    'experience.storeforceCalendar': 'StoreForce calendar',
+    'experience.storeforceStatistics': 'StoreForce statistics',
+    'experience.storeforceScheduling': 'StoreForce scheduling'
   }
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { TOOLTIP_DELAY } from 'utils/constants';
 import { useTheme } from 'react-jss';
@@ -14,9 +14,9 @@ import {
   TooltipStyle
 } from './image-interface';
 
-export const ImageRenderer: React.FC<IImageProps> = React.memo(
+export const ImageRenderer: React.FC<IImageProps> = memo(
   ({
-    ariaLabel,
+    alt,
     className,
     cursor,
     glow,
@@ -29,7 +29,8 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
     tooltip,
     tooltipBackground,
     tooltipPosition,
-    tooltipStyle
+    tooltipStyle,
+    index
   }) => {
     const [hovered, setHovered] = useState(false);
     const [composedClass, setComposedClass] = useState<string | undefined>('');
@@ -49,6 +50,14 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         ].join(' ');
       }
 
+      if (effect === ImageEffect.PopOutOnHoverSmall) {
+        composedClass = [
+          composedClass,
+          hovered ? styles.popOutSmall : styles.popIn,
+          styles.hoverTransitionSmall
+        ].join(' ');
+      }
+
       if (effect === ImageEffect.Rotate360OnHover) {
         let classToAdd;
 
@@ -61,6 +70,10 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         }
 
         composedClass = [composedClass, classToAdd].join(' ');
+      }
+
+      if (effect === ImageEffect.ShakeOnHover) {
+        composedClass = [composedClass, hovered && styles.shake].join(' ');
       }
 
       if (cursor !== undefined) {
@@ -86,25 +99,37 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
       cursor
     ]);
 
-    const handleClick = (event: any) => {
-      // Only care about left click
-      if (event.button !== 0) {
-        return;
-      }
+    const handleClick = useCallback(
+      (event: any) => {
+        if (!onClick && !link) {
+          return;
+        }
 
-      if (link) {
-        window.open(link, '_blank');
-        return;
-      }
+        event.preventDefault();
 
-      if (onClick) {
-        onClick(event);
-      }
-    };
+        // Only care about left click
+        if (event.button !== 0) {
+          return;
+        }
 
-    const changeHover = (hovered: boolean) => () => {
-      setHovered(hovered);
-    };
+        if (link) {
+          window.open(link, '_blank');
+          return;
+        }
+
+        if (onClick) {
+          onClick(event, index);
+        }
+      },
+      [index, link, onClick]
+    );
+
+    const changeHover = useCallback(
+      (hovered: boolean) => () => {
+        setHovered(hovered);
+      },
+      []
+    );
 
     const component = Svg ? (
       <Svg
@@ -113,10 +138,17 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
         onMouseLeave={changeHover(false)}
         onMouseDown={handleClick}
       >
-        {ariaLabel}
+        {alt}
       </Svg>
     ) : (
-      <img alt={ariaLabel} className={composedClass} src={src} />
+      <img
+        alt={alt}
+        className={composedClass}
+        src={src}
+        onMouseEnter={changeHover(true)}
+        onMouseLeave={changeHover(false)}
+        onMouseDown={handleClick}
+      />
     );
 
     if (tooltip) {
@@ -154,7 +186,6 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
 
       let tooltipClasses;
       let useStyles;
-
       useStyles = makeStyles({
         tooltip: {
           background: tooltipBackground ?? theme.tooltipBackground,
@@ -168,7 +199,7 @@ export const ImageRenderer: React.FC<IImageProps> = React.memo(
 
       return (
         <Tooltip
-          aria-label={ariaLabel}
+          aria-label={alt}
           arrow
           classes={tooltipClasses}
           placement={position}

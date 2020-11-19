@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import myNameStyle from './style/my-name-style';
 import Typography from '@material-ui/core/Typography';
 
-export const MyNameRenderer: React.FC = () => {
+export const MyNameRenderer: React.FC = memo(() => {
   const theme = useTheme();
   const styles = myNameStyle(theme);
   const { formatMessage } = useIntl();
@@ -14,6 +14,6 @@ export const MyNameRenderer: React.FC = () => {
       {formatMessage({ id: 'home.nikitaKuznetsov' })}
     </Typography>
   );
-};
+});
 
 MyNameRenderer.displayName = 'MyNameRenderer';

@@ -1,10 +1,10 @@
 export interface IImageProps {
-  ariaLabel?: string;
+  alt?: string;
   className?: string;
   cursor?: Cursor;
   glow?: boolean;
   link?: string;
-  onClick?: (event: any) => void;
+  onClick?: (event: any, index?: number) => void;
   effect?: ImageEffect;
   src?: string;
   Svg?: any;
@@ -13,12 +13,15 @@ export interface IImageProps {
   tooltipBackground?: string;
   tooltipPosition?: TooltipPosition;
   tooltipStyle?: TooltipStyle;
+  index?: number; // used in gallery
 }
 
 export enum ImageEffect {
   None,
   PopOutOnHover,
-  Rotate360OnHover
+  PopOutOnHoverSmall,
+  Rotate360OnHover,
+  ShakeOnHover
 }
 
 export enum Cursor {

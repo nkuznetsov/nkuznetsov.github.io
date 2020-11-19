@@ -299,16 +299,27 @@ export default createUseStyles(theme => ({
     }
   },
   flipImgContainer: {
-    position: 'absolute',
     background: theme.isDebug && colors.red[100],
-    alignSelf: 'flex-end',
-    top: '1.1rem'
+    position: 'absolute',
+    top: '1.1rem',
+    right: '1.1rem',
+    zIndex: 2
   },
   flipImg: {
-    width: '2rem',
-    height: '2rem',
     display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'start'
+    width: '2rem',
+    height: '2rem'
+  },
+  cardBack: {
+    backgroundColor: theme.isDebug && colors.yellow[100],
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    maxHeight: '100%'
+  },
+  gridList: {
+    backgroundColor: theme.isDebug && colors.yellow[200],
+    transform: 'translateZ(0)'
   }
 }));

@@ -1,35 +1,35 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
+import { Cursor, ImageEffect } from 'components/image/src/image-interface';
 import { Image } from 'components/image';
-import { ImageEffect } from 'components/image/src/image-interface';
 import { IScrollProps } from './scroll-interface';
 import { ITheme, ThemeType } from 'models';
-import { ReactComponent as ArrowDownDarkImg } from './style/arrow_down_dark.svg';
-import { ReactComponent as ArrowDownLightImg } from './style/arrow_down_light.svg';
-import { ReactComponent as RocketDarkImg } from './style/rocket_dark.svg';
-import { ReactComponent as RocketLightImg } from './style/rocket_light.svg';
+import { ReactComponent as ArrowDownDarkImg } from './style/arrow-down-dark.svg';
+import { ReactComponent as ArrowDownLightImg } from './style/arrow-down-light.svg';
+import { ReactComponent as RocketDarkImg } from './style/rocket-dark.svg';
+import { ReactComponent as RocketLightImg } from './style/rocket-light.svg';
 import { scrollToElement, scrollToTop } from 'utils/utils';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import scrollStyle from './style/scroll-style';
 
-export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
+export const ScrollRenderer: React.FC<IScrollProps> = memo(({ to }) => {
   const theme = useTheme() as ITheme;
   const styles = scrollStyle(theme);
   const { formatMessage } = useIntl();
 
-  let scrollImg, ariaLabel, imgStyle;
+  let scrollImg, alt, imgStyle;
   if (to) {
-    ariaLabel = formatMessage({ id: 'home.nextPage' });
+    alt = formatMessage({ id: 'home.nextPage' });
     scrollImg =
       theme.type === ThemeType.Light ? ArrowDownDarkImg : ArrowDownLightImg;
     imgStyle = styles.nextPageNavIcon;
   } else {
-    ariaLabel = formatMessage({ id: 'home.toTop' });
+    alt = formatMessage({ id: 'home.toTop' });
     scrollImg = theme.type === ThemeType.Light ? RocketDarkImg : RocketLightImg;
     imgStyle = styles.toTopNavIcon;
   }
 
-  const scroll = () => {
+  const scroll = useCallback(() => {
     if (to) {
       const page = document.querySelector(to);
       if (page) {
@@ -39,15 +39,16 @@ export const ScrollRenderer: React.FC<IScrollProps> = React.memo(({ to }) => {
     }
 
     scrollToTop();
-  };
+  }, [to]);
 
   return (
     <Image
-      ariaLabel={ariaLabel}
+      alt={alt}
       className={imgStyle}
       onClick={scroll}
-      effect={ImageEffect.PopOutOnHover}
+      effect={ImageEffect.ShakeOnHover}
       Svg={scrollImg}
+      cursor={Cursor.Pointer}
     />
   );
 });

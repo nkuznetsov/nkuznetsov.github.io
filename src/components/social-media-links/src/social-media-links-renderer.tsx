@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { Box } from '@material-ui/core';
 import { GITHUB_LINK, LINKEDIN_LINK } from 'utils/constants';
 import { Image, Cursor } from 'components/image';
 import { ImageEffect } from 'components/image/src/image-interface';
@@ -8,15 +9,15 @@ import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import socialMediaLinksStyle from './style/social-media-links-style';
 
-export const SocialMediaLinksRenderer: React.FC = () => {
+export const SocialMediaLinksRenderer: React.FC = memo(() => {
   const theme = useTheme();
   const styles = socialMediaLinksStyle(theme);
   const { formatMessage } = useIntl();
 
   return (
-    <div className={styles.socialIconsContainer}>
+    <Box className={styles.socialIconsContainer}>
       <Image
-        ariaLabel={formatMessage({ id: 'home.github' })}
+        alt={formatMessage({ id: 'home.github' })}
         className={styles.socialIcon}
         cursor={Cursor.Pointer}
         link={GITHUB_LINK}
@@ -25,7 +26,7 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         themed
       />
       <Image
-        ariaLabel={formatMessage({ id: 'home.linkedin' })}
+        alt={formatMessage({ id: 'home.linkedin' })}
         className={styles.socialIcon}
         cursor={Cursor.Pointer}
         link={LINKEDIN_LINK}
@@ -33,8 +34,8 @@ export const SocialMediaLinksRenderer: React.FC = () => {
         Svg={LinkedInLogo}
         themed
       />
-    </div>
+    </Box>
   );
-};
+});
 
 SocialMediaLinksRenderer.displayName = 'SocialMediaLinksRenderer';
