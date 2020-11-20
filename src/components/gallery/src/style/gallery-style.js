@@ -24,13 +24,8 @@ export default createUseStyles(theme => ({
     gridTemplateColumns: 'repeat(8, 12.5%)',
     gridTemplateRows: 'repeat(8, 12.5%)',
     gridGap: '0.5rem',
-    justifyContent: 'center',
-    alignItems: 'center',
 
     // Make sure grid height dows not overflow
-    maxHeight: 'calc(100% - 4.5rem)',
-
-    // Grid does not align to the left, so compensate for this
-    marginLeft: '-5rem'
+    maxHeight: 'calc(100% - 4.5rem)'
   }
 }));

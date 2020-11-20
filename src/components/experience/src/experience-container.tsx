@@ -7,20 +7,22 @@ import { ReactComponent as RbcLogo } from './style/experience-logos/rbc-logo.svg
 import { ReactComponent as StoreForceLogo } from './style/experience-logos/storeforce-logo.svg';
 import { Tech } from 'utils/utils-interface';
 import { useIntl } from 'react-intl';
-import sfd0 from './style/sf-images/sf-d-0.jpg';
-import sft0 from './style/sf-images/sf-t-0.jpg';
-import sfd1 from './style/sf-images/sf-d-1.png';
-import sft1 from './style/sf-images/sf-t-1.png';
-import sfd2 from './style/sf-images/sf-d-2.png';
-import sft2 from './style/sf-images/sf-t-2.png';
-import sfd3 from './style/sf-images/sf-d-3.png';
-import sft3 from './style/sf-images/sf-t-3.png';
-import sfd4 from './style/sf-images/sf-d-4.png';
-import sft4 from './style/sf-images/sf-t-4.png';
-import sfd5 from './style/sf-images/sf-d-5.png';
-import sft5 from './style/sf-images/sf-t-5.png';
-import sfd6 from './style/sf-images/sf-d-6.png';
-import sft6 from './style/sf-images/sf-t-6.png';
+
+import sfd0 from './style/sf-images/download/0.png';
+import sfd1 from './style/sf-images/download/1.png';
+import sfd2 from './style/sf-images/download/2.png';
+import sfd3 from './style/sf-images/download/3.png';
+import sfd4 from './style/sf-images/download/4.png';
+import sfd5 from './style/sf-images/download/5.png';
+import sfd6 from './style/sf-images/download/6.png';
+
+import sft0 from './style/sf-images/thumbnail/0.png';
+import sft1 from './style/sf-images/thumbnail/1.png';
+import sft2 from './style/sf-images/thumbnail/2.png';
+import sft3 from './style/sf-images/thumbnail/3.png';
+import sft4 from './style/sf-images/thumbnail/4.png';
+import sft5 from './style/sf-images/thumbnail/5.png';
+import sft6 from './style/sf-images/thumbnail/6.png';
 
 export const ExperienceContainer: React.FC = memo(() => {
   const { formatMessage } = useIntl();
