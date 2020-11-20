@@ -59,12 +59,19 @@ export default {
     'experience.flipImgBackText': 'go back',
 
     // Experience card images
-    'experience.storeforceAdvancedDashboard': 'StoreForce advanced dashboard',
-    'experience.storeforceDashboardKpis': 'StoreForce dashboard KPIs',
-    'experience.storeforceHierarchy': 'StoreForce hierarchy',
-    'experience.storeforceHierarchySelection': 'StoreForce hierarchy selection',
-    'experience.storeforceCalendar': 'StoreForce calendar',
-    'experience.storeforceStatistics': 'StoreForce statistics',
-    'experience.storeforceScheduling': 'StoreForce scheduling'
+    'experience.storeforceHierarchySelection':
+      'StoreForce hierarchy selection allows browsing stores and their groups',
+    'experience.storeforceReporting':
+      'StoreForce reporting provides a comprehensive view of store data',
+    'experience.storeforceHierarchy':
+      'StoreForce visual hierarchy presented as a tree',
+    'experience.storeforceAdvancedDashboard':
+      'StoreForce has advanced controls to track various metrics across the company',
+    'experience.storeforceDashboard':
+      'Standard StoreForce dashboard present a concise view of key performance indicators (KPIs) for the location',
+    'experience.storeforceStatistics':
+      'StoreForce time-based statistics view provides yet another way to explore performance',
+    'experience.storeforceScheduling':
+      'StoreForce scheduling component allows for an efficient employee time management'
   }
 };

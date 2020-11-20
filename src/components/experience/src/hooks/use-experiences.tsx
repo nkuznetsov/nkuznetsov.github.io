@@ -114,10 +114,10 @@ const getExperiences = (formatMessage: any): IExperience[] => {
         images: [
           {
             caption: formatMessage({
-              id: 'experience.storeforceAdvancedDashboard'
+              id: 'experience.storeforceHierarchySelection'
             }),
             alt: formatMessage({
-              id: 'experience.storeforceAdvancedDashboard'
+              id: 'experience.storeforceHierarchySelection'
             }),
             source: {
               regular: sfd0,
@@ -126,9 +126,9 @@ const getExperiences = (formatMessage: any): IExperience[] => {
           },
           {
             caption: formatMessage({
-              id: 'experience.storeforceDashboardKpis'
+              id: 'experience.storeforceReporting'
             }),
-            alt: formatMessage({ id: 'experience.storeforceDashboardKpis' }),
+            alt: formatMessage({ id: 'experience.storeforceReporting' }),
             source: {
               regular: sfd1,
               thumbnail: sft1
@@ -144,19 +144,20 @@ const getExperiences = (formatMessage: any): IExperience[] => {
           },
           {
             caption: formatMessage({
-              id: 'experience.storeforceHierarchySelection'
+              id: 'experience.storeforceAdvancedDashboard'
             }),
             alt: formatMessage({
-              id: 'experience.storeforceHierarchySelection'
+              id: 'experience.storeforceAdvancedDashboard'
             }),
+
             source: {
               regular: sfd3,
               thumbnail: sft3
             }
           },
           {
-            caption: formatMessage({ id: 'experience.storeforceCalendar' }),
-            alt: formatMessage({ id: 'experience.storeforceCalendar' }),
+            caption: formatMessage({ id: 'experience.storeforceDashboard' }),
+            alt: formatMessage({ id: 'experience.storeforceDashboard' }),
             source: {
               regular: sfd4,
               thumbnail: sft4
