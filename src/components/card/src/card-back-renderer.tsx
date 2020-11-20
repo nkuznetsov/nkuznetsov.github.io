@@ -1,14 +1,15 @@
 import React, { memo, useCallback, useState } from 'react';
 import { Cursor, Image } from 'components/image';
 import { Gallery } from 'components/gallery';
+import { HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT } from 'utils/constants';
 import { ICardSideRendererProps } from './card-interface';
+import { IImage } from 'components/gallery/src/gallery-interface';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import cardStyle from './style/card-style';
-import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
+import Carousel, { Modal, ModalGateway, ViewType } from 'react-images'; // https://jossmac.github.io/react-images
 import Grid from '@material-ui/core/Grid';
-import { IImage } from 'components/gallery/src/gallery-interface';
 
 export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
   ({ experience, cardContainerStyle, onFlip, flipImage }) => {
@@ -71,6 +72,7 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
                 <Carousel
                   views={convertImagesToViewTypes(images)}
                   currentIndex={selectedImageIndex}
+                  hideControlsWhenIdle={HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT}
                 />
               </Modal>
             </ModalGateway>

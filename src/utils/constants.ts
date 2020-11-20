@@ -52,3 +52,6 @@ export const FLIP_SPEED_FRONT_TO_BACK = 1;
 export const FLIP_SPEED_BACK_TO_FRONT = 1;
 export const IS_INFINITE_ROTATION = true;
 export const CARD_Z_INDEX = 'auto';
+
+/** Modal */
+export const HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT = 5000; // ms
