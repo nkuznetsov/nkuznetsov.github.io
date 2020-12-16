@@ -34,6 +34,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
   }) => {
     const [hovered, setHovered] = useState(false);
     const [composedClass, setComposedClass] = useState<string | undefined>('');
+
     const theme: any = useTheme();
     const styles = imageStyle(theme);
 
@@ -91,16 +92,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
       }
 
       setComposedClass(composedClass);
-    }, [
-      className,
-      glow,
-      hovered,
-      effect,
-      setComposedClass,
-      styles,
-      themed,
-      cursor
-    ]);
+    }, [className, glow, hovered, effect, styles, themed, cursor]);
 
     const handleClick = useCallback(
       (event: any) => {
@@ -130,6 +122,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
     const changeHover = useCallback(
       (hovered: boolean) => () => {
         setHovered(hovered);
+        console.log(hovered);
       },
       []
     );
@@ -144,14 +137,15 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
         {alt}
       </Svg>
     ) : (
-      <img
-        alt={alt}
-        className={composedClass}
-        src={src}
+      // div wrapper is used to avoid weird mouse enter/leave behavior
+      // these are fired multiple times while hovered
+      <div
         onMouseEnter={changeHover(true)}
         onMouseLeave={changeHover(false)}
         onMouseDown={handleClick}
-      />
+      >
+        <img alt={alt} className={composedClass} src={src} />
+      </div>
     );
 
     if (tooltip) {

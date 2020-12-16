@@ -59,6 +59,7 @@ export default {
     'experience.flipImgBackText': 'go back',
 
     // Experience card images
+    // StoreForce
     'experience.storeforceHierarchySelection':
       'StoreForce hierarchy selection allows browsing stores and their groups',
     'experience.storeforceReporting':
@@ -72,6 +73,41 @@ export default {
     'experience.storeforceStatistics':
       'StoreForce time-based statistics view provides yet another way to explore performance',
     'experience.storeforceScheduling':
-      'StoreForce scheduling component allows for an efficient employee time management'
+      'StoreForce scheduling component allows for an efficient employee time management',
+
+    // BillMo
+    'experience.billmoWalletDashboard': 'BillMo main wallet dashboard',
+    'experience.billmoSendMoneyCalculator':
+      "BillMo sender's side send money calculator",
+    'experience.billmoBillPaymentOptions': 'BillMo bill payment options',
+
+    'experience.billmoTransactionTypes':
+      'Transaction types that BillMo supports',
+    'experience.billmoBarcodeBillPay': 'BillMo bill pay by barcode example',
+    'experience.billmoCountries': 'Countries supported in BillMo',
+    'experience.billmoOffers': 'BillMo offers tab',
+    'experience.billmoBarcodeScanner': 'BillMo barcode scanner',
+    'experience.billmoDeliveryMethods': 'Money delivery methods in BillMo',
+    'experience.billmoFundsControl': 'Various ways to control funds in BillMo',
+    'experience.billmoServices': 'Services, for which you can pay with BillMo',
+    'experience.billmoCashoutLocations':
+      'Examples of locations, where one can cashout with BillMo',
+    'experience.billmoAddBalanceLocations':
+      'Examples of locations, where one can add balance to BillMo account',
+    'experience.billmoSendScreen': 'Sending money with BillMo',
+    'experience.billmoPromo': 'BillMo promo',
+    'experience.billmoVirtualCard': "BillMo's Virtual card description",
+    'experience.billmoRetailPayment': "BillMo's retail payment description",
+    'experience.billmoMenu': 'Menu in BillMo',
+    'experience.billmoVirtualCardPayment':
+      'Payment with virtual card in BillMo',
+    'experience.billmoPaymentBarcode': 'BillMo payment barcode',
+    'experience.billmoDocumentsUpload':
+      'Document upload to confirm identity in BillMo',
+    'experience.billmoVirtualCardGuidance': "BillMo's Virtual card guidance",
+    'experience.billmoSendToBank':
+      'Sending money to a bank account with BillMo ',
+    'experience.billmoUploadDriversLicense':
+      "Uploading driver's license to BillMo to confirm identity"
   }
 };

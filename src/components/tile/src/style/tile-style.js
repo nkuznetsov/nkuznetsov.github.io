@@ -5,8 +5,7 @@ export default createUseStyles(theme => ({
   flowingTile: {
     background: theme.isDebug ? colors.red[100] : theme.background,
     width: '100%', // in case there are inline attributes
-    height: 'auto',
-    overflow: 'hidden'
+    height: 'auto'
   },
   galleryImage: {
     background: theme.isDebug ? colors.brown : theme.background,

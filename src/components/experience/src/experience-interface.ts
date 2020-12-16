@@ -25,6 +25,7 @@ export interface IDetails {
   flipEffect: FlipEffect;
   flipIconBackStyle: FlipIconStyle;
   images: IImage[];
+  isDynamic?: boolean;
 }
 
 export enum FlipEffect {

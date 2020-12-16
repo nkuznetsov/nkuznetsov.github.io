@@ -315,9 +315,17 @@ export default createUseStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
-    maxHeight: '100%'
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    maxHeight: '100%',
+    '&::-webkit-scrollbar': {
+      width: 0, // Chrome
+      background: colors.transparent
+    },
+    scrollbarWidth: 'none',
+    '&::-ms-overflow-style': 'none' /* IE 10+ */
   },
+
   gridList: {
     backgroundColor: theme.isDebug && colors.yellow[200],
     transform: 'translateZ(0)'

@@ -24,6 +24,7 @@ export const GalleryRenderer: React.FC<IGalleryProps> = memo(
               thumbnail={image.source.thumbnail}
               alt={image.alt}
               onClick={onClick}
+              isDynamic={isDynamic}
             />
           );
         })}

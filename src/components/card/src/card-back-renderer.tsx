@@ -20,7 +20,11 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-    const images = experience.details?.images;
+    if (!experience?.details) {
+      return null;
+    }
+
+    const { images, isDynamic } = experience.details;
     if (!images) {
       return null;
     }
@@ -64,7 +68,11 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
             />
           </Box>
 
-          <Gallery images={images} onClick={handleClick} />
+          <Gallery
+            images={images}
+            onClick={handleClick}
+            isDynamic={isDynamic}
+          />
 
           {isModalOpen && (
             <ModalGateway>

@@ -3,7 +3,7 @@ import colors from 'style/colors';
 
 export default createUseStyles(theme => ({
   dynamicGallery: {
-    background: theme.isDebug ? colors.teal[200] : theme.background,
+    background: theme.isDebug ? colors.red[200] : colors.transparent,
 
     /* Prevent vertical gaps */
     lineHeight: 0,
@@ -15,7 +15,7 @@ export default createUseStyles(theme => ({
     columnCount: 3,
     columnGap: 0,
 
-    margin: '0.5rem'
+    marginBottom: '0.8rem'
   },
   // Fixed 8x8 gallery, which contains 7 images
   fixedGallery: {
@@ -25,7 +25,7 @@ export default createUseStyles(theme => ({
     gridTemplateRows: 'repeat(8, 12.5%)',
     gridGap: '0.5rem',
 
-    // Make sure grid height dows not overflow
+    // Make sure grid height does not overflow
     maxHeight: 'calc(100% - 4.5rem)'
   }
 }));
