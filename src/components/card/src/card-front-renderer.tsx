@@ -119,9 +119,17 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
         </Grid>
         <Grid item xs={12} className={styles.middleSection}>
           {experience.descriptions.map((description, index) => (
-            <Typography key={index} variant='h6' className={styles.description}>
-              {description}
-            </Typography>
+            <Box key={index} className={styles.description}>
+              <Typography className={styles.descriptionLargeFont} variant='h6'>
+                {description}
+              </Typography>
+              <Typography
+                className={styles.descriptionSmallFont}
+                variant='body2'
+              >
+                {description}
+              </Typography>
+            </Box>
           ))}
         </Grid>
         <Grid item xs={12} className={styles.bottomSection}>
