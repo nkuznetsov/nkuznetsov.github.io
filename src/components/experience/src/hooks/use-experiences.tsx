@@ -134,7 +134,7 @@ const getExperiences = (formatMessage: any): IExperience[] => {
       period: 'Aug 2015 - Dec 2019',
       details: {
         flipEffect: FlipEffect.FlipVertical,
-        flipIconBackStyle: FlipIconStyle.Dark,
+        flipIconBackStyle: FlipIconStyle.Light,
         isDynamic: true,
         images: [
           {
