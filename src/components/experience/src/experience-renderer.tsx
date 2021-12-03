@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { Card } from 'components/card';
 import { IExperienceRendererProps } from './experience-interface';
-import { NoDataToDisplay } from 'components/no-data-to-display';
 import { Scroll } from 'components/scroll';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
@@ -14,20 +13,14 @@ export const ExperienceRenderer: React.FC<IExperienceRendererProps> = memo(
 
     const composedClass = [styles.experience, 'experience-page'].join(' ');
 
-    const experiencesExist = experiences?.length > 0;
-
     return (
       <Box className={composedClass}>
         <Box className={styles.main}>
-          {experiencesExist ? (
-            <Box className={styles.experiencesContainer}>
-              {experiences.map((exp, index) => (
-                <Card key={index} experience={exp} />
-              ))}
-            </Box>
-          ) : (
-            <NoDataToDisplay />
-          )}
+          <Box className={styles.experiencesContainer}>
+            {experiences.map((exp, index) => (
+              <Card key={index} experience={exp} />
+            ))}
+          </Box>
         </Box>
 
         <Box className={styles.toTopContainer}>

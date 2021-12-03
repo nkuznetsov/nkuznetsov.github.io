@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { Cursor, Image } from 'components/image';
-import { getTechLogo } from 'utils/utils';
+import { getExperienceLogo, getTechLogo } from 'utils/utils';
 import { ICardSideRendererProps } from './card-interface';
 import { ReactComponent as CompanyLinkImg } from './style/company-link.svg';
 import { useIntl } from 'react-intl';
@@ -20,9 +20,12 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
     const styles = cardStyle(theme);
     const { formatMessage } = useIntl();
 
+    const translatedDisplayName = formatMessage({ id: experience.displayName });
     const workLinkText = `${formatMessage({
       id: 'experience.workLinkTooltip'
-    })} ${experience.displayName}`;
+    })} ${translatedDisplayName}`;
+    const translatedPosition = formatMessage({ id: experience.position });
+    const logo = getExperienceLogo(experience.name);
 
     const flipImgFrontText = formatMessage({
       id: 'experience.flipImgFrontText'
@@ -31,9 +34,9 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
     const flip = useCallback(
       (e: any) => {
         e.preventDefault();
-        onFlip && onFlip(true);
+        experience?.details?.images && onFlip && onFlip(true);
       },
-      [onFlip]
+      [onFlip, experience]
     );
 
     return (
@@ -44,12 +47,8 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
               alt={formatMessage({
                 id: `experience.${experience.name}Logo`
               })}
-              src={
-                experience.logo instanceof Object ? undefined : experience.logo
-              }
-              Svg={
-                experience.logo instanceof Object ? experience.logo : undefined
-              }
+              src={logo instanceof Object ? undefined : logo}
+              Svg={logo instanceof Object ? logo : undefined}
               className={styles.cardLogo}
             />
           </Grid>
@@ -67,21 +66,21 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
             )}
 
             <Typography className={styles.positionLargeFont} variant='h4'>
-              {experience.position}
+              {translatedPosition}
             </Typography>
             <Typography className={styles.positionSmallFont} variant='body2'>
-              {experience.position}
+              {translatedPosition}
             </Typography>
 
             <Box className={styles.workLinkContainer}>
               <Typography
                 className={styles.displayNameLargeFont}
                 variant='h5'
-              >{`@ ${experience.displayName}`}</Typography>
+              >{`@ ${translatedDisplayName}`}</Typography>
               <Typography
                 className={styles.displayNameSmallFont}
                 variant='body2'
-              >{`@ ${experience.displayName}`}</Typography>
+              >{`@ ${translatedDisplayName}`}</Typography>
 
               {experience.workUrl && (
                 <Image
@@ -118,23 +117,29 @@ export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
           </Grid>
         </Grid>
         <Grid item xs={12} className={styles.middleSection}>
-          {experience.descriptions.map((description, index) => (
-            <Box key={index} className={styles.description}>
-              <Typography className={styles.descriptionLargeFont} variant='h6'>
-                {description}
-              </Typography>
-              <Typography
-                className={styles.descriptionSmallFont}
-                variant='body2'
-              >
-                {description}
-              </Typography>
-            </Box>
-          ))}
+          {experience.descriptions.map((description, index) => {
+            const translatedDescription = formatMessage({ id: description });
+            return (
+              <Box key={index} className={styles.description}>
+                <Typography
+                  className={styles.descriptionLargeFont}
+                  variant='h6'
+                >
+                  {translatedDescription}
+                </Typography>
+                <Typography
+                  className={styles.descriptionSmallFont}
+                  variant='body2'
+                >
+                  {translatedDescription}
+                </Typography>
+              </Box>
+            );
+          })}
         </Grid>
         <Grid item xs={12} className={styles.bottomSection}>
           <Grid item>
-            {experience.tech.map((tech, index) => {
+            {experience.techValues.map((tech, index) => {
               const logo = getTechLogo(tech.name, theme.type);
               const src = typeof logo === 'string' ? logo : undefined;
               const svg = typeof logo === 'string' ? null : logo;

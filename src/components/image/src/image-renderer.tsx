@@ -122,7 +122,6 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
     const changeHover = useCallback(
       (hovered: boolean) => () => {
         setHovered(hovered);
-        console.log(hovered);
       },
       []
     );

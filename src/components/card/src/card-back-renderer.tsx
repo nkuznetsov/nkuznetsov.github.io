@@ -78,7 +78,7 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
             <ModalGateway>
               <Modal onClose={closeModal}>
                 <Carousel
-                  views={convertImagesToViewTypes(images)}
+                  views={convertImagesToViewTypes(formatMessage, images)}
                   currentIndex={selectedImageIndex}
                   hideControlsWhenIdle={HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT}
                 />
@@ -91,7 +91,10 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
   }
 );
 
-const convertImagesToViewTypes = (images: IImage[]): ViewType[] => {
+const convertImagesToViewTypes = (
+  formatMessage: any,
+  images: IImage[]
+): ViewType[] => {
   return images.map(image => {
     return {
       source: image.source.regular,

@@ -13,7 +13,7 @@ export interface IExperience {
 
   descriptions: string[];
   logo: any;
-  tech: any[];
+  techValues: any[];
   workUrl?: string;
   period?: string;
 

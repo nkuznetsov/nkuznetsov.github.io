@@ -17,12 +17,16 @@ export const LogoRenderer: React.FC = memo(() => {
   const svgLogo = theme.type === ThemeType.Light ? DarkLogo : LightLogo;
 
   return (
-    <div onMouseEnter={() => setHovered(!hovered)}>
-      <Image
-        Svg={svgLogo}
-        alt={formatMessage({ id: 'home.logo' })}
-        className={hovered ? styles.logoCounterclockwise : styles.logoClockwise}
-      />
+    <div>
+      <div onMouseEnter={() => setHovered(!hovered)}>
+        <Image
+          Svg={svgLogo}
+          alt={formatMessage({ id: 'home.logo' })}
+          className={
+            hovered ? styles.logoCounterclockwise : styles.logoClockwise
+          }
+        />
+      </div>
     </div>
   );
 });

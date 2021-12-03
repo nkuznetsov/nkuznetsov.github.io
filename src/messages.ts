@@ -1,8 +1,10 @@
 /** Format: pageName.stringName: string */
 export default {
   en: {
+    'common.errorLoadingData': 'Error loading data',
+    'common.loading': 'Loading...',
+
     'home.nikitaKuznetsov': 'Nikita Kuznetsov',
-    'noData.noDataText': 'Oops. No data to display here',
 
     // Experience
     'experience.microsoft': 'Microsoft',

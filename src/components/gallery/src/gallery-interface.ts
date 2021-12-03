@@ -18,7 +18,7 @@ export interface IImage {
 
 interface IImageSource {
   // Image name is of form "sfd0", where "sf" is name (StoreForce),
-  // "d" is download ("t" - thumbnail, "f" - fillscreen, "r" - regular)
+  // "d" is download ("t" - thumbnail, "f" - fullscreen, "r" - regular)
   // and 0 is image index
 
   // url to serve a perfect quality image download from

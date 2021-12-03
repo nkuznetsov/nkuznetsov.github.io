@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { ApolloProvider } from 'react-apollo';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from 'models';
+import ApolloClient from 'apollo-boost';
 import messages from 'messages';
 import themes from 'style/themes';
 import {
@@ -83,20 +85,27 @@ export const AppContainer: React.FC = () => {
     [theme]
   );
 
+  // 'http://localhost:4444/graphql'
+  const client = new ApolloClient({
+    uri: 'https://fluffyoyster.herokuapp.com/graphql'
+  });
+
   return (
-    <IntlProvider locale={locale} messages={translations}>
-      <ThemeProvider theme={{ ...theme }}>
-        <AppContext.Provider value={appContext}>
-          <MuiThemeProvider theme={muiTheme}>
-            <AppRenderer
-              toggleDebug={toggleDebug}
-              toggleMagic={toggleMagic}
-              toggleTheme={toggleTheme}
-            />
-          </MuiThemeProvider>
-        </AppContext.Provider>
-      </ThemeProvider>
-    </IntlProvider>
+    <ApolloProvider client={client}>
+      <IntlProvider locale={locale} messages={translations}>
+        <ThemeProvider theme={{ ...theme }}>
+          <AppContext.Provider value={appContext}>
+            <MuiThemeProvider theme={muiTheme}>
+              <AppRenderer
+                toggleDebug={toggleDebug}
+                toggleMagic={toggleMagic}
+                toggleTheme={toggleTheme}
+              />
+            </MuiThemeProvider>
+          </AppContext.Provider>
+        </ThemeProvider>
+      </IntlProvider>
+    </ApolloProvider>
   );
 };
 
