@@ -2,13 +2,14 @@ import React, { memo, useState, useEffect } from 'react';
 import { Cursor, ImageEffect } from 'components/image/src/image-interface';
 import { Image } from 'components/image';
 import { ITileProps } from './tile-interface';
+import { Theme } from 'models';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import tileStyle from './style/tile-style';
 
 export const TileRenderer: React.FC<ITileProps> = memo(
   ({ index, thumbnail, alt, onClick, isDynamic }) => {
-    const theme = useTheme();
+    const theme = useTheme() as Theme;
     const styles = tileStyle(theme);
     const [containerStyle, setContainerStyle] = useState<string | undefined>(
       ''

@@ -2,7 +2,7 @@
 // https://material.io/design/material-theming/implementing-your-theme.html#
 
 import { DEFAULT_IS_DEBUG } from 'utils/constants';
-import { IBaseTheme, ITheme, ThemeType } from 'models';
+import { IBaseTheme, Theme, ThemeType } from 'models';
 import colors from './colors';
 
 const baseTheme: IBaseTheme = {
@@ -19,7 +19,7 @@ const baseTheme: IBaseTheme = {
   onError: colors.brown
 };
 
-const lightTheme: ITheme = {
+const lightTheme: Theme = {
   base: baseTheme,
 
   type: ThemeType.Light,
@@ -34,7 +34,7 @@ const lightTheme: ITheme = {
   isDebug: DEFAULT_IS_DEBUG
 };
 
-const darkTheme: ITheme = {
+const darkTheme: Theme = {
   base: baseTheme,
 
   type: ThemeType.Dark,
@@ -49,4 +49,5 @@ const darkTheme: ITheme = {
   isDebug: DEFAULT_IS_DEBUG
 };
 
-export default { lightTheme, darkTheme };
+const themes = { lightTheme, darkTheme };
+export default themes;

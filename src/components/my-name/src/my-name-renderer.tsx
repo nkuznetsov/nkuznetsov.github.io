@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
+import { Theme } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import myNameStyle from './style/my-name-style';
 import Typography from '@material-ui/core/Typography';
 
 export const MyNameRenderer: React.FC = memo(() => {
-  const theme = useTheme();
+  const theme = useTheme() as Theme;
   const styles = myNameStyle(theme);
   const { formatMessage } = useIntl();
 

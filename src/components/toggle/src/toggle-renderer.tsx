@@ -9,7 +9,7 @@ import { AppContext } from 'components/app';
 import { Box } from '@material-ui/core';
 import { Image } from 'components/image';
 import { ImageEffect } from 'components/image/src/image-interface';
-import { ITheme, ThemeType } from 'models';
+import { Theme, ThemeType } from 'models';
 import { IToggleProps, ToggleType } from './toggle-interface';
 import { ReactComponent as DarkThemeActiveImage } from './style/moon-light.svg';
 import { ReactComponent as DarkThemeInactiveImage } from './style/moon-dark.svg';
@@ -23,17 +23,15 @@ import headerStyle from './style/toggle-style';
 
 export const ToggleRenderer: React.FC<IToggleProps> = memo(
   ({ cursor, glow, rotate360OnHover, toggle, type }) => {
-    const theme = useTheme() as ITheme;
+    const theme = useTheme() as Theme;
     const styles = headerStyle(theme);
     const { formatMessage } = useIntl();
     const appContext = useContext(AppContext);
     const [isChecked, setIsChecked] = useState(false);
-    const [activeIcon, setActiveIcon] = useState<
-      React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-    >();
-    const [inactiveIcon, setInactiveIcon] = useState<
-      React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-    >();
+    const [activeIcon, setActiveIcon] =
+      useState<React.FunctionComponent<React.SVGProps<SVGSVGElement>>>();
+    const [inactiveIcon, setInactiveIcon] =
+      useState<React.FunctionComponent<React.SVGProps<SVGSVGElement>>>();
 
     useEffect(() => {
       switch (type) {

@@ -1,10 +1,11 @@
 import React, { memo } from 'react';
+import { Theme } from 'models';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import headerStyle from './style/header-style';
 
 export const HeaderRenderer: React.FC = memo(() => {
-  const theme = useTheme();
+  const theme = useTheme() as Theme;
   const styles = headerStyle(theme);
 
   return (

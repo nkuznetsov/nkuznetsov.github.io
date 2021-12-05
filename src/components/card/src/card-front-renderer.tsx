@@ -3,6 +3,7 @@ import { Cursor, Image } from 'components/image';
 import { getExperienceLogo, getTechLogo } from 'utils/utils';
 import { ICardSideRendererProps } from './card-interface';
 import { ReactComponent as CompanyLinkImg } from './style/company-link.svg';
+import { Theme } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
@@ -16,7 +17,7 @@ import {
 
 export const CardFrontRenderer: React.FC<ICardSideRendererProps> = memo(
   ({ experience, cardContainerStyle, onFlip, flipImage }) => {
-    const theme: any = useTheme();
+    const theme = useTheme() as Theme;
     const styles = cardStyle(theme);
     const { formatMessage } = useIntl();
 

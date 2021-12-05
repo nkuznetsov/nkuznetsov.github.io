@@ -14,6 +14,7 @@ import { Scroll } from 'components/scroll';
 import { scrollToElement } from 'utils/utils';
 import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
+import { Theme } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
@@ -23,7 +24,7 @@ import homeStyle from './style/home-style';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
   ({ toggleDebug, toggleMagic, toggleTheme }) => {
-    const theme = useTheme();
+    const theme = useTheme() as Theme;
     const styles = homeStyle(theme);
     const { formatMessage } = useIntl();
 

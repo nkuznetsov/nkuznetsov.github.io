@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
 import { Image } from 'components/image';
+import { Theme } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import catImage from './style/cat.png';
 import headerStyle from './style/slideout-image-style';
 
 export const SlideoutImageRenderer: React.FC = memo(() => {
-  const theme = useTheme();
+  const theme = useTheme() as Theme;
   const styles = headerStyle(theme);
   const { formatMessage } = useIntl();
 

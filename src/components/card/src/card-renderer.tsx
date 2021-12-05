@@ -4,6 +4,7 @@ import { CardBackRenderer as CardBack } from './card-back-renderer';
 import { CardFlip } from 'components/card-flip';
 import { CardFrontRenderer as CardFront } from './card-front-renderer';
 import { ICardRendererProps } from './card-interface';
+import { Theme } from 'models';
 import { useTheme } from 'react-jss';
 import cardStyle from './style/card-style';
 import {
@@ -21,7 +22,7 @@ import { useIntl } from 'react-intl';
 
 export const CardRenderer: React.FC<ICardRendererProps> = memo(
   ({ experience }) => {
-    const theme = useTheme();
+    const theme = useTheme() as Theme;
     const styles = cardStyle(theme);
     const { formatMessage } = useIntl();
 

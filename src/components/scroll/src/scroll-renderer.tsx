@@ -2,18 +2,18 @@ import React, { memo, useCallback } from 'react';
 import { Cursor, ImageEffect } from 'components/image/src/image-interface';
 import { Image } from 'components/image';
 import { IScrollProps } from './scroll-interface';
-import { ITheme, ThemeType } from 'models';
 import { ReactComponent as ArrowDownDarkImg } from './style/arrow-down-dark.svg';
 import { ReactComponent as ArrowDownLightImg } from './style/arrow-down-light.svg';
 import { ReactComponent as RocketDarkImg } from './style/rocket-dark.svg';
 import { ReactComponent as RocketLightImg } from './style/rocket-light.svg';
 import { scrollToElement, scrollToTop } from 'utils/utils';
+import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import scrollStyle from './style/scroll-style';
 
 export const ScrollRenderer: React.FC<IScrollProps> = memo(({ to }) => {
-  const theme = useTheme() as ITheme;
+  const theme = useTheme() as Theme;
   const styles = scrollStyle(theme);
   const { formatMessage } = useIntl();
 

@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from 'models';
 import { TOOLTIP_DELAY } from 'utils/constants';
 import { useTheme } from 'react-jss';
 import Fade from '@material-ui/core/Fade';
@@ -35,7 +36,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
     const [hovered, setHovered] = useState(false);
     const [composedClass, setComposedClass] = useState<string | undefined>('');
 
-    const theme: any = useTheme();
+    const theme = useTheme() as Theme;
     const styles = imageStyle(theme);
 
     useEffect(() => {
@@ -151,7 +152,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
       const style = getStyleFromTooltipStyle(tooltipStyle);
       const position = getPositionFromTooltipPosition(tooltipPosition);
 
-      const useStyles = makeStyles({
+      const getStyles = makeStyles({
         tooltip: {
           background: tooltipBackground ?? theme.tooltipBackground,
           color: theme.onBackground
@@ -160,7 +161,7 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
           color: tooltipBackground ?? theme.tooltipBackground
         }
       });
-      const tooltipClasses = useStyles();
+      const tooltipClasses = getStyles();
 
       return (
         <Tooltip

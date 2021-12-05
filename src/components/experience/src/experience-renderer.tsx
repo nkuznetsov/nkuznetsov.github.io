@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import { Card } from 'components/card';
 import { IExperienceRendererProps } from './experience-interface';
 import { Scroll } from 'components/scroll';
+import { Theme } from 'models';
 import { useTheme } from 'react-jss';
 import Box from '@material-ui/core/Box';
 import experienceStyle from './style/experience-style';
 
 export const ExperienceRenderer: React.FC<IExperienceRendererProps> = memo(
   ({ experiences }) => {
-    const theme = useTheme();
+    const theme = useTheme() as Theme;
     const styles = experienceStyle(theme);
 
     const composedClass = [styles.experience, 'experience-page'].join(' ');

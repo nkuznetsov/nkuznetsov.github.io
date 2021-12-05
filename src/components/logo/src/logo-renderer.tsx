@@ -2,13 +2,13 @@ import React, { memo, useState } from 'react';
 import { Image } from 'components/image';
 import { ReactComponent as DarkLogo } from './style/logo-dark.svg';
 import { ReactComponent as LightLogo } from './style/logo-light.svg';
-import { ThemeType } from 'models';
+import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import logoStyle from './style/logo-style';
 
 export const LogoRenderer: React.FC = memo(() => {
-  const theme: any = useTheme();
+  const theme = useTheme() as Theme;
   const styles = logoStyle(theme);
   const { formatMessage } = useIntl();
 

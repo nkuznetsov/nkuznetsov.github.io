@@ -21,6 +21,8 @@ interface IBaseTheme {
   onError: string;
 }
 
+type Theme = ITheme | Jss.Theme | any;
+
 interface ITheme {
   base: IBaseTheme;
   type: ThemeType;
@@ -38,4 +40,4 @@ interface ITheme {
 }
 
 export { ThemeType };
-export type { IBaseTheme, ITheme };
+export type { IBaseTheme, Theme };
