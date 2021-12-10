@@ -81,11 +81,11 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
                 />
               </Box>
             </Grid>
-            <Hidden xsDown>
+            <Hidden smDown>
               <Scroll to={EXPERIENCE_PAGE} />
             </Hidden>
 
-            <Hidden smUp>
+            <Hidden lgUp>
               <Box className={styles.placeholder} />
             </Hidden>
           </Grid>

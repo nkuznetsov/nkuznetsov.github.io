@@ -44,7 +44,7 @@ export default createUseStyles(theme => ({
       paddingTop: '50%'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xxmd}px)`]: {
-      paddingTop: '40%'
+      paddingTop: '25%'
     },
     [`@media only screen and (min-width: ${BREAKPOINTS.xmd}px)`]: {
       paddingTop: '30%'
@@ -54,6 +54,7 @@ export default createUseStyles(theme => ({
     }
   },
   placeholder: {
+    background: theme.isDebug && colors.red[100],
     height: '6rem'
   },
   header: {
