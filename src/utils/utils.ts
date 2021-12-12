@@ -2,7 +2,7 @@ import { CardFlipDirection } from 'components/card-flip/src/card-flip-interface'
 import { IImage } from 'components/gallery/src/gallery-interface';
 import { Tech } from './utils-interface';
 import { ThemeType } from 'models';
-import colors from 'style/colors';
+import { colors } from 'style/colors';
 import {
   FlipEffect,
   FlipIconStyle

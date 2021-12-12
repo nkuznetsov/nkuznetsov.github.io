@@ -1,7 +1,7 @@
 // Reference
 // https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 
-export default {
+const colors = {
   transparent: 'transparent',
   white: '#FFFFFF',
   gray: {
@@ -30,3 +30,5 @@ export default {
   brown: '#60292E',
   black: '#000000'
 };
+
+export { colors };

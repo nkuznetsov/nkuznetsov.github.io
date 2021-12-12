@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { ThemeType } from 'models';
 import { WAND_SVG } from 'utils/constants';
-import colors from 'style/colors';
+import { colors } from 'style/colors';
 
 export default createUseStyles(theme => ({
   pointerCursor: {

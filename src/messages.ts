@@ -1,5 +1,5 @@
 /** Format: pageName.stringName: string */
-export default {
+const messages = {
   en: {
     'common.errorLoadingData': 'Error loading data',
     'common.loading': 'Loading...',
@@ -113,3 +113,5 @@ export default {
       "Uploading driver's license to BillMo to confirm identity"
   }
 };
+
+export { messages };

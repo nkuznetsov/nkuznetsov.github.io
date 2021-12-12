@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { Box } from '@material-ui/core';
 import { CardFlipDirection, ICardFlipProps } from './card-flip-interface';
 import { useTheme } from 'react-jss';
-import colors from 'style/colors';
+import { colors } from 'style/colors';
 
 export const CardFlipRenderer: React.FC<ICardFlipProps> = memo(
   ({

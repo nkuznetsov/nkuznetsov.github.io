@@ -1,6 +1,6 @@
 import { BREAKPOINTS } from 'utils/constants';
 import { createUseStyles } from 'react-jss';
-import colors from 'style/colors';
+import { colors } from 'style/colors';
 
 export default createUseStyles(theme => ({
   home: {

@@ -3,7 +3,7 @@
 
 import { DEFAULT_IS_DEBUG } from 'utils/constants';
 import { IBaseTheme, Theme, ThemeType } from 'models';
-import colors from './colors';
+import { colors } from './colors';
 
 const baseTheme: IBaseTheme = {
   primary: colors.teal[100],

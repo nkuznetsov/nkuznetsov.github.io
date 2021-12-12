@@ -3,13 +3,13 @@ import { ApolloProvider } from 'react-apollo';
 import { AppRenderer } from './app-renderer';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
+import { messages } from 'messages';
 import { ThemeProvider } from 'react-jss';
 import { ThemeType } from 'models';
 import ApolloClient from 'apollo-boost';
-import messages from 'messages';
 import themes from 'style/themes';
 import {
-  createMuiTheme,
+  createTheme,
   MuiThemeProvider,
   responsiveFontSizes
 } from '@material-ui/core/styles';
@@ -36,7 +36,7 @@ export const AppContainer: React.FC = () => {
   const appContext: IAppContext = { isMagic, isDebug };
 
   const muiTheme = responsiveFontSizes(
-    createMuiTheme({
+    createTheme({
       breakpoints: {
         values: BREAKPOINTS
       }
