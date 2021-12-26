@@ -4,6 +4,8 @@ const DEBUG = false;
 export const DEFAULT_IS_DEBUG = DEBUG;
 export const SHOW_DEBUG = DEBUG;
 
+export const SITE_NAME = 'Fluffy Oyster';
+
 export const BREAKPOINTS = {
   // default breakpoints need to be left as are
   xs: 0, // default

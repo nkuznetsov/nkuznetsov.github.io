@@ -12,6 +12,7 @@ import { MyName } from 'components/my-name';
 import { ReactComponent as SuitcaseImg } from './style/suitcase.svg';
 import { Scroll } from 'components/scroll';
 import { scrollToElement } from 'utils/utils';
+import { Page, Seo } from 'components/seo';
 import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
 import { Theme } from 'models';
@@ -38,17 +39,62 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
     }, []);
 
     return (
-      <Box className={styles.home}>
-        <Grid container className={styles.container}>
-          <Hidden only='xs'>
-            <Grid item sm={2} className={styles.leftContainer}>
-              {isMagic[2] && <Logo />}
-            </Grid>
-          </Hidden>
+      <>
+        <Seo page={Page.Home} />
+        <Box className={styles.home}>
+          <Grid container className={styles.container}>
+            <Hidden only='xs'>
+              <Grid item sm={2} className={styles.leftContainer}>
+                {isMagic[2] && <Logo />}
+              </Grid>
+            </Hidden>
 
-          <Grid item container sm={8} className={styles.centerContainer}>
-            <Hidden smUp>
-              <Grid container className={styles.topMenu}>
+            <Grid item container sm={8} className={styles.centerContainer}>
+              <Hidden smUp>
+                <Grid container className={styles.topMenu}>
+                  <Menu
+                    toggleDebug={toggleDebug}
+                    toggleMagic={toggleMagic}
+                    toggleTheme={toggleTheme}
+                  />
+                </Grid>
+              </Hidden>
+
+              <Grid className={styles.centerSubContainer}>
+                {isMagic[0] && (
+                  <Box className={styles.header}>
+                    <HeaderImage />
+                    <Header />
+                  </Box>
+                )}
+                <MyName />
+                <Box
+                  alignItems='center'
+                  justifyContent='center'
+                  className={styles.linksContainer}
+                >
+                  <SocialMediaLinks />
+                  <Image
+                    alt={formatMessage({ id: 'home.experience' })}
+                    className={styles.experienceIcon}
+                    onClick={scrollToExperience}
+                    effect={ImageEffect.PopOutOnHover}
+                    Svg={SuitcaseImg}
+                    cursor={Cursor.Pointer}
+                  />
+                </Box>
+              </Grid>
+              <Hidden smDown>
+                <Scroll to={EXPERIENCE_PAGE} />
+              </Hidden>
+
+              <Hidden lgUp>
+                <Box className={styles.placeholder} />
+              </Hidden>
+            </Grid>
+
+            <Hidden only='xs'>
+              <Grid container item sm={2} className={styles.rightContainer}>
                 <Menu
                   toggleDebug={toggleDebug}
                   toggleMagic={toggleMagic}
@@ -56,52 +102,10 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
                 />
               </Grid>
             </Hidden>
-
-            <Grid className={styles.centerSubContainer}>
-              {isMagic[0] && (
-                <Box className={styles.header}>
-                  <HeaderImage />
-                  <Header />
-                </Box>
-              )}
-              <MyName />
-              <Box
-                alignItems='center'
-                justifyContent='center'
-                className={styles.linksContainer}
-              >
-                <SocialMediaLinks />
-                <Image
-                  alt={formatMessage({ id: 'home.experience' })}
-                  className={styles.experienceIcon}
-                  onClick={scrollToExperience}
-                  effect={ImageEffect.PopOutOnHover}
-                  Svg={SuitcaseImg}
-                  cursor={Cursor.Pointer}
-                />
-              </Box>
-            </Grid>
-            <Hidden smDown>
-              <Scroll to={EXPERIENCE_PAGE} />
-            </Hidden>
-
-            <Hidden lgUp>
-              <Box className={styles.placeholder} />
-            </Hidden>
           </Grid>
-
-          <Hidden only='xs'>
-            <Grid container item sm={2} className={styles.rightContainer}>
-              <Menu
-                toggleDebug={toggleDebug}
-                toggleMagic={toggleMagic}
-                toggleTheme={toggleTheme}
-              />
-            </Grid>
-          </Hidden>
-        </Grid>
-        {isMagic[1] && <SlideoutImage />}
-      </Box>
+          {isMagic[1] && <SlideoutImage />}
+        </Box>
+      </>
     );
   }
 );
