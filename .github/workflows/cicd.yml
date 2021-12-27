@@ -12,25 +12,44 @@ jobs:
     name: deploy to gh-pages
     runs-on: ubuntu-latest
     steps:
-      - name: setup node.js for use with actions
-        uses: actions/setup-node@v2.5.0
-        with:
-          node-version: '16'
-
       - name: checkout branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: install yarn
-        run: npm install -g yarn
+      - name: setup node.js for use with actions
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: '16'
 
-      - name: predeploy
-        run: yarn install --frozen-lockfile
+      - name: set email
+        run: git config --global user.email "${{ secrets.ADMIN_EMAIL }}"
 
-      - name: Deploy to GitHub Pages
+      - name: set username
+        run: git config --global user.name "${{ secrets.ADMIN_NAME }}"
+
+      - name: list structure
+        run: ls
+
+      # - name: install yarn
+      #   run: npm install -g yarn
+
+      # - name: predeploy
+      #   run: yarn install --frozen-lockfile && npm run build
+
+      - name: install dependencies
+        run: cd website && npm install
+
+      - name: check package.json
+        run: cat package.json
+
+      - name: build
+        run: npm run build
+
+      - name: deploy to github pages
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
-
+          GITHUB_TOKEN: ${{ secrets.FLUFFY }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: website/build
