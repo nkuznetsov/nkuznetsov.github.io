@@ -28,7 +28,9 @@ jobs:
       - name: predeploy
         run: yarn install --frozen-lockfile
 
-      - name: deploy
-        run: |
-          git config user.name "Nikita Kuznetsov" && git config user.email "kuznetsov.nikita@gmail.com"
-          yarn deploy
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+
