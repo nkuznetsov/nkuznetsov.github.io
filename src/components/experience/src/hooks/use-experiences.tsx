@@ -13,9 +13,7 @@ export const useExperiences = (): IUseExperiencesResult => {
       experiences: []
     });
 
-  const { data, loading, error } = useQuery(GET_EXPERIENCES, {
-    fetchPolicy: 'no-cache'
-  });
+  const { data, loading, error } = useQuery(GET_EXPERIENCES);
 
   // Loading or error
   React.useEffect(() => {
@@ -24,7 +22,7 @@ export const useExperiences = (): IUseExperiencesResult => {
     }
 
     if (error) {
-      console.log(
+      console.error(
         `Error running query [name=${error.name}][message=${error.message}]`
       );
     }
@@ -33,6 +31,7 @@ export const useExperiences = (): IUseExperiencesResult => {
   // Query data
   React.useEffect(() => {
     if (!data?.experiences) {
+      console.log('No experiences available');
       return;
     }
 
