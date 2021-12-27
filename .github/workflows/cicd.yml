@@ -28,21 +28,17 @@ jobs:
       - name: set username
         run: git config --global user.name "${{ secrets.ADMIN_NAME }}"
 
-      - name: list structure
-        run: ls
+      # - name: list file and folder structure
+      #   run: ls
 
       - name: install yarn
         run: npm install -g yarn
 
       - name: predeploy
         run: yarn install --frozen-lockfile
-      #  && npm run build
 
-      # - name: install dependencies
-      #   run: npm install
-
-      - name: check package.json
-        run: cat package.json
+      # - name: display contents of package.json
+      #   run: cat package.json
 
       - name: build
         run: npm run build
