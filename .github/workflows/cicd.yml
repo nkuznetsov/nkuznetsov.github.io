@@ -29,6 +29,6 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: deploy
-        run: yarn deploy
-    env:
-      GIT_AUTHOR_NAME: nkuznetsov
+        run: |
+          git config user.name "Nikita Kuznetsov" && git config user.email "kuznetsov.nikita@gmail.com"
+          yarn deploy
