@@ -31,7 +31,7 @@ export const useExperiences = (): IUseExperiencesResult => {
   // Query data
   React.useEffect(() => {
     if (!data?.experiences) {
-      console.log('No experiences available');
+      // Still loading
       return;
     }
 

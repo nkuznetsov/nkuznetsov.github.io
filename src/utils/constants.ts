@@ -60,6 +60,9 @@ export const CARD_Z_INDEX = 'auto';
 /** Modal */
 export const HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT = 5000; // ms
 
-/** Ads */
+/** Google AdSense */
 export const AD_CLIENT = 'ca-pub-4609964133332939';
 export const AD_SLOT = '2603031932';
+
+/** Google Analytics */
+export const MEASUREMENT_ID = 'G-W0M9VTXPWT';

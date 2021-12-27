@@ -1,0 +1,25 @@
+name: Fluffy Oyster CICD
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn
+      - name: Deploy to GitHub Pages
+        run: yarn deploy
+    env:
+      GIT_AUTHOR_NAME: nkuznetsov
