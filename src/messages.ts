@@ -4,7 +4,7 @@ const messages = {
     'common.errorLoadingData': 'Error loading data',
     'common.loading': 'Loading...',
 
-    'home.nikitaKuznetsov': 'Nikita Kuznetsov',
+    'home.nikitaKuznetsov': 'Nikita K',
 
     // Experience
     'experience.microsoft': 'Microsoft',
