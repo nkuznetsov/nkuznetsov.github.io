@@ -31,14 +31,15 @@ jobs:
       - name: list structure
         run: ls
 
-      # - name: install yarn
-      #   run: npm install -g yarn
+      - name: install yarn
+        run: npm install -g yarn
 
-      # - name: predeploy
-      #   run: yarn install --frozen-lockfile && npm run build
+      - name: predeploy
+        run: yarn install --frozen-lockfile
+      #  && npm run build
 
-      - name: install dependencies
-        run: cd website && npm install
+      # - name: install dependencies
+      #   run: npm install
 
       - name: check package.json
         run: cat package.json
@@ -52,4 +53,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.FLUFFY }}
           BASE_BRANCH: master
           BRANCH: gh-pages
-          FOLDER: website/build
+          FOLDER: build
