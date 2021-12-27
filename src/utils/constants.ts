@@ -6,6 +6,8 @@ export const SHOW_DEBUG = DEBUG;
 
 export const SITE_NAME = 'Fluffy Oyster';
 
+export const GRAPHQL_URL = 'https://fluffyoyster.herokuapp.com/graphql';
+
 export const BREAKPOINTS = {
   // default breakpoints need to be left as are
   xs: 0, // default
@@ -57,3 +59,7 @@ export const CARD_Z_INDEX = 'auto';
 
 /** Modal */
 export const HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT = 5000; // ms
+
+/** Ads */
+export const AD_CLIENT = 'ca-pub-4609964133332939';
+export const AD_SLOT = '2603031932';

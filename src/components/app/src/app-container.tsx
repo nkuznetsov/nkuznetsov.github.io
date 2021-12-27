@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { AppRenderer } from './app-renderer';
+import { GRAPHQL_URL } from 'utils/constants';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
 import { messages } from 'messages';
@@ -87,7 +88,7 @@ export const AppContainer: React.FC = () => {
 
   // 'http://localhost:4444/graphql'
   const client = new ApolloClient({
-    uri: 'https://fluffyoyster.herokuapp.com/graphql'
+    uri: GRAPHQL_URL
   });
 
   return (
