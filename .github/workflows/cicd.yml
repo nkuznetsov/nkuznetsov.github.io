@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: setup node.js for use with actions
-          uses: actions/setup-node@v1.1.0
+          uses: actions/setup-node@v2
           with:
-            version:  16.x
+            version: 12.x
 
       - name: checkout branch
         uses: actions/checkout@v2
@@ -25,15 +25,12 @@ jobs:
       - name: install yarn
         run: npm install -g yarn
 
-      - name: install dependencies
-        run: yarn build
-
       - name: predeploy
-        run: npm run build
+        run: yarn install --frozen-lockfile
 
       - name: Deploy
         run: |
           git config user.name "nkuznetsov" && git config user.email "kuznetsov.nikita@gmail.com"
-          npm run gh-pages-deploy
+          yarn run gh-pages-deploy
     env:
       GIT_AUTHOR_NAME: nkuznetsov
