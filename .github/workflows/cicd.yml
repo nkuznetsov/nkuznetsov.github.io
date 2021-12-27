@@ -28,9 +28,9 @@ jobs:
       - name: predeploy
         run: yarn install --frozen-lockfile
 
-      - name: Deploy
+      - name: deploy
         run: |
           git config user.name "nkuznetsov" && git config user.email "kuznetsov.nikita@gmail.com"
-          yarn run gh-pages-deploy
+          yarn deploy
     env:
       GIT_AUTHOR_NAME: nkuznetsov
