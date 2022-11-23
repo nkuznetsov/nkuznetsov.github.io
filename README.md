@@ -6,21 +6,6 @@
 
 Playground for a fluffy oyster.
 
-## Usage
-
-- clone repo
-- install dependencies
-
-```bash
-yarn
-```
-
-- start
-
-```bash
-yarn start
-```
-
 ## Authors
 
-**Nikita K** - _initial work_
+**Nikita K**
