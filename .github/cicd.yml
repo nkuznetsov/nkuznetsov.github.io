@@ -1,0 +1,52 @@
+name: fluffy oyster cicd
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+
+jobs:
+  cicd:
+    name: deploy to gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: setup node.js for use with actions
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: '16'
+
+      - name: set email
+        run: git config --global user.email "${{ secrets.ADMIN_EMAIL }}"
+
+      - name: set username
+        run: git config --global user.name "${{ secrets.ADMIN_NAME }}"
+
+      # - name: list file and folder structure
+      #   run: ls
+
+      - name: install yarn
+        run: npm install -g yarn
+
+      - name: predeploy
+        run: yarn install --frozen-lockfile
+
+      # - name: display contents of package.json
+      #   run: cat package.json
+
+      - name: build
+        run: npm run build
+
+      - name: deploy to github pages
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          GITHUB_TOKEN: ${{ secrets.FLUFFY }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: build
