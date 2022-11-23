@@ -1,15 +1,12 @@
 import React, { memo, useCallback } from 'react';
+import { Box, Grid, Typography, useTheme } from '@mui/material';
 import { Cursor, Image } from 'components/image';
 import { getExperienceLogo, getTechLogo } from 'utils/utils';
 import { ICardSideRendererProps } from './card-interface';
 import { ReactComponent as CompanyLinkImg } from './style/company-link.svg';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from 'react-jss';
-import Box from '@material-ui/core/Box';
 import cardStyle from './style/card-style';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import {
   ImageEffect,
   TooltipStyle

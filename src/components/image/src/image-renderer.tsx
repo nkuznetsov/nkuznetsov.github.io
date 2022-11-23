@@ -1,12 +1,15 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {
+  createRef,
+  memo,
+  useCallback,
+  useEffect,
+  useState
+} from 'react';
+import { makeStyles } from '@mui/styles';
 import { Theme } from 'models';
 import { TOOLTIP_DELAY } from 'utils/constants';
-import { useTheme } from 'react-jss';
-import Fade from '@material-ui/core/Fade';
+import { Fade, Tooltip, useTheme, Zoom } from '@mui/material';
 import imageStyle from './style/image-style';
-import Tooltip from '@material-ui/core/Tooltip';
-import Zoom from '@material-ui/core/Zoom';
 import {
   Cursor,
   IImageProps,
@@ -38,6 +41,35 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
 
     const theme = useTheme() as Theme;
     const styles = imageStyle(theme);
+
+    const mouseMoveRef = createRef();
+
+    const changeHover = useCallback(
+      (hovered: boolean) => () => {
+        setHovered(hovered);
+      },
+      []
+    );
+
+    useEffect(() => {
+      const checkHover = (e: any) => {
+        if (mouseMoveRef.current) {
+          const mouseOver = (mouseMoveRef.current as any).contains(e.target);
+          if (!hovered && mouseOver) {
+            changeHover(true);
+          }
+
+          if (hovered && !mouseOver) {
+            changeHover(false);
+          }
+        }
+      };
+
+      window.addEventListener('mousemove', checkHover, true);
+      return () => {
+        window.removeEventListener('mousemove', checkHover, true);
+      };
+    }, [changeHover, hovered, mouseMoveRef]);
 
     useEffect(() => {
       let composedClass = themed
@@ -120,15 +152,9 @@ export const ImageRenderer: React.FC<IImageProps> = memo(
       [index, link, onClick]
     );
 
-    const changeHover = useCallback(
-      (hovered: boolean) => () => {
-        setHovered(hovered);
-      },
-      []
-    );
-
     const component = Svg ? (
       <Svg
+        ref={mouseMoveRef}
         className={composedClass}
         onMouseEnter={changeHover(true)}
         onMouseLeave={changeHover(false)}

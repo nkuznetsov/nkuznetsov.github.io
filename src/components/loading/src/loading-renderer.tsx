@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { ILoadingProps } from './loading-interface';
+import { Typography } from '@mui/material';
 import { useIntl } from 'react-intl';
-import Typography from '@material-ui/core/Typography';
 
 export const LoadingRenderer: React.FC<ILoadingProps> = memo(
   ({ type, message }) => {

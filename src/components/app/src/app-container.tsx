@@ -5,15 +5,14 @@ import { GRAPHQL_URL } from 'utils/constants';
 import { IAppContext } from './app-interface';
 import { IntlProvider } from 'react-intl';
 import { messages } from 'messages';
-import { ThemeProvider } from 'react-jss';
 import { ThemeType } from 'models';
 import ApolloClient from 'apollo-boost';
 import themes from 'style/themes';
 import {
   createTheme,
-  MuiThemeProvider,
+  ThemeProvider,
   responsiveFontSizes
-} from '@material-ui/core/styles';
+} from '@mui/material/styles';
 import {
   BREAKPOINTS,
   DEFAULT_IS_DEBUG,
@@ -96,13 +95,13 @@ export const AppContainer: React.FC = () => {
       <IntlProvider locale={locale} messages={translations}>
         <ThemeProvider theme={{ ...theme }}>
           <AppContext.Provider value={appContext}>
-            <MuiThemeProvider theme={muiTheme}>
+            <ThemeProvider theme={muiTheme}>
               <AppRenderer
                 toggleDebug={toggleDebug}
                 toggleMagic={toggleMagic}
                 toggleTheme={toggleTheme}
               />
-            </MuiThemeProvider>
+            </ThemeProvider>
           </AppContext.Provider>
         </ThemeProvider>
       </IntlProvider>

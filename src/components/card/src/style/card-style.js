@@ -263,7 +263,9 @@ export default createUseStyles(theme => ({
     [`@media only screen and (min-width: ${BREAKPOINTS.xxxxxsm}px)`]: {
       paddingLeft: '1rem',
       paddingRight: '1rem'
-    }
+    },
+    position: 'relative',
+    zIndex: 1000
   },
   techLogo: {
     background: theme.isDebug && colors.pink[300],
@@ -319,9 +321,9 @@ export default createUseStyles(theme => ({
   flipImgContainer: {
     background: theme.isDebug && colors.red[100],
     position: 'absolute',
-    top: '1.1rem',
-    right: '1.1rem',
-    zIndex: 2
+    top: '1rem',
+    right: '1rem',
+    zIndex: 9999
   },
   flipImg: {
     display: 'flex',

@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
+import { Box, Grid, useTheme } from '@mui/material';
 import { Cursor, Image } from 'components/image';
 import { Gallery } from 'components/gallery';
 import { HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT } from 'utils/constants';
@@ -6,11 +7,8 @@ import { ICardSideRendererProps } from './card-interface';
 import { IImage } from 'components/gallery/src/gallery-interface';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from 'react-jss';
-import Box from '@material-ui/core/Box';
 import cardStyle from './style/card-style';
-import Carousel, { Modal, ModalGateway, ViewType } from 'react-images'; // https://jossmac.github.io/react-images
-import Grid from '@material-ui/core/Grid';
+// import Carousel, { Modal, ModalGateway, ViewType } from 'react-images'; // https://jossmac.github.io/react-images
 
 export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
   ({ experience, cardContainerStyle, onFlip, flipImage }) => {
@@ -59,7 +57,7 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
 
     return (
       <Grid container className={cardContainerStyle}>
-        <Grid container item xs={12} className={styles.cardBack}>
+        {onFlip && (
           <Box className={styles.flipImgContainer}>
             <Image
               alt={flipImgBackText}
@@ -69,14 +67,16 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
               onClick={flip}
             />
           </Box>
+        )}
 
+        <Grid container item xs={12} className={styles.cardBack}>
           <Gallery
             images={images}
             onClick={handleClick}
             isDynamic={isDynamic}
           />
 
-          {isModalOpen && (
+          {/* {isModalOpen && (
             <ModalGateway>
               <Modal onClose={closeModal}>
                 <Carousel
@@ -86,23 +86,23 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
                 />
               </Modal>
             </ModalGateway>
-          )}
+          )} */}
         </Grid>
       </Grid>
     );
   }
 );
 
-const convertImagesToViewTypes = (
-  formatMessage: any,
-  images: IImage[]
-): ViewType[] => {
-  return images.map(image => {
-    return {
-      source: image.source.regular,
-      caption: image.caption
-    };
-  });
-};
+// const convertImagesToViewTypes = (
+//   formatMessage: any,
+//   images: IImage[]
+// ): ViewType[] => {
+//   return images.map(image => {
+//     return {
+//       source: image.source.regular,
+//       caption: image.caption
+//     };
+//   });
+// };
 
 CardBackRenderer.displayName = 'CardBackRenderer';

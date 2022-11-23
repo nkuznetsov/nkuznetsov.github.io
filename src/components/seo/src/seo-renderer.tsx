@@ -12,7 +12,7 @@ export const SeoRenderer: React.FC<ISeoRendererProps> = memo(({ page }) => {
       <meta name='og:description' content={getDescription(page)} />
       <meta name='og:type' content='website' />
       <meta name='og:site_name' content={getSiteName()} />
-      <meta name='og:image' content={getImage(page)} />
+      <meta name='og:image' content={'https://fluffyoyster.cc/oyster.png'} />
       <meta name='twitter:title' content={getTitle(page)} />
       <meta name='twitter:description' content={getDescription(page)} />
       <meta name='twitter:card' content='summary' />

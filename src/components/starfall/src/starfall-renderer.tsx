@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-import { Box } from '@material-ui/core';
+import { Box, useTheme } from '@mui/material';
 import { Theme } from 'models';
-import { useTheme } from 'react-jss';
 import starfallStyle from './style/starfall-style';
 
 export const StarfallRenderer: React.FC = memo(() => {

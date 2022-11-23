@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useContext } from 'react';
 import { AppContext } from 'components/app';
+import { Box, Grid, Hidden, useTheme } from '@mui/material';
 import { Cursor, Image } from 'components/image';
 import { EXPERIENCE_PAGE } from 'utils/constants';
 import { Header } from 'components/header';
@@ -17,10 +18,6 @@ import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from 'react-jss';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
 import homeStyle from './style/home-style';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = memo(

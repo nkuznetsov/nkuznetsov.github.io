@@ -6,7 +6,7 @@ import { IAppRendererProps } from './app-interface';
 import { Starfall } from 'components/starfall';
 import { Theme } from 'models';
 import { useAnalytics } from 'components/analytics/src/use-analytics';
-import { useTheme } from 'react-jss';
+import { useTheme } from '@mui/material';
 import styleResets from './style/app-style';
 
 export const AppRenderer: React.FC<IAppRendererProps> = memo(props => {

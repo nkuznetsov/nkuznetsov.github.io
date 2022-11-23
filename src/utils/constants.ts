@@ -1,12 +1,12 @@
 import { ThemeType } from 'models';
 
-const DEBUG = false;
+const DEBUG = true;
 export const DEFAULT_IS_DEBUG = DEBUG;
 export const SHOW_DEBUG = DEBUG;
 
 export const SITE_NAME = 'Fluffy Oyster';
 
-export const GRAPHQL_URL = 'https://fluffyoyster.herokuapp.com/graphql';
+export const GRAPHQL_URL = 'https://fluffyoyster.onrender.com/graphql';
 
 export const BREAKPOINTS = {
   // default breakpoints need to be left as are

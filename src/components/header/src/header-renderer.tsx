@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { Theme } from 'models';
-import { useTheme } from 'react-jss';
-import Box from '@material-ui/core/Box';
+import { Box, useTheme } from '@mui/material';
 import headerStyle from './style/header-style';
 
 export const HeaderRenderer: React.FC = memo(() => {

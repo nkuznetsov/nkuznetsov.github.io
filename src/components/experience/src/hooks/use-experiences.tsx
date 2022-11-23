@@ -35,6 +35,7 @@ export const useExperiences = (): IUseExperiencesResult => {
       return;
     }
 
+    console.log('Loaded experiences.');
     setExperiencesList({ experiences: data.experiences });
   }, [data]);
 

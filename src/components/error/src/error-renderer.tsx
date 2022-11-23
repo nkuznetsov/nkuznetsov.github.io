@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { IErrorProps } from './error-interface';
+import { Typography } from '@mui/material';
 import { useIntl } from 'react-intl';
-import Typography from '@material-ui/core/Typography';
 
 export const ErrorRenderer: React.FC<IErrorProps> = memo(({ message }) => {
   const { formatMessage } = useIntl();

@@ -9,7 +9,7 @@ import { ReactComponent as RocketLightImg } from './style/rocket-light.svg';
 import { scrollToElement, scrollToTop } from 'utils/utils';
 import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from 'react-jss';
+import { useTheme } from '@mui/material';
 import scrollStyle from './style/scroll-style';
 
 export const ScrollRenderer: React.FC<IScrollProps> = memo(({ to }) => {
