@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { Theme } from 'models';
+import { Typography } from '@material-ui/core';
 import { useIntl } from 'react-intl';
-import { Typography, useTheme } from '@mui/material';
+import { useTheme } from 'react-jss';
 import myNameStyle from './style/my-name-style';
 
 export const MyNameRenderer: React.FC = memo(() => {

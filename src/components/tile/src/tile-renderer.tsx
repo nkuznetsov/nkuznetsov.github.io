@@ -3,7 +3,8 @@ import { Cursor, ImageEffect } from 'components/image/src/image-interface';
 import { Image } from 'components/image';
 import { ITileProps } from './tile-interface';
 import { Theme } from 'models';
-import { Box, useTheme } from '@mui/material';
+import { useTheme } from 'react-jss';
+import { Box } from '@material-ui/core';
 import tileStyle from './style/tile-style';
 
 export const TileRenderer: React.FC<ITileProps> = memo(

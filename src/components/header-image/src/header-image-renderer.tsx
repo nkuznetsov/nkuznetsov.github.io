@@ -4,7 +4,7 @@ import { ReactComponent as DarkOysterImage } from './style/dark-oyster.svg';
 import { ReactComponent as LightOysterImage } from './style/light-oyster.svg';
 import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from '@mui/material';
+import { useTheme } from 'react-jss';
 import headerStyle from './style/header-image-style';
 
 export const HeaderImageRenderer: React.FC = memo(() => {

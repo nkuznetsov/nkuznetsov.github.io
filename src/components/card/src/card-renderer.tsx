@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@material-ui/core';
 import { CardBackRenderer as CardBack } from './card-back-renderer';
 import { CardFlip } from 'components/card-flip';
 import { CardFrontRenderer as CardFront } from './card-front-renderer';
 import { ICardRendererProps } from './card-interface';
 import { Theme } from 'models';
+import { useTheme } from 'react-jss';
 import cardStyle from './style/card-style';
 import {
   CARD_Z_INDEX,

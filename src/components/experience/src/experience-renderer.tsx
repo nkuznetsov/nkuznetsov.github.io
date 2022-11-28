@@ -1,9 +1,10 @@
 import React, { memo } from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@material-ui/core';
 import { Card } from 'components/card';
 import { IExperienceRendererProps } from './experience-interface';
 import { Scroll } from 'components/scroll';
 import { Theme } from 'models';
+import { useTheme } from 'react-jss';
 import experienceStyle from './style/experience-style';
 
 export const ExperienceRenderer: React.FC<IExperienceRendererProps> = memo(

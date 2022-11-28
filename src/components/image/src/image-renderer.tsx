@@ -5,10 +5,11 @@ import React, {
   useEffect,
   useState
 } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Theme } from 'models';
 import { TOOLTIP_DELAY } from 'utils/constants';
-import { Fade, Tooltip, useTheme, Zoom } from '@mui/material';
+import { useTheme } from 'react-jss';
+import { Fade, Tooltip, Zoom } from '@material-ui/core';
 import imageStyle from './style/image-style';
 import {
   Cursor,

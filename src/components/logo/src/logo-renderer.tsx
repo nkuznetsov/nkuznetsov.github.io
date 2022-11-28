@@ -4,7 +4,7 @@ import { ReactComponent as DarkLogo } from './style/logo-dark.svg';
 import { ReactComponent as LightLogo } from './style/logo-light.svg';
 import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
-import { useTheme } from '@mui/material';
+import { useTheme } from 'react-jss';
 import logoStyle from './style/logo-style';
 
 export const LogoRenderer: React.FC = memo(() => {

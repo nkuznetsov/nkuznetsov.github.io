@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { IErrorProps } from './error-interface';
-import { Typography } from '@mui/material';
+import { Typography } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 
 export const ErrorRenderer: React.FC<IErrorProps> = memo(({ message }) => {

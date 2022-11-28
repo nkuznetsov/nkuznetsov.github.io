@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Box, Grid, useTheme } from '@mui/material';
+import { Box, Grid } from '@material-ui/core';
 import { Cursor, Image } from 'components/image';
 import { Gallery } from 'components/gallery';
 import { HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT } from 'utils/constants';
@@ -7,6 +7,7 @@ import { ICardSideRendererProps } from './card-interface';
 import { IImage } from 'components/gallery/src/gallery-interface';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
+import { useTheme } from 'react-jss';
 import cardStyle from './style/card-style';
 // import Carousel, { Modal, ModalGateway, ViewType } from 'react-images'; // https://jossmac.github.io/react-images
 

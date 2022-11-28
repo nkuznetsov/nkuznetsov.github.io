@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useContext } from 'react';
 import { AppContext } from 'components/app';
-import { Box, Grid, Hidden, useTheme } from '@mui/material';
+import { Box, Grid, Hidden } from '@material-ui/core';
 import { Cursor, Image } from 'components/image';
 import { EXPERIENCE_PAGE } from 'utils/constants';
 import { Header } from 'components/header';
@@ -18,6 +18,7 @@ import { SlideoutImage } from 'components/slideout-image';
 import { SocialMediaLinks } from 'components/social-media-links';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
+import { useTheme } from 'react-jss';
 import homeStyle from './style/home-style';
 
 export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
@@ -40,22 +41,22 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
         <Seo page={Page.Home} />
         <Box className={styles.home}>
           <Grid container className={styles.container}>
-            <Hidden only='xs'>
-              <Grid item sm={2} className={styles.leftContainer}>
-                {isMagic[2] && <Logo />}
-              </Grid>
-            </Hidden>
+            {/* <Hidden only='xs'> */}
+            <Grid item sm={2} className={styles.leftContainer}>
+              {isMagic[2] && <Logo />}
+            </Grid>
+            {/* </Hidden> */}
 
             <Grid item container sm={8} className={styles.centerContainer}>
-              <Hidden smUp>
-                <Grid container className={styles.topMenu}>
-                  <Menu
-                    toggleDebug={toggleDebug}
-                    toggleMagic={toggleMagic}
-                    toggleTheme={toggleTheme}
-                  />
-                </Grid>
-              </Hidden>
+              {/* <Hidden smUp> */}
+              <Grid container className={styles.topMenu}>
+                <Menu
+                  toggleDebug={toggleDebug}
+                  toggleMagic={toggleMagic}
+                  toggleTheme={toggleTheme}
+                />
+              </Grid>
+              {/* </Hidden> */}
 
               <Grid className={styles.centerSubContainer}>
                 {isMagic[0] && (
@@ -81,24 +82,24 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
                   />
                 </Box>
               </Grid>
-              <Hidden smDown>
-                <Scroll to={EXPERIENCE_PAGE} />
-              </Hidden>
+              {/* <Hidden smDown> */}
+              <Scroll to={EXPERIENCE_PAGE} />
+              {/* </Hidden> */}
 
-              <Hidden lgUp>
-                <Box className={styles.placeholder} />
-              </Hidden>
+              {/* <Hidden lgUp> */}
+              <Box className={styles.placeholder} />
+              {/* </Hidden> */}
             </Grid>
 
-            <Hidden only='xs'>
-              <Grid container item sm={2} className={styles.rightContainer}>
-                <Menu
-                  toggleDebug={toggleDebug}
-                  toggleMagic={toggleMagic}
-                  toggleTheme={toggleTheme}
-                />
-              </Grid>
-            </Hidden>
+            {/* <Hidden only='xs'> */}
+            <Grid container item sm={2} className={styles.rightContainer}>
+              <Menu
+                toggleDebug={toggleDebug}
+                toggleMagic={toggleMagic}
+                toggleTheme={toggleTheme}
+              />
+            </Grid>
+            {/* </Hidden> */}
           </Grid>
           {isMagic[1] && <SlideoutImage />}
         </Box>

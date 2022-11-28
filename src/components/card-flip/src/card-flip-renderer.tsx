@@ -1,7 +1,8 @@
 import React, { memo, useEffect, useState } from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@material-ui/core';
 import { CardFlipDirection, ICardFlipProps } from './card-flip-interface';
 import { colors } from 'style/colors';
+import { useTheme } from 'react-jss';
 
 export const CardFlipRenderer: React.FC<ICardFlipProps> = memo(
   ({

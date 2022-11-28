@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@material-ui/core';
 import { IGalleryProps, IImage } from './gallery-interface';
 import { Theme } from 'models';
 import { Tile } from 'components/tile';
+import { useTheme } from 'react-jss';
 import galleryStyle from './style/gallery-style';
 
 export const GalleryRenderer: React.FC<IGalleryProps> = memo(

@@ -1,5 +1,6 @@
 // Reference:
 // https://material.io/design/material-theming/implementing-your-theme.html#
+// See notes.md
 
 import { DEFAULT_IS_DEBUG } from 'utils/constants';
 import { IBaseTheme, Theme, ThemeType } from 'models';

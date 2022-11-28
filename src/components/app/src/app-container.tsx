@@ -8,11 +8,12 @@ import { messages } from 'messages';
 import { ThemeType } from 'models';
 import ApolloClient from 'apollo-boost';
 import themes from 'style/themes';
+import { ThemeProvider } from 'react-jss';
 import {
   createTheme,
-  ThemeProvider,
+  MuiThemeProvider,
   responsiveFontSizes
-} from '@mui/material/styles';
+} from '@material-ui/core/styles';
 import {
   BREAKPOINTS,
   DEFAULT_IS_DEBUG,
@@ -95,13 +96,13 @@ export const AppContainer: React.FC = () => {
       <IntlProvider locale={locale} messages={translations}>
         <ThemeProvider theme={{ ...theme }}>
           <AppContext.Provider value={appContext}>
-            <ThemeProvider theme={muiTheme}>
+            <MuiThemeProvider theme={muiTheme}>
               <AppRenderer
                 toggleDebug={toggleDebug}
                 toggleMagic={toggleMagic}
                 toggleTheme={toggleTheme}
               />
-            </ThemeProvider>
+            </MuiThemeProvider>
           </AppContext.Provider>
         </ThemeProvider>
       </IntlProvider>

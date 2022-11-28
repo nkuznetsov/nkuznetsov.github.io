@@ -6,10 +6,9 @@ import React, {
   useState
 } from 'react';
 import { AppContext } from 'components/app';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@material-ui/core';
 import { Image } from 'components/image';
 import { ImageEffect } from 'components/image/src/image-interface';
-import { Theme, ThemeType } from 'models';
 import { IToggleProps, ToggleType } from './toggle-interface';
 import { ReactComponent as DarkThemeActiveImage } from './style/moon-light.svg';
 import { ReactComponent as DarkThemeInactiveImage } from './style/moon-dark.svg';
@@ -17,7 +16,9 @@ import { ReactComponent as WandActiveImage } from './style/wand-dark.svg';
 import { ReactComponent as WandInactiveImage } from './style/wand-light.svg';
 import { ReactComponent as WrenchActiveImage } from './style/wrench-dark.svg';
 import { ReactComponent as WrenchInactiveImage } from './style/wrench-light.svg';
+import { Theme, ThemeType } from 'models';
 import { useIntl } from 'react-intl';
+import { useTheme } from 'react-jss';
 import headerStyle from './style/toggle-style';
 
 export const ToggleRenderer: React.FC<IToggleProps> = memo(
