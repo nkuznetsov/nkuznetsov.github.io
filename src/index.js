@@ -1,6 +1,7 @@
 import React from 'react';
 import 'typeface-roboto';
 import { App } from './components/app';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
