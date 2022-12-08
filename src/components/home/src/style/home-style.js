@@ -23,14 +23,18 @@ export default createUseStyles(theme => ({
   },
   leftContainer: {
     background: theme.isDebug && colors.pink[100],
-    display: 'flex',
     justifyContent: 'center',
     alignContent: 'flex-start',
-    paddingTop: '3%'
+    paddingTop: '3%',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      display: 'none'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
+      display: 'flex'
+    }
   },
   centerContainer: {
     background: theme.isDebug && colors.pink[200],
-    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignContent: 'center'
@@ -55,7 +59,13 @@ export default createUseStyles(theme => ({
   },
   placeholder: {
     background: theme.isDebug && colors.red[100],
-    height: '6rem'
+    height: '6rem',
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      display: 'flex'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.lg}px)`]: {
+      display: 'none'
+    }
   },
   header: {
     background: theme.isDebug && colors.pink[100],
@@ -66,7 +76,11 @@ export default createUseStyles(theme => ({
   },
   rightContainer: {
     background: theme.isDebug && colors.pink[300],
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      display: 'none'
+    },
     [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
+      display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
       alignContent: 'flex-end'
@@ -92,8 +106,14 @@ export default createUseStyles(theme => ({
   },
   topMenu: {
     background: theme.isDebug && colors.pink[100],
-    display: 'flex',
-    justifyContent: 'flex-end'
+    [`@media only screen and (min-width: ${BREAKPOINTS.xs}px)`]: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'flex-end'
+    },
+    [`@media only screen and (min-width: ${BREAKPOINTS.sm}px)`]: {
+      display: 'none'
+    }
   },
   linksContainer: {
     background: theme.isDebug && colors.teal[300],

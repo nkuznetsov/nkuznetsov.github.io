@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useContext } from 'react';
 import { AppContext } from 'components/app';
-import { Box, Grid, Hidden } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { Cursor, Image } from 'components/image';
 import { EXPERIENCE_PAGE } from 'utils/constants';
 import { Header } from 'components/header';
@@ -41,22 +41,18 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
         <Seo page={Page.Home} />
         <Box className={styles.home}>
           <Grid container className={styles.container}>
-            {/* <Hidden only='xs'> */}
             <Grid item sm={2} className={styles.leftContainer}>
               {isMagic[2] && <Logo />}
             </Grid>
-            {/* </Hidden> */}
 
             <Grid item container sm={8} className={styles.centerContainer}>
-              {/* <Hidden smUp> */}
-              <Grid container className={styles.topMenu}>
+              <Grid className={styles.topMenu}>
                 <Menu
                   toggleDebug={toggleDebug}
                   toggleMagic={toggleMagic}
                   toggleTheme={toggleTheme}
                 />
               </Grid>
-              {/* </Hidden> */}
 
               <Grid className={styles.centerSubContainer}>
                 {isMagic[0] && (
@@ -82,24 +78,19 @@ export const HomeRenderer: React.FC<IHomeRendererProps> = memo(
                   />
                 </Box>
               </Grid>
-              {/* <Hidden smDown> */}
-              <Scroll to={EXPERIENCE_PAGE} />
-              {/* </Hidden> */}
 
-              {/* <Hidden lgUp> */}
+              <Scroll to={EXPERIENCE_PAGE} />
+
               <Box className={styles.placeholder} />
-              {/* </Hidden> */}
             </Grid>
 
-            {/* <Hidden only='xs'> */}
-            <Grid container item sm={2} className={styles.rightContainer}>
+            <Grid item sm={2} className={styles.rightContainer}>
               <Menu
                 toggleDebug={toggleDebug}
                 toggleMagic={toggleMagic}
                 toggleTheme={toggleTheme}
               />
             </Grid>
-            {/* </Hidden> */}
           </Grid>
           {isMagic[1] && <SlideoutImage />}
         </Box>
