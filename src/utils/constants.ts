@@ -57,9 +57,6 @@ export const FLIP_SPEED_BACK_TO_FRONT = 1;
 export const IS_INFINITE_ROTATION = true;
 export const CARD_Z_INDEX = 'auto';
 
-/** Modal */
-export const HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT = 5000; // ms
-
 /** Google AdSense */
 export const AD_CLIENT = 'ca-pub-4609964133332939';
 export const AD_SLOT = '2603031932';

@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, Modal } from '@material-ui/core';
 import { Cursor, Image } from 'components/image';
 import { Gallery } from 'components/gallery';
-import { HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT } from 'utils/constants';
 import { ICardSideRendererProps } from './card-interface';
-import { IImage } from 'components/gallery/src/gallery-interface';
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
 import { useTheme } from 'react-jss';
 import cardStyle from './style/card-style';
-// import Carousel, { Modal, ModalGateway, ViewType } from 'react-images'; // https://jossmac.github.io/react-images
+import 'swiper/css';
 
 export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
   ({ experience, cardContainerStyle, onFlip, flipImage }) => {
@@ -56,6 +56,12 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
 
     const flipImgBackText = formatMessage({ id: 'experience.flipImgBackText' });
 
+    const imagesList = images.map(img => (
+      <SwiperSlide key={img.caption}>
+        <Image alt={img.alt} cursor={Cursor.Pointer} src={img.source.regular} />
+      </SwiperSlide>
+    ));
+
     return (
       <Grid container className={cardContainerStyle}>
         {onFlip && (
@@ -77,33 +83,30 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
             isDynamic={isDynamic}
           />
 
-          {/* {isModalOpen && (
-            <ModalGateway>
-              <Modal onClose={closeModal}>
-                <Carousel
-                  views={convertImagesToViewTypes(formatMessage, images)}
-                  currentIndex={selectedImageIndex}
-                  hideControlsWhenIdle={HIDE_MODAL_CONTROLS_WHEN_IDLE_TIMEOUT}
-                />
-              </Modal>
-            </ModalGateway>
-          )} */}
+          <Modal
+            open={isModalOpen}
+            onClose={closeModal}
+            className={styles.modal}
+          >
+            <Swiper
+              className={styles.swiper}
+              slidesPerView={4}
+              spaceBetween={30}
+              keyboard
+              navigation
+              mousewheel
+              modules={[Mousewheel, Keyboard, Pagination, Navigation]}
+              initialSlide={selectedImageIndex}
+              loop
+              centeredSlides
+            >
+              {imagesList}
+            </Swiper>
+          </Modal>
         </Grid>
       </Grid>
     );
   }
 );
-
-// const convertImagesToViewTypes = (
-//   formatMessage: any,
-//   images: IImage[]
-// ): ViewType[] => {
-//   return images.map(image => {
-//     return {
-//       source: image.source.regular,
-//       caption: image.caption
-//     };
-//   });
-// };
 
 CardBackRenderer.displayName = 'CardBackRenderer';
