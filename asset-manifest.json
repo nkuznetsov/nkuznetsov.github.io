@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.658c3a49.css",
-    "main.js": "/static/js/main.2421e3b1.js",
+    "main.css": "/static/css/main.995897c5.css",
+    "main.js": "/static/js/main.c4baef9f.js",
     "static/media/1.png": "/static/media/1.a17903f1e6811601443e.png",
     "static/media/3.png": "/static/media/3.282d51a5666c91803c6e.png",
     "static/media/cat.png": "/static/media/cat.24c5f1096759f1ee4d7b.png",
@@ -88,6 +88,8 @@
     "static/media/typescript.svg": "/static/media/typescript.1a6ab40a144bfaf265c57f727d6921a6.svg",
     "static/media/reduxDark.svg": "/static/media/reduxDark.3a98d32dde5ebb465c95a0d1b1138b86.svg",
     "static/media/android.svg": "/static/media/android.b6f718bfa5eb048e2a2546b67c4d1a2e.svg",
+    "static/media/close-light.svg": "/static/media/close-light.70eb30f0fd7a42030250510d466dd348.svg",
+    "static/media/close-dark.svg": "/static/media/close-dark.54fb4e7a472223d8418b6ff69a70a118.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.23786fe97d7101481d12da97ddc2de3b.svg",
     "index.html": "/index.html",
     "static/media/xamarin.svg": "/static/media/xamarin.9882ffc37d29fef5558d1083fd9b6a3b.svg",
@@ -110,7 +112,7 @@
     "static/media/microsoft-logo.svg": "/static/media/microsoft-logo.82a8d3fdfc924eb122351c1dbf96fccb.svg"
   },
   "entrypoints": [
-    "static/css/main.658c3a49.css",
-    "static/js/main.2421e3b1.js"
+    "static/css/main.995897c5.css",
+    "static/js/main.c4baef9f.js"
   ]
 }
