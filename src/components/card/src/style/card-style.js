@@ -356,16 +356,11 @@ export default createUseStyles(theme => ({
     backgroundColor: theme.isDebug && colors.yellow[200],
     transform: 'translateZ(0)'
   },
-
-  modal: {
-    backgroundColor: theme.isDebug && colors.yellow[100],
-    width: '60%',
-    height: '60%',
-    marginLeft: '25%',
-    marginTop: '10%'
-  },
-
   swiper: {
-    backgroundColor: theme.isDebug && colors.red[200]
+    backgroundColor: theme.isDebug && colors.red[200],
+    display: 'flex',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    borderBottom: '0 none'
   }
 }));

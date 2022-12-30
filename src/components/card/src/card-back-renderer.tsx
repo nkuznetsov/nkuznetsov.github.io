@@ -1,9 +1,10 @@
 import React, { memo, useCallback, useState } from 'react';
-import { Box, Grid, Modal } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { Cursor, Image } from 'components/image';
 import { Gallery } from 'components/gallery';
 import { ICardSideRendererProps } from './card-interface';
 import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+import { Modal } from 'components/modal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Theme } from 'models';
 import { useIntl } from 'react-intl';
@@ -41,7 +42,7 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
       [isModalOpen]
     );
 
-    const closeModal = useCallback((_event: any) => {
+    const closeModal = useCallback(() => {
       setIsModalOpen(false);
     }, []);
 
@@ -83,22 +84,24 @@ export const CardBackRenderer: React.FC<ICardSideRendererProps> = memo(
             isDynamic={isDynamic}
           />
 
-          <Modal
-            open={isModalOpen}
-            onClose={closeModal}
-            className={styles.modal}
-          >
+          <Modal isOpen={isModalOpen} handleClose={closeModal}>
             <Swiper
               className={styles.swiper}
               slidesPerView={4}
               spaceBetween={30}
+              loop
               keyboard
               navigation
               mousewheel
-              modules={[Mousewheel, Keyboard, Pagination, Navigation]}
-              initialSlide={selectedImageIndex}
-              loop
               centeredSlides
+              initialSlide={selectedImageIndex}
+              modules={[
+                Keyboard,
+                Mousewheel,
+                Navigation,
+                Pagination,
+                Pagination
+              ]}
             >
               {imagesList}
             </Swiper>
